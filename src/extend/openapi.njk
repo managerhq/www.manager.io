@@ -1,6 +1,7 @@
 ---
 layout: layout.njk
 title: OpenAPI Specifications
+description: Browse the OpenAPI specifications for the Manager.io API and see which endpoints, request shapes and responses are available.
 verbs:
   - { key: get, label: GET, active: "bg-emerald-600 text-white ring-emerald-600", idle: "bg-white text-emerald-700 ring-emerald-200 hover:bg-emerald-50" }
   - { key: post, label: POST, active: "bg-sky-600 text-white ring-sky-600", idle: "bg-white text-sky-700 ring-sky-200 hover:bg-sky-50" }
@@ -12,12 +13,12 @@ verbs:
 {% set filterButton = "inline-flex items-center rounded-md px-3 py-1.5 text-xs font-semibold ring-1 ring-inset transition-colors" %}
 <div class="px-6 pt-16 lg:px-8">
     <div class="mx-auto max-w-2xl text-center lg:max-w-3xl">
-        <h1 class="text-base font-semibold leading-7 text-indigo-600">
+        <p class="text-base font-semibold leading-7 text-indigo-600">
             API Reference
-        </h1>
-        <p class="mt-2 text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
-            OpenAPI Specifications
         </p>
+        <h1 class="mt-2 text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
+            OpenAPI Specifications
+        </h1>
     </div>
     <p class="mx-auto mt-6 mb-12 max-w-2xl text-center text-lg leading-8 text-gray-600">
         Each specification describes a slice of the Manager API. Pick one to view the raw document and learn which endpoints, request shapes, and responses are available.

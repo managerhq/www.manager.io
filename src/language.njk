@@ -1,13 +1,27 @@
----
-layout: layout.njk
-pagination:
-  data: languages
-  size: 1
-  alias: language
-permalink: "/{{ language.code }}/"
-eleventyComputed:
-  title: "{{ language.nativeName | safe }}"
-  contentDir: "{{ language.direction }}"
+---js
+{
+  layout: "layout.njk",
+  pagination: { data: "languages", size: 1, alias: "language", addAllPagesToCollections: true },
+  permalink: "/{{ language.code }}/",
+  eleventyComputed: {
+    // A language counts as translated once it has an entry in translations.json.
+    // Until then its page is an English copy of /download/, so it is kept out of search engines.
+    translated: (data) => Boolean(data.translations[data.language.code]),
+    noindex: (data) => !data.translated,
+    hreflang: (data) => data.translated,
+    lang: (data) => (data.translated ? data.language.code : "en"),
+    contentDir: (data) => data.language.direction,
+    title: (data) => data.language.nativeName,
+    metaTitle: (data) => {
+      const t = data.translations[data.language.code];
+      return t ? `Manager.io ${data.language.nativeName} – ${t.download}` : undefined;
+    },
+    description: (data) => {
+      const t = data.translations[data.language.code];
+      return t ? `${t.installDesktop} – ${t.noInternet}` : undefined;
+    },
+  },
+}
 ---
 {# One download page per language in languages.json, e.g. /ar/. Text falls back to English when untranslated. #}
 {% set t = translations[language.code] or translations.default %}
@@ -15,12 +29,12 @@ eleventyComputed:
 <!-- Header -->
 <div class="px-6 pt-16 lg:px-8">
     <div class="mx-auto max-w-2xl text-center lg:max-w-5xl">
-        <h1 class="text-base font-semibold leading-7 text-indigo-600">
+        <p class="text-base font-semibold leading-7 text-indigo-600">
             Manager.io
-        </h1>
-        <p class="mt-2 text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
-            {{ language.nativeName }}
         </p>
+        <h1 class="mt-2 text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
+            {{ language.nativeName }}
+        </h1>
     </div>
     <p class="mx-auto mt-6 max-w-2xl text-center text-lg leading-8 text-gray-600">
         {{ t.installDesktop }}

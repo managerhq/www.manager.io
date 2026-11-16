@@ -4,9 +4,11 @@ pagination:
   data: guides
   size: 1
   alias: guide
+  addAllPagesToCollections: true
 permalink: "{{ guide.url }}"
 eleventyComputed:
   title: "{{ guide.title | safe }}"
+  description: "{{ guide.description | safe }}"
 ---
 {# One page per file in content/guides. The menu on the left is src/_data/guideSidebar.json. #}
 {% macro sidebar() %}

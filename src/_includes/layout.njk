@@ -1,9 +1,44 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+{#
+    Front matter read here:
+      title        shown as "<title> | Manager.io"
+      metaTitle    replaces the whole <title> when the page needs different wording
+      description  meta description, plain text
+      noindex      keeps the page out of search engines and out of sitemap.xml
+      lang         language of the page content (default "en")
+      hreflang     true on pages that are translations of each other (/download/ and the translated language pages)
+#}
+{%- set pageTitle = metaTitle or ((title + " | " + site.name) if title else site.name) %}
+{%- set pageUrl = site.url + page.url %}
+<html lang="{{ lang or 'en' }}" dir="ltr">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% if title %}{{ title | safe }} | {% endif %}Manager.io</title>
+    <title>{{ pageTitle | safe }}</title>
+    {%- if description %}
+    <meta name="description" content="{{ description }}">
+    {%- endif %}
+    {%- if noindex %}
+    <meta name="robots" content="noindex, follow">
+    {%- elif not redirect %}
+    <link rel="canonical" href="{{ pageUrl }}">
+    {%- if hreflang %}
+    <link rel="alternate" hreflang="en" href="{{ site.url }}/download/">
+    {%- for language in languages %}{% if translations[language.code] %}
+    <link rel="alternate" hreflang="{{ language.code }}" href="{{ site.url }}/{{ language.code }}/">
+    {%- endif %}{% endfor %}
+    <link rel="alternate" hreflang="x-default" href="{{ site.url }}/download/">
+    {%- endif %}
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="{{ site.name }}">
+    <meta property="og:title" content="{{ (metaTitle or title or site.name) | safe }}">
+    {%- if description %}
+    <meta property="og:description" content="{{ description }}">
+    {%- endif %}
+    <meta property="og:url" content="{{ pageUrl }}">
+    <meta property="og:image" content="{{ site.url }}{{ site.image }}">
+    <meta name="twitter:card" content="summary">
+    {%- endif %}
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
     <link rel="stylesheet" href="/style.css">
     <script src="https://kit.fontawesome.com/0b64f5ae8f.js" crossorigin="anonymous"></script>

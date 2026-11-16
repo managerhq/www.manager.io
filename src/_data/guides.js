@@ -4,6 +4,15 @@ const directory = new URL("../../content/guides/", import.meta.url);
 
 const text = (html) => html.replace(/<[^>]+>/g, "").trim();
 
+// Plain text for the meta description: the first paragraph, cut at a word boundary.
+const entities = { "&mdash;": "—", "&ndash;": "–", "&nbsp;": " ", "&amp;": "&", "&lt;": "<", "&gt;": ">", "&quot;": '"', "&#39;": "'" };
+function describe(html) {
+  const paragraph = html.match(/<p\b[^>]*>([\s\S]*?)<\/p>/)?.[1] ?? "";
+  const plain = text(paragraph).replace(/&[a-z#0-9]+;/g, (entity) => entities[entity] ?? " ").replace(/\s+/g, " ").trim();
+  if (plain.length <= 160) return plain;
+  return plain.slice(0, 160).replace(/\s+\S*$/, "") + "…";
+}
+
 // One entry per content/guides/{slug}.json, which holds { key, content } where content is HTML.
 export default async function () {
   const files = (await readdir(directory)).filter((name) => name.endsWith(".json")).sort();
@@ -27,6 +36,7 @@ export default async function () {
       slug,
       url: slug === "default" ? "/guides/" : `/guides/${slug}/`,
       title: text(guide.content.match(/<h1\b[^>]*>([\s\S]*?)<\/h1>/)?.[1] ?? ""),
+      description: describe(guide.content),
       html,
       toc,
     };
