@@ -1,0 +1,4 @@
+{
+  "content": "<h1><span translate=\"true\" keyword=\"CancelBackup\">Cancel Backup</span></h1><p translate=\"true\" keywords=\"And Back Backup Cancel Cancelled Download From FromDate Is On To ToDate User\">Backup in progress can be cancelled. This will immediately stop the download for the user who is downloading the backup and remove read-only lock from the database.</p>",
+  "key": "backup-cancel"
+}

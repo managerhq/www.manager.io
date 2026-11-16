@@ -1,0 +1,4 @@
+{
+  "content": "<h1><span translate=\"true\" keyword=\"ExpenseClaimsSummary\">Expense Claims Summary</span> &mdash; <span translate=\"true\" keyword=\"Transactions\">Transactions</span></h1><p translate=\"true\" keywords=\"Action Date ExpenseClaim ExpenseClaimsPayer On Transaction Transactions\">Shows expense claim transactions for a specific payer within the date range.</p><p translate=\"true\" keywords=\"Action And Expense_claims ExpenseClaim ExpenseClaims Is On Payment Transaction Transactions\">Displays expense claims and their related payment transactions.</p>",
+  "key": "expense-claims-summary-transactions"
+}

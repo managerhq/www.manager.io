@@ -1,0 +1,4 @@
+{
+  "content": "<h1><span translate=\"true\" keyword=\"SalesInvoiceTotalsByItem\">Sales Invoice Totals by Item</span> &mdash; <span translate=\"true\" keyword=\"Transactions\">Transactions</span></h1><p translate=\"true\" keywords=\"Action Invoice Item On Sales SalesInvoice Transaction Transactions\">Shows sales invoice transactions for a specific item.</p><p translate=\"true\" keywords=\"And Credit CreditNote CreditNotes Edit Invoice Invoices Is Item Notes On Sales SalesInvoice SalesInvoices Select\">Displays all sales invoices and credit notes containing the selected item.</p>",
+  "key": "sales-invoice-totals-by-item-transactions"
+}

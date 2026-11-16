@@ -1,0 +1,4 @@
+{
+  "content": "<h1><span translate=\"true\" keyword=\"InventoryProfitMargin\">Inventory Profit Margin</span></h1><p translate=\"true\" keywords=\"By InventoryItem InventoryProfitMargin Item Margin Port Profit To ToDate\">The Inventory Profit Margin report analyzes profitability by inventory item.</p><p translate=\"true\" keywords=\"Amount And CostOfSales Margin Profit Sales\">It shows sales revenue, cost of sales, profit amounts, and profit margins.</p><p><span translate=\"true\" keywords=\"On\">For more information see:</span> <a href=\"/guides/inventory-profit-margin-form\"><span translate=\"true\" keyword=\"InventoryProfitMargin\">Inventory Profit Margin</span></a></p>",
+  "key": "inventory-profit-margin-view"
+}

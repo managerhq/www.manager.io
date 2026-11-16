@@ -1,0 +1,438 @@
+{
+  "openapi": "3.1.1",
+  "info": {
+    "title": "ManagerServer | put-recurring-purchase-order",
+    "version": "1.0.0+c6d1f1e3306702a9f3c52e59bee7a51638b30e7c"
+  },
+  "paths": {
+    "/api4/recurring-purchase-order": {
+      "put": {
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PutRecurringPurchaseOrder"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "CustomFields": {
+        "type": "object",
+        "properties": {
+          "strings": {
+            "type": [
+              "null",
+              "object"
+            ],
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "decimals": {
+            "type": [
+              "null",
+              "object"
+            ],
+            "additionalProperties": {
+              "pattern": "^-?(?:0|[1-9]\\d*)(?:\\.\\d+)?$",
+              "type": [
+                "null",
+                "number",
+                "string"
+              ],
+              "format": "double"
+            }
+          },
+          "dates": {
+            "type": [
+              "null",
+              "object"
+            ],
+            "additionalProperties": {
+              "type": [
+                "null",
+                "string"
+              ],
+              "format": "date-time"
+            }
+          },
+          "booleans": {
+            "type": [
+              "null",
+              "object"
+            ],
+            "additionalProperties": {
+              "type": "boolean"
+            }
+          },
+          "stringArrays": {
+            "type": [
+              "null",
+              "object"
+            ],
+            "additionalProperties": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "images": {
+            "type": [
+              "null",
+              "object"
+            ],
+            "additionalProperties": {
+              "type": [
+                "null",
+                "string"
+              ],
+              "format": "uuid"
+            }
+          }
+        }
+      },
+      "DiscountType": {
+        "type": "integer"
+      },
+      "ErrorResponse": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "message": {
+            "type": [
+              "null",
+              "string"
+            ]
+          }
+        }
+      },
+      "ExpirationType": {
+        "type": "integer"
+      },
+      "Line": {
+        "type": "object",
+        "properties": {
+          "lineNumber": { },
+          "item": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "format": "uuid"
+          },
+          "lineDescription": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "customFields": {
+            "type": [
+              "null",
+              "object"
+            ],
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "customFields2": {
+            "$ref": "#/components/schemas/CustomFields"
+          },
+          "qty": {
+            "pattern": "^-?(?:0|[1-9]\\d*)(?:\\.\\d+)?$",
+            "type": [
+              "null",
+              "number",
+              "string"
+            ],
+            "format": "double"
+          },
+          "purchaseUnitPrice": {
+            "pattern": "^-?(?:0|[1-9]\\d*)(?:\\.\\d+)?$",
+            "type": [
+              "number",
+              "string"
+            ],
+            "format": "double"
+          },
+          "discountPercentage": {
+            "pattern": "^-?(?:0|[1-9]\\d*)(?:\\.\\d+)?$",
+            "type": [
+              "number",
+              "string"
+            ],
+            "format": "double"
+          },
+          "discountAmount": {
+            "pattern": "^-?(?:0|[1-9]\\d*)(?:\\.\\d+)?$",
+            "type": [
+              "number",
+              "string"
+            ],
+            "format": "double"
+          },
+          "totalBeforeTax": { },
+          "taxCode": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "format": "uuid"
+          },
+          "project": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "format": "uuid"
+          },
+          "taxAmount": { },
+          "total": { }
+        }
+      },
+      "MonthDay": {
+        "type": "integer"
+      },
+      "Period": {
+        "type": "integer"
+      },
+      "PutRecurringPurchaseOrder": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "value": {
+            "$ref": "#/components/schemas/RecurringPurchaseOrder"
+          },
+          "business": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Name of business. If you are calling API from an extension running within IFRAME, then business does not have to be provided. Manager will automatically inject current business. This is useful when extension doesn't know business name which is typically the case."
+          }
+        }
+      },
+      "RecurringPurchaseOrder": {
+        "type": "object",
+        "properties": {
+          "nextIssueDate": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "format": "date-time"
+          },
+          "dueDate": {
+            "pattern": "^-?(?:0|[1-9]\\d*)$",
+            "type": [
+              "null",
+              "integer",
+              "string"
+            ],
+            "format": "int32"
+          },
+          "interval": {
+            "pattern": "^-?(?:0|[1-9]\\d*)$",
+            "type": [
+              "null",
+              "integer",
+              "string"
+            ],
+            "format": "int32"
+          },
+          "periodType": {
+            "$ref": "#/components/schemas/Period"
+          },
+          "monthDay": {
+            "$ref": "#/components/schemas/MonthDay"
+          },
+          "expirationType": {
+            "$ref": "#/components/schemas/ExpirationType"
+          },
+          "untilDate": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "format": "date-time"
+          },
+          "supplier": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "format": "uuid"
+          },
+          "description": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "lines": {
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/Line"
+            }
+          },
+          "amountsIncludeTax": {
+            "type": "boolean"
+          },
+          "hasLineNumber": {
+            "type": "boolean"
+          },
+          "discount": {
+            "type": "boolean"
+          },
+          "discountType": {
+            "$ref": "#/components/schemas/DiscountType"
+          },
+          "withholdingTax": {
+            "type": "boolean"
+          },
+          "withholdingTaxType": {
+            "$ref": "#/components/schemas/WithholdingTaxType"
+          },
+          "withholdingTaxPercentage": {
+            "pattern": "^-?(?:0|[1-9]\\d*)(?:\\.\\d+)?$",
+            "type": [
+              "number",
+              "string"
+            ],
+            "format": "double"
+          },
+          "withholdingTaxAmount": {
+            "pattern": "^-?(?:0|[1-9]\\d*)(?:\\.\\d+)?$",
+            "type": [
+              "number",
+              "string"
+            ],
+            "format": "double"
+          },
+          "trackQuantityToReceive": {
+            "type": "boolean"
+          },
+          "hasPurchaseOrderCustomTheme": {
+            "type": "boolean"
+          },
+          "purchaseOrderCustomTheme": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "format": "uuid"
+          },
+          "showTaxAmountColumn": {
+            "type": "boolean"
+          },
+          "hasPurchaseOrderFooters": {
+            "type": "boolean"
+          },
+          "purchaseOrderFooters": {
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          "automaticReference": {
+            "type": "boolean"
+          },
+          "customFields": {
+            "type": [
+              "null",
+              "object"
+            ],
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "customFields2": {
+            "$ref": "#/components/schemas/CustomFields"
+          },
+          "key": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "timestamp": {
+            "pattern": "^-?(?:0|[1-9]\\d*)$",
+            "type": [
+              "integer",
+              "string"
+            ],
+            "format": "int64"
+          },
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          }
+        }
+      },
+      "WithholdingTaxType": {
+        "type": "integer"
+      }
+    }
+  }
+}

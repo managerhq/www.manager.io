@@ -1,0 +1,79 @@
+---
+layout: layout.njk
+title: Server Edition
+platforms: [x64, arm64]
+operatingSystems:
+  - name: Windows
+    files: { x64: ManagerServer-win-x64.zip, arm64: ManagerServer-win-arm64.zip }
+  - name: OS X
+    files: { x64: ManagerServer-osx-x64.zip, arm64: ManagerServer-osx-arm64.zip }
+  - name: Linux
+    files: { x64: ManagerServer-linux-x64.tar.gz, arm64: ManagerServer-linux-arm64.tar.gz }
+faqs:
+  - q: How do I install server edition?
+    a: To install the server edition, download the archive for your operating system and processor architecture. Extract the contents of the archive into your desired folder. On Windows, launch <code>ManagerServer.exe</code>, and on Linux or macOS, open a terminal, navigate to the folder, and run <code>./ManagerServer</code>. This will launch HTTP server on port 8080 which you can access from your web-browser.
+  - q: Can you help installing server edition?
+    a: We do not provide installation service. Server edition works as a custom web-server. If you do not have an experience with web-servers, please seek local IT specialist or sign up for <a href="https://www.manager.cloud" class="underline text-sky-500 underline-offset-4">cloud edition</a>. Cloud edition is identical to the server edition in terms of features and functionality. The key difference is that the cloud edition is professionally hosted by us, offering a seamless experience without the need for self-hosting.
+---
+<div class="px-6 py-16 lg:px-8">
+    <div class="mx-auto max-w-2xl text-center lg:max-w-3xl">
+        <h1 class="text-base font-semibold leading-7 text-indigo-600">
+            Server Edition
+        </h1>
+        <p class="mt-2 text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
+            The Same Accounting Software but on your Server
+        </p>
+    </div>
+    <p class="mx-auto mt-6 max-w-2xl text-center text-lg leading-8 text-gray-600">
+        Full control with no monthly fees
+    </p>
+    <p class="mx-auto mt-6 max-w-2xl">
+        <img src="https://img.shields.io/github/v/release/managerhq/Manager?style=for-the-badge" class="mx-auto">
+    </p>
+</div>
+
+<div class="mx-auto w-full max-w-5xl px-6 lg:px-8">
+    <table class="mx-auto">
+        <tr>
+            <td class="p-2 border bg-neutral-50"></td>
+            {% for platform in platforms %}
+            <td class="p-2 text-center border font-semibold bg-neutral-50">{{ platform }}</td>
+            {% endfor %}
+        </tr>
+        {% for os in operatingSystems %}
+        <tr>
+            <td class="p-2 px-4 text-center border bg-neutral-50 font-semibold">{{ os.name }}</td>
+            {% for platform in platforms %}
+            <td class="p-4 border">
+                <a href="https://github.com/managerhq/Manager/releases/latest/download/{{ os.files[platform] }}" class="whitespace-nowrap block rounded-md bg-indigo-600 px-2 py-1 text-xs font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 text-center hover:text-white">
+                    {{ os.files[platform] }}
+                    <i class="fas fa-download ml-2"></i>
+                </a>
+            </td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+
+<!-- FAQ Section -->
+<div class="mx-auto max-w-7xl divide-y divide-gray-900/10 px-6 py-16 lg:px-8">
+    <div class="text-2xl font-bold leading-10 tracking-tight text-gray-900">
+        Frequently Asked Questions
+    </div>
+
+    <div class="mt-10 space-y-8 divide-y divide-gray-900/10">
+        {% for faq in faqs %}
+        <div class="pt-8 lg:grid lg:grid-cols-12 lg:gap-8">
+            <div class="text-base font-semibold leading-7 text-gray-900 lg:col-span-5">
+                {{ faq.q }}
+            </div>
+            <div class="mt-4 lg:col-span-7 lg:mt-0 prose prose-xl">
+                <p class="text-base leading-7 text-gray-600 prose-a:underline prose-a:text-sky-500 prose-a:underline-offset-4 before:prose-code:content-none after:prose-code:content-none prose-code:whitespace-nowrap">
+                    {{ faq.a | safe }}
+                </p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>

@@ -1,0 +1,4 @@
+{
+  "content": "<h1><span translate=\"true\" keyword=\"EmployeeSummary\">Employee Summary</span></h1><p translate=\"true\" keywords=\"Employee EmployeeSummary Port Summary To ToDate Total\">The Employee Summary report shows payroll totals for an individual employee.</p><p translate=\"true\" keywords=\"And Contribution Contributions Deduction Deductions Earnings On\">It breaks down earnings, deductions, and contributions for the specified period.</p><p><span translate=\"true\" keywords=\"On\">For more information see:</span> <a href=\"/guides/employee-summary-form\"><span translate=\"true\" keyword=\"EmployeeSummary\">Employee Summary</span></a></p>",
+  "key": "employee-summary-view"
+}

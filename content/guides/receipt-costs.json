@@ -1,0 +1,4 @@
+{
+  "content": "<h1><span translate=\"true\" keyword=\"Receipts\">Receipts</span></h1><p translate=\"true\" keywords=\"Code InventoryItem InventoryItems Item Receipt Receipts To ToDate\">The <code>Receipt Costs</code> screen provides a detailed breakdown of how costs are allocated across inventory items when processing receipts.</p><p translate=\"true\" keywords=\"Exactly InventoryItem InventoryItems Is Item On Other Receipt Tax To ToDate Total TotalCost\">When you receive inventory items, the total cost of the receipt (including shipping, taxes, or other charges) needs to be distributed among the individual items. This screen shows you exactly how those costs have been allocated.</p><p translate=\"true\" keywords=\"Allocation By Expenses Item Location On Rate Receipt To ToDate\">The cost allocation helps ensure accurate inventory valuation by properly assigning all receipt-related expenses to the specific items purchased.</p>",
+  "key": "receipt-costs"
+}

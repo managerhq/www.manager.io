@@ -1,0 +1,4 @@
+{
+  "content": "<h1><span translate=\"true\" keyword=\"InventoryProfitMargin\">Inventory Profit Margin</span> &mdash; <span translate=\"true\" keyword=\"Transactions\">Transactions</span></h1><p translate=\"true\" keywords=\"Action InventoryItem InventoryItems Item On Profit To ToDate Transaction Transactions\">Shows profit transactions for individual inventory items.</p><p translate=\"true\" keywords=\"Action And CostOfSales Is Margin On Profit Sales Transaction\">Displays sales revenue, cost of sales, and profit margins for each transaction.</p>",
+  "key": "inventory-profit-margin-transactions"
+}

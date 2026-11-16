@@ -1,0 +1,44 @@
+---
+layout: layout.njk
+pagination:
+  data: openapi
+  size: 1
+  alias: name
+permalink: "/extend/openapi/{{ name }}/"
+eleventyComputed:
+  title: "{{ name }}"
+---
+{# One page per spec in content/openapi, rendered in the browser by Scalar. #}
+<div class="mx-auto max-w-7xl px-6 pt-6 lg:px-8">
+    <a href="/extend/openapi/" class="inline-flex items-center gap-2 text-sm font-semibold text-indigo-600 hover:text-indigo-500">
+        <i class="fas fa-arrow-left"></i> Back to specifications
+    </a>
+    <h1 class="mt-4 text-2xl font-bold tracking-tight text-gray-900">{{ name }}</h1>
+    <p class="mt-1 text-sm text-gray-500">
+        Raw spec: <a id="raw-spec" href="/openapi/{{ name }}.json" class="text-indigo-600 hover:text-indigo-500">/openapi/{{ name }}.json</a>
+    </p>
+</div>
+<div id="scalar-container" class="mt-4"></div>
+<div id="scalar-status" class="mx-auto max-w-3xl px-6 pb-16 lg:px-8 text-center text-gray-500">
+    <i class="fas fa-spinner fa-spin mr-2"></i> Loading viewer...
+</div>
+
+<script>
+    function showViewer() {
+        const status = document.getElementById('scalar-status');
+        const specUrl = document.getElementById('raw-spec').href;
+
+        if (typeof window.Scalar?.createApiReference === 'function') {
+            status.remove();
+            window.Scalar.createApiReference('#scalar-container', { url: specUrl });
+        } else {
+            status.innerHTML = `
+                <div class="mx-auto max-w-3xl rounded-lg bg-red-50 ring-1 ring-red-200 p-6 text-center">
+                    <i class="fas fa-triangle-exclamation text-red-500 mr-2"></i>
+                    <span class="text-red-800">Failed to load viewer. <a href="${specUrl}" class="underline">View raw spec</a>.</span>
+                </div>
+            `;
+        }
+    }
+</script>
+<script src="https://cdn.jsdelivr.net/npm/@scalar/api-reference" onload="showViewer()" onerror="showViewer()"></script>

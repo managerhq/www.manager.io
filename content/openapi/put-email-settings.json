@@ -1,0 +1,256 @@
+{
+  "openapi": "3.1.1",
+  "info": {
+    "title": "ManagerServer | put-email-settings",
+    "version": "1.0.0+c6d1f1e3306702a9f3c52e59bee7a51638b30e7c"
+  },
+  "paths": {
+    "/api4/email-settings": {
+      "put": {
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PutEmailSettings"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "EmailFormat": {
+        "type": "integer"
+      },
+      "EmailSettings": {
+        "type": "object",
+        "properties": {
+          "protocol": {
+            "$ref": "#/components/schemas/Protocol"
+          },
+          "httpServer": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "httpReplyTo": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "smtpServer": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "port": {
+            "$ref": "#/components/schemas/SmtpPort"
+          },
+          "smtpCredentials": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "emailAddress": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "password": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "sendCopy": {
+            "type": "boolean"
+          },
+          "sendCopyEmail": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "receiveRepliesAtADifferentAddressThanYouSendFrom": {
+            "type": "boolean"
+          },
+          "replyTo": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "doNotVerifyTLSCertificate": {
+            "type": "boolean"
+          },
+          "obsolete_PageSize": {
+            "$ref": "#/components/schemas/PageSize"
+          },
+          "obsolete_Format2": {
+            "$ref": "#/components/schemas/EmailFormat"
+          },
+          "obsolete_NewPassword": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "obsolete_PdfStandard": {
+            "pattern": "^-?(?:0|[1-9]\\d*)$",
+            "type": [
+              "integer",
+              "string"
+            ],
+            "format": "int32"
+          },
+          "obsolete_Name": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "obsolete_TrackingEnabled": {
+            "type": "boolean"
+          },
+          "obsolete_UseCustomSmtpServer": {
+            "type": "boolean"
+          },
+          "obsolete_RequiresAuthentication": {
+            "type": "boolean"
+          },
+          "obsolete_SSL": {
+            "type": "boolean"
+          },
+          "obsolete_EmailSendingFormat": {
+            "pattern": "^-?(?:0|[1-9]\\d*)$",
+            "type": [
+              "integer",
+              "string"
+            ],
+            "format": "int32"
+          },
+          "obsolete_EmailTracking": {
+            "type": "boolean"
+          },
+          "obsolete_Format": {
+            "pattern": "^-?(?:0|[1-9]\\d*)$",
+            "type": [
+              "integer",
+              "string"
+            ],
+            "format": "int32"
+          },
+          "obsolete_DoNotUseInternationalDeliveryFormat": {
+            "type": "boolean"
+          },
+          "key": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "timestamp": {
+            "pattern": "^-?(?:0|[1-9]\\d*)$",
+            "type": [
+              "integer",
+              "string"
+            ],
+            "format": "int64"
+          },
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          }
+        }
+      },
+      "ErrorResponse": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "message": {
+            "type": [
+              "null",
+              "string"
+            ]
+          }
+        }
+      },
+      "PageSize": {
+        "type": "integer"
+      },
+      "Protocol": {
+        "type": "integer"
+      },
+      "PutEmailSettings": {
+        "type": "object",
+        "properties": {
+          "value": {
+            "$ref": "#/components/schemas/EmailSettings"
+          },
+          "business": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Name of business. If you are calling API from an extension running within IFRAME, then business does not have to be provided. Manager will automatically inject current business. This is useful when extension doesn't know business name which is typically the case."
+          }
+        }
+      },
+      "SmtpPort": {
+        "type": "integer"
+      }
+    }
+  }
+}

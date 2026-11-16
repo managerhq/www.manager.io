@@ -1,0 +1,4 @@
+{
+  "content": "<h1><span translate=\"true\" keyword=\"SalesInvoiceTotalsByCustomField\">Sales Invoice Totals by Custom Field</span></h1><p translate=\"true\" keywords=\"By Custom CustomField Invoice InvoiceTotal Port Sales SalesInvoice SalesInvoiceTotalsByCustomField To ToDate Total\">The Sales Invoice Totals by Custom Field report analyzes sales by custom attributes.</p><p translate=\"true\" keywords=\"Amount And Custom CustomField Group On Sales To ToDate Total\">It groups and totals sales amounts based on custom field values.</p><p><span translate=\"true\" keywords=\"On\">For more information see:</span> <a href=\"/guides/sales-invoice-totals-by-custom-field-form\"><span translate=\"true\" keyword=\"SalesInvoiceTotalsByCustomField\">Sales Invoice Totals by Custom Field</span></a></p>",
+  "key": "sales-invoice-totals-by-custom-field-view"
+}

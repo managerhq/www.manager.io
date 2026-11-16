@@ -1,0 +1,39 @@
+{% set footerSections = [
+    { title: "Products", links: [
+        { label: "Desktop Edition", url: "/" },
+        { label: "Cloud Edition", url: "https://www.manager.cloud" },
+        { label: "Server Edition", url: "/server-edition/" }
+    ] },
+    { title: "Support", links: [
+        { label: "Guides", url: "/guides/" },
+        { label: "Forum", url: "https://forum.manager.io", external: true }
+    ] },
+    { title: "Partners", links: [
+        { label: "Accountants", url: "https://www.manager.cloud/accountants" },
+        { label: "Advisors", url: "https://www.manager.cloud/advisors" }
+    ] },
+    { title: "Get Involved", links: [
+        { label: "Extend", url: "/extend/" }
+    ] }
+] %}
+<div class="bg-gray-50 border-t border-gray-200 mt-16">
+    <div class="py-12 px-6 lg:px-8">
+        <div class="w-full max-w-7xl mx-auto">
+            <div class="grid grid-cols-2 gap-8 sm:grid-cols-2 md:grid-cols-4">
+                {% for section in footerSections %}
+                <div>
+                    <div class="font-semibold pb-3 text-base sm:text-lg text-neutral-600">
+                        {{ section.title }}
+                    </div>
+                    {% for link in section.links %}
+                    <a href="{{ link.url }}"{% if link.external %} target="_blank"{% endif %} class="block py-1.5 text-sm sm:text-base text-neutral-500 hover:text-neutral-800 flex gap-1.5 items-center">
+                        {{ link.label }}
+                        {% if link.external %}<i class="fas fa-external-link-square opacity-50 text-xs"></i>{% endif %}
+                    </a>
+                    {% endfor %}
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>

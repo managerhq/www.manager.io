@@ -1,0 +1,4 @@
+{
+  "content": "<h1><span translate=\"true\" keyword=\"SalesInvoiceTotalsByCustomField\">Sales Invoice Totals by Custom Field</span> &mdash; <span translate=\"true\" keyword=\"Transactions\">Transactions</span></h1><p translate=\"true\" keywords=\"Action By Custom CustomField Group Invoice On Sales SalesInvoice To ToDate Transaction Transactions\">Shows sales invoice transactions grouped by custom field values.</p><p translate=\"true\" keywords=\"And By Credit CreditNote CreditNotes Custom CustomField Edit Filter Invoice Invoices Is Notes To ToDate\">Displays invoices and credit notes filtered by specific custom field criteria.</p>",
+  "key": "sales-invoice-totals-by-custom-field-transactions"
+}

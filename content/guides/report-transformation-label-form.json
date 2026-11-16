@@ -1,0 +1,4 @@
+{
+  "content": "<h1><span translate=\"true\" keyword=\"Label\">Label</span></h1><p translate=\"true\" keywords=\"Create Custom Label On Port ReportTransformation ReportTransformations To ToDate\">Create custom labels for report transformations.</p><p translate=\"true\" keywords=\"And Custom CustomReport CustomReports Label Port Reports To ToDate\">Labels help organize and categorize data in custom reports.</p><details><summary><span translate=\"true\" keyword=\"Name\">Name</span></summary><div><p translate=\"true\" keywords=\"Label On Port ReportTransformation ReportTransformations\">Enter the text that will appear as a label in report transformations.</p></div></details>",
+  "key": "report-transformation-label-form"
+}

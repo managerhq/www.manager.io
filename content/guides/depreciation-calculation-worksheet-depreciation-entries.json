@@ -1,0 +1,4 @@
+{
+  "content": "<h1><span translate=\"true\" keyword=\"DepreciationCalculationWorksheet\">Depreciation Calculation Worksheet</span> &mdash; <span translate=\"true\" keyword=\"DepreciationEntries\">Depreciation Entries</span></h1><p translate=\"true\" keywords=\"Date Depreciation DepreciationEntries Fixed_asset FixedAsset On\">Shows depreciation entries for a specific fixed asset within the date range.</p><p translate=\"true\" keywords=\"AccumulatedDepreciation Action Depreciation Is On Select Transaction Transactions\">Displays all transactions affecting accumulated depreciation for the selected asset.</p>",
+  "key": "depreciation-calculation-worksheet-depreciation-entries"
+}

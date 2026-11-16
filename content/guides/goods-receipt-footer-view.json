@@ -1,0 +1,4 @@
+{
+  "content": "<h1><span translate=\"true\" keyword=\"GoodsReceipt\">Goods Receipt</span> &mdash; <span translate=\"true\" keyword=\"Footer\">Footer</span> &mdash; <span translate=\"true\" keyword=\"View\">View</span></h1><p translate=\"true\" keywords=\"Email Footer GoodsReceipt GoodsReceipts Is On Print Receipt Receipts View\">This screen displays a preview of your <em>goods receipt footer</em> as it will appear on printed or emailed goods receipts.</p><p translate=\"true\" keywords=\"And Contains Footer GoodsReceipt GoodsReceipts Is On Receipt Receipts To ToDate View\">Use this view to verify that your footer information is formatted correctly and contains all necessary details before applying it to your goods receipts.</p><p><span translate=\"true\" keywords=\"On\">For more information, see:</span> <a href=\"/guides/goods-receipt-footer-form\"><span translate=\"true\" keyword=\"Footer\">Footer</span></a></p>",
+  "key": "goods-receipt-footer-view"
+}

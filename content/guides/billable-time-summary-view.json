@@ -1,0 +1,4 @@
+{
+  "content": "<h1><span translate=\"true\" keyword=\"BillableTimeSummary\">Billable Time Summary</span></h1><p translate=\"true\" keywords=\"Balance Billable_time BillableTime BillableTimeSummary Port Summary\">The Billable Time Summary report shows movements in billable time balances.</p><p translate=\"true\" keywords=\"Amount And Billable_time BillableTime By Custom Customer Invoice Invoiced NewBillableTime Off To ToDate WriteOff\">It tracks new billable time, invoiced amounts, and write-offs by customer.</p><p><span translate=\"true\" keywords=\"On\">For more information see:</span> <a href=\"/guides/billable-time-summary-form\"><span translate=\"true\" keyword=\"BillableTimeSummary\">Billable Time Summary</span> &mdash; <span translate=\"true\" keyword=\"Edit\">Edit</span></a></p>",
+  "key": "billable-time-summary-view"
+}

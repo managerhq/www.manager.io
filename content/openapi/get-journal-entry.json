@@ -1,0 +1,909 @@
+{
+  "openapi": "3.1.1",
+  "info": {
+    "title": "ManagerServer | get-journal-entry",
+    "version": "1.0.0+c6d1f1e3306702a9f3c52e59bee7a51638b30e7c"
+  },
+  "paths": {
+    "/api4/journal-entry": {
+      "get": {
+        "parameters": [
+          {
+            "name": "Key",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "Business",
+            "in": "query",
+            "description": "Name of business. If you are calling API from an extension running within IFRAME, then business does not have to be provided. Manager will automatically inject current business. This is useful when extension doesn't know business name which is typically the case.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/JournalEntry"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "CustomFields": {
+        "type": "object",
+        "properties": {
+          "strings": {
+            "type": [
+              "null",
+              "object"
+            ],
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "decimals": {
+            "type": [
+              "null",
+              "object"
+            ],
+            "additionalProperties": {
+              "pattern": "^-?(?:0|[1-9]\\d*)(?:\\.\\d+)?$",
+              "type": [
+                "null",
+                "number",
+                "string"
+              ],
+              "format": "double"
+            }
+          },
+          "dates": {
+            "type": [
+              "null",
+              "object"
+            ],
+            "additionalProperties": {
+              "type": [
+                "null",
+                "string"
+              ],
+              "format": "date-time"
+            }
+          },
+          "booleans": {
+            "type": [
+              "null",
+              "object"
+            ],
+            "additionalProperties": {
+              "type": "boolean"
+            }
+          },
+          "stringArrays": {
+            "type": [
+              "null",
+              "object"
+            ],
+            "additionalProperties": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "images": {
+            "type": [
+              "null",
+              "object"
+            ],
+            "additionalProperties": {
+              "type": [
+                "null",
+                "string"
+              ],
+              "format": "uuid"
+            }
+          }
+        }
+      },
+      "ErrorResponse": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "message": {
+            "type": [
+              "null",
+              "string"
+            ]
+          }
+        }
+      },
+      "InventoryWriteOff": {
+        "type": "object",
+        "properties": {
+          "date": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "reference": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "inventoryLocation": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "format": "uuid"
+          },
+          "description": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "items": {
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/Item"
+            }
+          },
+          "allocation": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "format": "uuid"
+          },
+          "fixedAsset": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "format": "uuid"
+          },
+          "taxCode": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "format": "uuid"
+          },
+          "project": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "format": "uuid"
+          },
+          "division": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "format": "uuid"
+          },
+          "customTheme": {
+            "type": "boolean"
+          },
+          "customThemeId": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "format": "uuid"
+          },
+          "automaticReference": {
+            "type": "boolean"
+          },
+          "customFields": {
+            "type": [
+              "null",
+              "object"
+            ],
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "customFields2": {
+            "$ref": "#/components/schemas/CustomFields"
+          },
+          "obsolete_HasProjects": {
+            "type": "boolean"
+          },
+          "obsolete_JournalEntry": {
+            "$ref": "#/components/schemas/JournalEntry"
+          },
+          "obsolete_Reference": {
+            "pattern": "^-?(?:0|[1-9]\\d*)$",
+            "type": [
+              "null",
+              "integer",
+              "string"
+            ],
+            "format": "int64"
+          },
+          "obsolete_LegacyEntry": {
+            "type": "boolean"
+          },
+          "obsolete_LegacyEntryInventoryWriteOff": {
+            "$ref": "#/components/schemas/InventoryWriteOff"
+          },
+          "transactionTitle": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "text": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "uniqueName": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "isBillableExpense": {
+            "type": "boolean"
+          },
+          "isControlAccountForInvestments": {
+            "type": "boolean"
+          },
+          "isWithholdingTaxPayablePayable": {
+            "type": "boolean"
+          },
+          "isAccountsReceivable": {
+            "type": "boolean"
+          },
+          "isAccountsPayable": {
+            "type": "boolean"
+          },
+          "isCashAtBank": {
+            "type": "boolean"
+          },
+          "isInterAccountTransfers": {
+            "type": "boolean"
+          },
+          "isInventoryOnHand": {
+            "type": "boolean"
+          },
+          "isControlAccountForCapitalAccounts": {
+            "type": "boolean"
+          },
+          "isEmployeeClearingAccount": {
+            "type": "boolean"
+          },
+          "isControlAccountForSpecialAccounts": {
+            "type": "boolean"
+          },
+          "isControlAccountForFixedAssets": {
+            "type": "boolean"
+          },
+          "isControlAccountForFixedAssetsAccumulatedDepreciation": {
+            "type": "boolean"
+          },
+          "isControlAccountForIntangibleAssets": {
+            "type": "boolean"
+          },
+          "isControlAccountForIntangibleAssetsAccumulatedAmortization": {
+            "type": "boolean"
+          },
+          "hasCustomers": {
+            "type": "boolean"
+          },
+          "hasInvestments": {
+            "type": "boolean"
+          },
+          "hasSuppliers": {
+            "type": "boolean"
+          },
+          "hasFixedAssets": {
+            "type": "boolean"
+          },
+          "hasIntangibleAssets": {
+            "type": "boolean"
+          },
+          "isProfitAndLossAccount": {
+            "type": "boolean"
+          },
+          "hasExpenseClaimPayers": {
+            "type": "boolean"
+          },
+          "taxCodeEnabled": {
+            "type": "boolean"
+          },
+          "divisionEnabled": {
+            "type": "boolean"
+          },
+          "projectEnabled": {
+            "type": "boolean"
+          },
+          "canHaveCurrencyAmount": {
+            "type": "boolean"
+          },
+          "key": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "timestamp": {
+            "pattern": "^-?(?:0|[1-9]\\d*)$",
+            "type": [
+              "integer",
+              "string"
+            ],
+            "format": "int64"
+          },
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          }
+        }
+      },
+      "Item": {
+        "type": "object",
+        "properties": {
+          "inventoryItem": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "format": "uuid"
+          },
+          "qty": {
+            "pattern": "^-?(?:0|[1-9]\\d*)(?:\\.\\d+)?$",
+            "type": [
+              "number",
+              "string"
+            ],
+            "format": "double"
+          },
+          "obsolete_UnitCost": {
+            "pattern": "^-?(?:0|[1-9]\\d*)(?:\\.\\d+)?$",
+            "type": [
+              "number",
+              "string"
+            ],
+            "format": "double"
+          },
+          "obsolete_Project": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "format": "uuid"
+          },
+          "obsolete_Qty": {
+            "pattern": "^-?(?:0|[1-9]\\d*)(?:\\.\\d+)?$",
+            "type": [
+              "null",
+              "number",
+              "string"
+            ],
+            "format": "double"
+          }
+        }
+      },
+      "JournalEntry": {
+        "type": "object",
+        "properties": {
+          "date": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "reference": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "currency": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "format": "uuid"
+          },
+          "exchangeRate": {
+            "pattern": "^-?(?:0|[1-9]\\d*)(?:\\.\\d+)?$",
+            "type": [
+              "number",
+              "string"
+            ],
+            "format": "double"
+          },
+          "exchangeRateIsInverse": {
+            "type": "boolean"
+          },
+          "narration": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "lines": {
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/Line"
+            }
+          },
+          "outOfBalance": { },
+          "forTaxPurposesThisIs": {
+            "$ref": "#/components/schemas/TaxTransactionType"
+          },
+          "itemColumn": {
+            "type": "boolean"
+          },
+          "hasLineDescription": {
+            "type": "boolean"
+          },
+          "quantityColumn": {
+            "type": "boolean"
+          },
+          "customTheme": {
+            "type": "boolean"
+          },
+          "customThemeId": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "format": "uuid"
+          },
+          "hasJournalEntryFooters": {
+            "type": "boolean"
+          },
+          "journalEntryFooters": {
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          "cashTransactionForCashFlowStatementPurposes": {
+            "type": "boolean"
+          },
+          "customFields": {
+            "type": [
+              "null",
+              "object"
+            ],
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "customFields2": {
+            "$ref": "#/components/schemas/CustomFields"
+          },
+          "automaticReference": {
+            "type": "boolean"
+          },
+          "obsolete_InventoryLocation": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "format": "uuid"
+          },
+          "obsolete_Lines": {
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/TransactionLine"
+            }
+          },
+          "obsolete_IsReversing": {
+            "type": "boolean"
+          },
+          "obsolete_Notes": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "obsolete_InventoryWriteOff": {
+            "$ref": "#/components/schemas/InventoryWriteOff"
+          },
+          "transactionTitle": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "text": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "uniqueName": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "isBillableExpense": {
+            "type": "boolean"
+          },
+          "isControlAccountForInvestments": {
+            "type": "boolean"
+          },
+          "isWithholdingTaxPayablePayable": {
+            "type": "boolean"
+          },
+          "isAccountsReceivable": {
+            "type": "boolean"
+          },
+          "isAccountsPayable": {
+            "type": "boolean"
+          },
+          "isCashAtBank": {
+            "type": "boolean"
+          },
+          "isInterAccountTransfers": {
+            "type": "boolean"
+          },
+          "isInventoryOnHand": {
+            "type": "boolean"
+          },
+          "isControlAccountForCapitalAccounts": {
+            "type": "boolean"
+          },
+          "isEmployeeClearingAccount": {
+            "type": "boolean"
+          },
+          "isControlAccountForSpecialAccounts": {
+            "type": "boolean"
+          },
+          "isControlAccountForFixedAssets": {
+            "type": "boolean"
+          },
+          "isControlAccountForFixedAssetsAccumulatedDepreciation": {
+            "type": "boolean"
+          },
+          "isControlAccountForIntangibleAssets": {
+            "type": "boolean"
+          },
+          "isControlAccountForIntangibleAssetsAccumulatedAmortization": {
+            "type": "boolean"
+          },
+          "hasCustomers": {
+            "type": "boolean"
+          },
+          "hasInvestments": {
+            "type": "boolean"
+          },
+          "hasSuppliers": {
+            "type": "boolean"
+          },
+          "hasFixedAssets": {
+            "type": "boolean"
+          },
+          "hasIntangibleAssets": {
+            "type": "boolean"
+          },
+          "isProfitAndLossAccount": {
+            "type": "boolean"
+          },
+          "hasExpenseClaimPayers": {
+            "type": "boolean"
+          },
+          "taxCodeEnabled": {
+            "type": "boolean"
+          },
+          "divisionEnabled": {
+            "type": "boolean"
+          },
+          "projectEnabled": {
+            "type": "boolean"
+          },
+          "canHaveCurrencyAmount": {
+            "type": "boolean"
+          },
+          "key": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "timestamp": {
+            "pattern": "^-?(?:0|[1-9]\\d*)$",
+            "type": [
+              "integer",
+              "string"
+            ],
+            "format": "int64"
+          },
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          }
+        }
+      },
+      "Line": {
+        "type": "object",
+        "properties": {
+          "item": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "format": "uuid"
+          },
+          "inventoryLocation": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "format": "uuid"
+          },
+          "account": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "format": "uuid"
+          },
+          "bankOrCashAccount": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "format": "uuid"
+          },
+          "accountsReceivableCustomer": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "format": "uuid"
+          },
+          "accountsReceivableSalesInvoice": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "format": "uuid"
+          },
+          "billableExpenseCustomer": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "format": "uuid"
+          },
+          "billableExpenseSalesInvoice": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "format": "uuid"
+          },
+          "accountsPayableSupplier": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "format": "uuid"
+          },
+          "purchaseInvoice": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "format": "uuid"
+          },
+          "withholdingTaxPayableSupplier": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "format": "uuid"
+          },
+          "capitalAccount": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "format": "uuid"
+          },
+          "subAccount": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "format": "uuid"
+          },
+          "employee": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "format": "uuid"
+          },
+          "specialAccount": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "format": "uuid"
+          },
+          "fixedAsset": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "format": "uuid"
+          },
+          "intangibleAsset": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "format": "uuid"
+          },
+          "expenseClaimPayer": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "format": "uuid"
+          },
+          "investment": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "format": "uuid"
+          },
+          "lineDescription": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "customFields": {
+            "type": [
+              "null",
+              "object"
+            ],
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "customFields2": {
+            "$ref": "#/components/schemas/CustomFields"
+          },
+          "qty": {
+            "pattern": "^-?(?:0|[1-9]\\d*)(?:\\.\\d+)?$",
+            "type": [
+              "number",
+              "string"
+            ],
+            "format": "double"
+          },
+          "debit": {
+            "pattern": "^-?(?:0|[1-9]\\d*)(?:\\.\\d+)?$",
+            "type": [
+              "number",
+              "string"
+            ],
+            "format": "double"
+          },
+          "credit": {
+            "pattern": "^-?(?:0|[1-9]\\d*)(?:\\.\\d+)?$",
+            "type": [
+              "number",
+              "string"
+            ],
+            "format": "double"
+          },
+          "currencyAmount": {
+            "pattern": "^-?(?:0|[1-9]\\d*)(?:\\.\\d+)?$",
+            "type": [
+              "number",
+              "string"
+            ],
+            "format": "double"
+          },
+          "taxCode": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "format": "uuid"
+          },
+          "project": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "format": "uuid"
+          },
+          "division": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "format": "uuid"
+          },
+          "obsolete_InventoryItem": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "format": "uuid"
+          }
+        }
+      },
+      "TaxTransactionType": {
+        "type": "integer"
+      },
+      "TransactionLine": {
+        "type": "object"
+      }
+    }
+  }
+}

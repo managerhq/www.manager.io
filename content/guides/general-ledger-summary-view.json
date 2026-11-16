@@ -1,0 +1,4 @@
+{
+  "content": "<h1><span translate=\"true\" keyword=\"GeneralLedgerSummary\">General Ledger Summary</span></h1><p translate=\"true\" keywords=\"Account And Balance Count General_ledger GeneralLedgerSummary Summary\">The General Ledger Summary shows account balances and movements.</p><p translate=\"true\" keywords=\"Account Accounts And Balance ClosingBalance ClosingBalances Count Credit Debit Edit Is OpeningBalance\">It displays opening balances, debits, credits, and closing balances for all accounts.</p><p><span translate=\"true\" keywords=\"On\">For more information see:</span> <a href=\"/guides/general-ledger-summary-form\"><span translate=\"true\" keyword=\"GeneralLedgerSummary\">General Ledger Summary</span></a></p>",
+  "key": "general-ledger-summary-view"
+}

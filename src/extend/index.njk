@@ -1,0 +1,215 @@
+---
+layout: layout.njk
+title: Extend
+points:
+  - icon: fa-globe
+    title: Just a website
+    description: "An extension is plain HTML, CSS, and JavaScript hosted at a public URL. Use any static host: GitHub Pages, Netlify, Vercel, S3, your own server."
+  - icon: fa-window-maximize
+    title: Loaded in an IFRAME
+    description: Manager embeds your extension URL in an &lt;iframe&gt;. Your code runs inside that iframe, isolated from the rest of Manager.
+  - icon: fa-arrow-right-arrow-left
+    title: postMessage to talk to Manager
+    description: Your extension calls window.parent.postMessage(...) to send a request. Manager receives it, handles it, and posts a message back into the iframe.
+  - icon: fa-tag
+    title: Request / response by type
+    description: Every request has a type (for example get-account). Manager replies with the same type plus -response (for example get-account-response).
+---
+{% set code = "px-1 py-0.5 rounded bg-slate-100 text-slate-800 text-sm" %}
+{% set codeOnGrey = "px-1 py-0.5 rounded bg-white ring-1 ring-gray-200 text-slate-800 text-sm" %}
+{% set pre = "mt-6 bg-slate-900 text-slate-100 rounded-lg p-4 overflow-x-auto text-sm" %}
+
+<!-- Hero -->
+<div class="px-6 pt-16 lg:px-8">
+    <div class="mx-auto max-w-2xl text-center lg:max-w-3xl">
+        <h1 class="text-base font-semibold leading-7 text-indigo-600">
+            Build
+        </h1>
+        <p class="mt-2 text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
+            How to build an extension for Manager
+        </p>
+    </div>
+    <p class="mx-auto mt-6 max-w-2xl text-center text-lg leading-8 text-gray-600">
+        An extension is a website. Manager loads it inside an IFRAME and talks to it through the postMessage API.
+    </p>
+</div>
+
+<!-- How it works -->
+<div class="mx-auto max-w-7xl px-6 py-16 lg:px-8">
+    <div class="mx-auto max-w-2xl text-center">
+        <h2 class="text-3xl font-bold tracking-tight text-gray-900">
+            How it works
+        </h2>
+        <p class="mt-4 text-lg leading-8 text-gray-600">
+            Four pieces, no SDK to install
+        </p>
+    </div>
+
+    <div class="mx-auto mt-12 max-w-3xl">
+        <div class="rounded-2xl bg-slate-50 p-8 ring-1 ring-gray-900/10">
+            <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
+                {% for point in points %}
+                <div class="flex items-start gap-4">
+                    <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-slate-200">
+                        <i class="fas {{ point.icon }} text-slate-600"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-gray-900">{{ point.title }}</h3>
+                        <p class="mt-1 text-sm text-gray-600">{{ point.description | safe }}</p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- A minimal extension -->
+<div class="mx-auto max-w-7xl px-6 lg:px-8">
+    <div class="mx-auto max-w-3xl">
+        <h2 class="text-2xl font-bold tracking-tight text-gray-900">
+            A minimal extension
+        </h2>
+        <p class="mt-4 text-base leading-7 text-gray-600">
+            The smallest possible extension is a single HTML file. Drop it on any static host and point Manager at the URL.
+        </p>
+
+        <pre class="{{ pre }}"><code>&lt;!doctype html&gt;
+&lt;html&gt;
+  &lt;body&gt;
+    Hello world
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+        <p class="mt-4 text-base leading-7 text-gray-600">
+            On its own this extension does nothing useful &mdash; Manager loads it in an iframe and it just renders the text "Hello world". To actually interact with Manager, the extension needs to talk to it through the postMessage API, which is what the rest of this page covers.
+        </p>
+    </div>
+</div>
+
+<!-- Helper function -->
+<div class="mx-auto max-w-7xl px-6 py-16 lg:px-8">
+    <div class="mx-auto max-w-3xl">
+        <h2 class="text-2xl font-bold tracking-tight text-gray-900">
+            Helper function
+        </h2>
+        <p class="mt-4 text-base leading-7 text-gray-600">
+            In iframe-to-parent communication, the postMessage API lets the iframe send messages to its parent &mdash; but it has no built-in way to wait for a reply. The helper below fixes that by tagging every outgoing message with a unique <code class="{{ code }}">requestId</code> and resolving a Promise when a matching response arrives. With it, your extension can <code class="{{ code }}">await</code> Manager like any normal request/response API.
+        </p>
+
+        <pre class="{{ pre }}"><code>{% raw %}async function postMessageWithResponse(message) {
+  return new Promise((resolve) =&gt; {
+    const requestId = crypto.randomUUID();
+
+    function onMessage(event) {
+      if (event.data?.type?.endsWith('-response') &amp;&amp; event.data?.requestId === requestId) {
+        window.removeEventListener('message', onMessage);
+        resolve(event.data.body);
+      }
+    }
+
+    window.addEventListener('message', onMessage);
+    window.parent.postMessage({ ...message, requestId }, '*');
+  });
+}{% endraw %}</code></pre>
+
+        <p class="mt-6 text-base leading-7 text-gray-600">
+            What it does:
+        </p>
+        <ul class="mt-3 space-y-2 text-base leading-7 text-gray-600 list-disc pl-6">
+            <li>Assigns a unique <code class="{{ code }}">requestId</code> to every message.</li>
+            <li>Listens for a response whose <code class="{{ code }}">type</code> ends in <code class="{{ code }}">-response</code> and whose <code class="{{ code }}">requestId</code> matches.</li>
+            <li>Resolves the Promise with <code class="{{ code }}">event.data.body</code> when that response arrives.</li>
+        </ul>
+    </div>
+</div>
+
+<!-- Calling the Manager API -->
+<div class="bg-slate-50 border-t border-b border-gray-200">
+    <div class="mx-auto max-w-7xl px-6 py-16 lg:px-8">
+        <div class="mx-auto max-w-3xl">
+            <h2 class="text-2xl font-bold tracking-tight text-gray-900">
+                Calling the Manager API
+            </h2>
+            <p class="mt-4 text-base leading-7 text-gray-600">
+                The helper is typically used to interact with the Manager API. You send a message of type <code class="{{ codeOnGrey }}">api-request</code> describing the HTTP method and path you want, and Manager performs the request on the extension's behalf and posts the result back. For example, to obtain the list of businesses:
+            </p>
+
+            <pre class="{{ pre }}"><code>async function getBusinesses() {
+  return await postMessageWithResponse({
+    type: 'api-request',
+    method: 'GET',
+    path: '/api4/businesses'
+  });
+}</code></pre>
+
+            <p class="mt-6 text-base leading-7 text-gray-600">
+                Manager receives the <code class="{{ codeOnGrey }}">api-request</code> message, executes <code class="{{ codeOnGrey }}">GET /api4/businesses</code>, and posts back <code class="{{ codeOnGrey }}">{ type: 'api-request-response', requestId, body: [...] }</code>. The helper sees the matching <code class="{{ codeOnGrey }}">requestId</code>, removes its listener, and resolves the Promise with <code class="{{ codeOnGrey }}">body</code> &mdash; the API response. The same pattern works for any HTTP verb and any Manager API path.
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- Working inside a business -->
+<div class="mx-auto max-w-7xl px-6 py-16 lg:px-8">
+    <div class="mx-auto max-w-3xl">
+        <h2 class="text-2xl font-bold tracking-tight text-gray-900">
+            Working inside a business
+        </h2>
+        <p class="mt-4 text-base leading-7 text-gray-600">
+            Most extensions are scoped to the business the user has currently opened. For example, to fetch the list of bank or cash accounts in that business:
+        </p>
+
+        <pre class="{{ pre }}"><code>async function getBankOrCashAccounts() {
+  return await postMessageWithResponse({
+    type: 'api-request',
+    method: 'GET',
+    path: '/api4/bank-or-cash-accounts'
+  });
+}</code></pre>
+
+        <p class="mt-6 text-base leading-7 text-gray-600">
+            Notice that the path doesn't include a business identifier. The extension doesn't need to know which business it's running against &mdash; the postMessage API automatically injects the current business when forwarding the request to the Manager API. Your extension just calls the path it cares about, and Manager scopes the call to whichever business the user has loaded the extension within.
+        </p>
+    </div>
+</div>
+
+<!-- API access and permissions -->
+<div class="bg-slate-50 border-t border-b border-gray-200">
+    <div class="mx-auto max-w-7xl px-6 py-16 lg:px-8">
+        <div class="mx-auto max-w-3xl">
+            <h2 class="text-2xl font-bold tracking-tight text-gray-900">
+                API access and permissions
+            </h2>
+            <p class="mt-4 text-base leading-7 text-gray-600">
+                As a developer you are free to use any Manager API endpoint through <code class="{{ codeOnGrey }}">api-request</code>. What an extension can actually do at runtime depends on the edition the user is running and the permissions of the signed-in user.
+            </p>
+            <ul class="mt-4 space-y-2 text-base leading-7 text-gray-600 list-disc pl-6">
+                <li><strong class="text-gray-900">Desktop Edition</strong> &mdash; the user is always the owner of their data, so every API endpoint is available to your extension.</li>
+                <li><strong class="text-gray-900">Cloud and Server Editions</strong> &mdash; the extension inherits the permissions of the signed-in user. If the user has restricted access, your extension is restricted to exactly the same set of endpoints. For example, if the user isn't allowed to delete a receipt, your extension can't delete a receipt either &mdash; the API call will be rejected.</li>
+            </ul>
+            <p class="mt-4 text-base leading-7 text-gray-600">
+                In other words: extensions never escalate privileges. They act on behalf of the current user and are bound by the same permission rules Manager already enforces in its own UI.
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- Next steps -->
+<div class="mx-auto max-w-7xl px-6 py-16 lg:px-8">
+    <div class="mx-auto max-w-2xl text-center">
+        <h2 class="text-3xl font-bold tracking-tight text-gray-900">
+            Next steps
+        </h2>
+        <p class="mt-4 text-lg leading-8 text-gray-600">
+            Build something, then get it in front of Manager users
+        </p>
+    </div>
+
+    <div class="mt-10 flex flex-wrap items-center justify-center gap-y-2 gap-x-4">
+        <a href="/extend/openapi/" class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-base font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 flex gap-2 items-center hover:text-white">
+            Browse API specs
+            <i class="fas fa-file-lines"></i>
+        </a>
+    </div>
+</div>

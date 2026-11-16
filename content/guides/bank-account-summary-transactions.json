@@ -1,0 +1,4 @@
+{
+  "content": "<h1><span translate=\"true\" keyword=\"BankAccountSummary\">Bank Account Summary</span> &mdash; <span translate=\"true\" keyword=\"Transactions\">Transactions</span></h1><p translate=\"true\" keywords=\"Account Action Bank_account BankAccount BankAccountSummary Count On Summary Transaction Transactions\">The Bank Account Summary Transactions screen shows detailed transactions for a bank account.</p><p translate=\"true\" keywords=\"And Credit Date Debit Edit Is\">It displays all debits and credits within the specified date range.</p>",
+  "key": "bank-account-summary-transactions"
+}

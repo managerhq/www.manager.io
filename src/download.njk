@@ -1,0 +1,81 @@
+---
+layout: layout.njk
+title: Download
+faqs:
+  - q: Is this 100% free accounting software?
+    a: Yes. You can use the desktop edition for as long as you like, use all the features and enter as much data as required. There are no time limits, no usage limits, no ads.
+  - q: If you give away your software for free, how do you make money?
+    a: Desktop edition is single-user software. Businesses requiring multi-user capabilities or remote access will use <a href="https://www.manager.cloud" class="underline text-sky-500 underline-offset-4">cloud edition</a> which is not free.
+  - q: If I'm working on Mac, can I send my file to an accountant who is on Windows?
+    a: Yes. Manager data is cross-compatible across all operating systems. You can make a backup and restore on another computer with different operating system.
+  - q: What happens to my data when I upgrade?
+    a: When you upgrade to the latest version, your data will be automatically rolled-over. Still, we strongly recommend you make regular backups of your data whether you are upgrading or not.
+---
+{% set t = translations.default %}
+{% set iconMargin = "ml-2" %}
+<div class="px-6 pt-16 lg:px-8">
+    <div class="mx-auto max-w-2xl text-center lg:max-w-5xl">
+        <h1 class="text-base font-semibold leading-7 text-indigo-600">
+            Download
+        </h1>
+        <p class="mt-2 text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
+            Install on your Desktop or Laptop
+        </p>
+    </div>
+    <p class="mx-auto mt-6 max-w-2xl text-center text-lg leading-8 text-gray-600">
+        No internet connection required. Fully-featured and free forever.
+    </p>
+</div>
+
+<div class="mx-auto w-full max-w-5xl mt-16 px-6 lg:px-8">
+    {% include "download-cards.njk" %}
+
+    <!-- FAQ Section -->
+    <div class="mx-auto max-w-7xl divide-y divide-gray-900/10 px-6 py-16 lg:px-8">
+        <div class="text-2xl font-bold leading-10 tracking-tight text-gray-900">
+            Frequently Asked Questions
+        </div>
+
+        <div class="mt-10 space-y-8 divide-y divide-gray-900/10">
+            <div class="pt-8 lg:grid lg:grid-cols-12 lg:gap-8">
+                <div class="text-base font-semibold leading-7 text-gray-900 lg:col-span-5">
+                    How can I learn to use this accounting software?
+                </div>
+                <div class="mt-4 lg:col-span-7 lg:mt-0 prose prose-xl">
+                    <p class="text-base leading-7 text-gray-600">
+                        You can learn to use Manager.io by exploring its interface. As you navigate between screens, look for the question mark icon for guidance.
+                    </p>
+                    <div class="border rounded p-0.5 inline-block pointer-events-none mx-auto">
+                        <div class="mt-4 ms-4 pe-8 items-center bg-neutral-100 p-4 border-neutral-200 border-s border-t rounded-ss-lg dark:bg-slate-800 dark:border-slate-700 dark:shadow-none flex space-x-4 rtl:space-x-reverse shadow-[inset_0px_1px_0px_#fff]">
+                            <span class="text-base font-bold text-neutral-300 dark:text-gray-400 [text-shadow:_1px_1px_0px_#fff]">
+                                Customers
+                            </span>
+                            <span class="text-neutral-400">
+                                <i class="fas fa-square-question fa-bounce" style="font-size: 16px"></i>
+                            </span>
+                            <span class="bg-white text-neutral-700 border border-neutral-300 font-semibold rounded-md py-2 px-4 text-sm">
+                                New Customer
+                            </span>
+                        </div>
+                    </div>
+                    <p class="text-base leading-7 text-gray-600">
+                        Click the question mark icon to access a detailed guide on our website that corresponds to the screen you are currently viewing.
+                    </p>
+                </div>
+            </div>
+
+            {% for faq in faqs %}
+            <div class="pt-8 lg:grid lg:grid-cols-12 lg:gap-8">
+                <div class="text-base font-semibold leading-7 text-gray-900 lg:col-span-5">
+                    {{ faq.q }}
+                </div>
+                <div class="mt-4 lg:col-span-7 lg:mt-0 prose prose-xl prose-a:underline prose-a:text-sky-500 prose-a:underline-offset-4">
+                    <p class="text-base leading-7 text-gray-600">
+                        {{ faq.a | safe }}
+                    </p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>

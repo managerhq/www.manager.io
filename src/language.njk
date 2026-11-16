@@ -1,0 +1,45 @@
+---
+layout: layout.njk
+pagination:
+  data: languages
+  size: 1
+  alias: language
+permalink: "/{{ language.code }}/"
+eleventyComputed:
+  title: "{{ language.nativeName | safe }}"
+  contentDir: "{{ language.direction }}"
+---
+{# One download page per language in languages.json, e.g. /ar/. Text falls back to English when untranslated. #}
+{% set t = translations[language.code] or translations.default %}
+{% set iconMargin = "mr-2" if language.direction == "rtl" else "ml-2" %}
+<!-- Header -->
+<div class="px-6 pt-16 lg:px-8">
+    <div class="mx-auto max-w-2xl text-center lg:max-w-5xl">
+        <h1 class="text-base font-semibold leading-7 text-indigo-600">
+            Manager.io
+        </h1>
+        <p class="mt-2 text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
+            {{ language.nativeName }}
+        </p>
+    </div>
+    <p class="mx-auto mt-6 max-w-2xl text-center text-lg leading-8 text-gray-600">
+        {{ t.installDesktop }}
+    </p>
+</div>
+
+<!-- Download Section -->
+<div class="mx-auto w-full max-w-5xl mt-16 px-6 lg:px-8">
+    <p class="mx-auto mb-8 max-w-2xl text-center text-lg leading-8 text-gray-600">
+        {{ t.noInternet }}
+    </p>
+    {% include "download-cards.njk" %}
+</div>
+
+<!-- Advisors Section -->
+<div class="px-6 py-16 lg:px-8">
+    <div class="mx-auto max-w-2xl lg:max-w-5xl">
+        <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-2">{{ t.advisors }}</h2>
+        <p class="text-gray-600 mb-8">{{ t.connectAdvisors }}</p>
+        <a href="https://www.manager.cloud/advisors" class="text-indigo-600 hover:underline" dir="ltr">www.manager.cloud/advisors</a>
+    </div>
+</div>

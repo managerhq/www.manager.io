@@ -1,0 +1,4 @@
+{
+  "content": "<h1><span translate=\"true\" keyword=\"InventoryQuantitySummary\">Inventory Quantity Summary</span> &mdash; <span translate=\"true\" keyword=\"Transactions\">Transactions</span></h1><p translate=\"true\" keywords=\"Item To ToDate\">Shows inventory quantity movements for specific items.</p><p translate=\"true\" keywords=\"Action And Is On Other Purchases Sales To ToDate Transaction Transactions\">Displays purchases, sales, and other transactions affecting inventory quantities.</p>",
+  "key": "inventory-quantity-summary-transactions"
+}

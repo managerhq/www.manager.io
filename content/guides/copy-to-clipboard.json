@@ -1,0 +1,4 @@
+{
+  "content": "<h1 translate=\"true\" keywords=\"Copy_to_clipboard\">Copy to clipboard</h1>\n<p translate=\"true\" keywords=\"Copy_to_clipboard\">Click the <strong>Copy to clipboard</strong> button located in the bottom-right corner to copy the screen's contents into a different spreadsheet program.</p>\n<p translate=\"true\"><div><div class=\"border rounded p-0.5 pb-4 inline-block pointer-events-none\"><div class=\"bg-neutral-100 p-3 border-b dark:text-slate-200 dark:bg-slate-800\"><div class=\"flex items-center space-x-4 rtl:space-x-reverse\"><span class=\"border text-xs rounded py-1 px-2 bg-white border-neutral-300 text-neutral-400\"><span translate=\"true\" keyword=\"Copy_to_clipboard\">Copy to clipboard</span></span></div></div></div></div></p>\n",
+  "key": "copy-to-clipboard"
+}

@@ -1,0 +1,4 @@
+{
+  "content": "<h1><span translate=\"true\" keyword=\"ReceiptsAndPaymentsSummary\">Receipts & Payments Summary</span> &mdash; <span translate=\"true\" keyword=\"Transactions\">Transactions</span></h1><p translate=\"true\" keywords=\"Action On Payment Payments Receipt Receipts ReceiptsAndPaymentsSummary Summary Transaction Transactions\">The Receipts & Payments Summary Transactions screen shows detailed cash movements.</p><p translate=\"true\" keywords=\"Account And Count Expense_claims ExpenseClaim ExpenseClaims Is Payment Payments Receipt Receipts Select Transfer\">It displays receipts, payments, transfers, and expense claims for the selected account.</p>",
+  "key": "receipts-and-payments-summary-transactions"
+}

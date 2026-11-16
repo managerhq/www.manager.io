@@ -1,0 +1,4 @@
+{
+  "content": "<h1><span translate=\"true\" keyword=\"BankFeedProvider\">Bank Feed Provider</span></h1><p translate=\"true\" keywords=\"Action Automatic BankFeedProvider From FromDate Import Is On Port To ToDate Transaction Transactions View\">The <em>bank feed provider</em> view displays details about a configured bank feed connection that automatically imports transactions from your bank.</p><p translate=\"true\" keywords=\"Account Accounts Count Edit From FromDate Is On Settings Status View\">From this view, you can edit provider settings, manage connected accounts, or view the status of your bank feed connection.</p><p><span translate=\"true\" keywords=\"On\">For more information, see:</span> <a href=\"/guides/bank-feed-provider-form\"><span translate=\"true\" keyword=\"BankFeedProvider\">Bank Feed Provider</span> &mdash; <span translate=\"true\" keyword=\"Edit\">Edit</span></a></p>",
+  "key": "bank-feed-provider-view"
+}

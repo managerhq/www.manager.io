@@ -1,0 +1,473 @@
+{
+  "openapi": "3.1.1",
+  "info": {
+    "title": "ManagerServer | put-recurring-sales-quote-batch",
+    "version": "1.0.0+c6d1f1e3306702a9f3c52e59bee7a51638b30e7c"
+  },
+  "paths": {
+    "/api4/recurring-sales-quote-batch": {
+      "put": {
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PutRecurringSalesQuoteBatch"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "CustomFields": {
+        "type": "object",
+        "properties": {
+          "strings": {
+            "type": [
+              "null",
+              "object"
+            ],
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "decimals": {
+            "type": [
+              "null",
+              "object"
+            ],
+            "additionalProperties": {
+              "pattern": "^-?(?:0|[1-9]\\d*)(?:\\.\\d+)?$",
+              "type": [
+                "null",
+                "number",
+                "string"
+              ],
+              "format": "double"
+            }
+          },
+          "dates": {
+            "type": [
+              "null",
+              "object"
+            ],
+            "additionalProperties": {
+              "type": [
+                "null",
+                "string"
+              ],
+              "format": "date-time"
+            }
+          },
+          "booleans": {
+            "type": [
+              "null",
+              "object"
+            ],
+            "additionalProperties": {
+              "type": "boolean"
+            }
+          },
+          "stringArrays": {
+            "type": [
+              "null",
+              "object"
+            ],
+            "additionalProperties": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "images": {
+            "type": [
+              "null",
+              "object"
+            ],
+            "additionalProperties": {
+              "type": [
+                "null",
+                "string"
+              ],
+              "format": "uuid"
+            }
+          }
+        }
+      },
+      "DiscountType": {
+        "type": "integer"
+      },
+      "ErrorResponse": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "message": {
+            "type": [
+              "null",
+              "string"
+            ]
+          }
+        }
+      },
+      "ExpirationType": {
+        "type": "integer"
+      },
+      "KeyValuePairOfGuidAndRecurringSalesQuote": {
+        "required": [
+          "key",
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "value": {
+            "$ref": "#/components/schemas/RecurringSalesQuote"
+          }
+        }
+      },
+      "Line": {
+        "type": "object",
+        "properties": {
+          "lineNumber": { },
+          "item": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "format": "uuid"
+          },
+          "lineDescription": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "customFields": {
+            "type": [
+              "null",
+              "object"
+            ],
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "customFields2": {
+            "$ref": "#/components/schemas/CustomFields"
+          },
+          "qty": {
+            "pattern": "^-?(?:0|[1-9]\\d*)(?:\\.\\d+)?$",
+            "type": [
+              "null",
+              "number",
+              "string"
+            ],
+            "format": "double"
+          },
+          "salesUnitPrice": {
+            "pattern": "^-?(?:0|[1-9]\\d*)(?:\\.\\d+)?$",
+            "type": [
+              "number",
+              "string"
+            ],
+            "format": "double"
+          },
+          "discountPercentage": {
+            "pattern": "^-?(?:0|[1-9]\\d*)(?:\\.\\d+)?$",
+            "type": [
+              "number",
+              "string"
+            ],
+            "format": "double"
+          },
+          "discountAmount": {
+            "pattern": "^-?(?:0|[1-9]\\d*)(?:\\.\\d+)?$",
+            "type": [
+              "number",
+              "string"
+            ],
+            "format": "double"
+          },
+          "totalBeforeTax": { },
+          "taxCode": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "format": "uuid"
+          },
+          "taxAmount": { },
+          "total": { }
+        }
+      },
+      "MonthDay": {
+        "type": "integer"
+      },
+      "Period": {
+        "type": "integer"
+      },
+      "PutRecurringSalesQuoteBatch": {
+        "type": "object",
+        "properties": {
+          "values": {
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/KeyValuePairOfGuidAndRecurringSalesQuote"
+            }
+          },
+          "business": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Name of business. If you are calling API from an extension running within IFRAME, then business does not have to be provided. Manager will automatically inject current business. This is useful when extension doesn't know business name which is typically the case."
+          }
+        }
+      },
+      "RecurringSalesQuote": {
+        "type": "object",
+        "properties": {
+          "nextIssueDate": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "format": "date-time"
+          },
+          "expiryDate": {
+            "pattern": "^-?(?:0|[1-9]\\d*)$",
+            "type": [
+              "null",
+              "integer",
+              "string"
+            ],
+            "format": "int32"
+          },
+          "interval": {
+            "pattern": "^-?(?:0|[1-9]\\d*)$",
+            "type": [
+              "null",
+              "integer",
+              "string"
+            ],
+            "format": "int32"
+          },
+          "periodType": {
+            "$ref": "#/components/schemas/Period"
+          },
+          "monthDay": {
+            "$ref": "#/components/schemas/MonthDay"
+          },
+          "expirationType": {
+            "$ref": "#/components/schemas/ExpirationType"
+          },
+          "untilDate": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "format": "date-time"
+          },
+          "customer": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "format": "uuid"
+          },
+          "billingAddress": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "description": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "lines": {
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/Line"
+            }
+          },
+          "amountsIncludeTax": {
+            "type": "boolean"
+          },
+          "rounding": {
+            "type": "boolean"
+          },
+          "roundingMethod": {
+            "$ref": "#/components/schemas/RoundingMethod"
+          },
+          "hasLineNumber": {
+            "type": "boolean"
+          },
+          "discount": {
+            "type": "boolean"
+          },
+          "discountType": {
+            "$ref": "#/components/schemas/DiscountType"
+          },
+          "withholdingTax": {
+            "type": "boolean"
+          },
+          "withholdingTaxType": {
+            "$ref": "#/components/schemas/WithholdingTaxType"
+          },
+          "withholdingTaxPercentage": {
+            "pattern": "^-?(?:0|[1-9]\\d*)(?:\\.\\d+)?$",
+            "type": [
+              "number",
+              "string"
+            ],
+            "format": "double"
+          },
+          "withholdingTaxAmount": {
+            "pattern": "^-?(?:0|[1-9]\\d*)(?:\\.\\d+)?$",
+            "type": [
+              "number",
+              "string"
+            ],
+            "format": "double"
+          },
+          "hideTotalAmount": {
+            "type": "boolean"
+          },
+          "hasSalesQuoteCustomTheme": {
+            "type": "boolean"
+          },
+          "salesQuoteCustomTheme": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "format": "uuid"
+          },
+          "hasSalesQuoteCustomTitle": {
+            "type": "boolean"
+          },
+          "salesQuoteCustomTitle": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "showTaxAmountColumn": {
+            "type": "boolean"
+          },
+          "hasSalesQuoteFooters": {
+            "type": "boolean"
+          },
+          "salesQuoteFooters": {
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          "automaticReference": {
+            "type": "boolean"
+          },
+          "customFields": {
+            "type": [
+              "null",
+              "object"
+            ],
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "customFields2": {
+            "$ref": "#/components/schemas/CustomFields"
+          },
+          "key": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "timestamp": {
+            "pattern": "^-?(?:0|[1-9]\\d*)$",
+            "type": [
+              "integer",
+              "string"
+            ],
+            "format": "int64"
+          },
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          }
+        }
+      },
+      "RoundingMethod": {
+        "type": "integer"
+      },
+      "WithholdingTaxType": {
+        "type": "integer"
+      }
+    }
+  }
+}

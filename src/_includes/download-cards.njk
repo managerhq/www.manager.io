@@ -1,0 +1,80 @@
+{# Expects `t` (an entry from translations.json) and `iconMargin` (ml-2, or mr-2 for right-to-left languages). #}
+{% set buttonClass = "inline-block rounded-md bg-indigo-600 px-3 sm:px-3.5 py-2 sm:py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 hover:text-white" %}
+<div class="flex flex-col lg:flex-row gap-4 w-full">
+    <!-- Windows -->
+    <div class="border bg-sky-50 border-sky-200 rounded-lg basis-full lg:basis-1/3 text-center p-6 sm:p-8 flex flex-col gap-4">
+        <div class="text-xl font-bold">Windows</div>
+        <div>
+            <svg class="block mx-auto h-20 sm:h-24 fill-sky-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                <path d="M0 93.7l183.6-25.3v177.4H0V93.7zm0 324.6l183.6 25.3V268.4H0v149.9zm203.8 28L448 480V268.4H203.8v177.9zm0-380.6v180.1H448V32L203.8 65.7z"/>
+            </svg>
+        </div>
+        <div class="py-2.5">
+            <a href="https://github.com/managerhq/Manager/releases/latest/download/Manager-x64.appx" class="{{ buttonClass }}">
+                {{ t.download }}
+                <i class="fa fa-download {{ iconMargin }}"></i>
+            </a>
+        </div>
+        <div>
+            <img src="https://img.shields.io/github/v/release/managerhq/Manager?logo=false&label=Manager.appx&style=social" class="inline">
+        </div>
+        <div class="text-xs text-gray-400">
+            {{ t.windowsRequires }}
+        </div>
+    </div>
+
+    <!-- Mac -->
+    <div class="border bg-zinc-50 border-zinc-200 rounded-lg basis-full lg:basis-1/3 text-center p-6 sm:p-8 flex flex-col gap-4">
+        <div class="text-xl font-bold">Mac</div>
+        <div>
+            <svg class="block mx-auto h-20 sm:h-24 fill-zinc-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+                <path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/>
+            </svg>
+        </div>
+        <div class="py-2.5">
+            <a href="https://github.com/managerhq/Manager/releases/latest/download/Manager-arm64.dmg" class="{{ buttonClass }}">
+                {{ t.download }}
+                <i class="fa fa-download {{ iconMargin }}"></i>
+            </a>
+        </div>
+        <div>
+            <img src="https://img.shields.io/github/v/release/managerhq/Manager?logo=false&label=Manager.dmg&style=social" class="inline">
+        </div>
+        <div class="text-xs text-gray-400">
+            {{ t.macRequires }}
+        </div>
+    </div>
+
+    <!-- Linux -->
+    <div class="border bg-amber-50 border-amber-200 rounded-lg basis-full lg:basis-1/3 text-center p-6 sm:p-8 flex flex-col gap-4">
+        <div class="text-xl font-bold">Linux</div>
+        <div>
+            <svg class="block mx-auto h-20 sm:h-24 fill-gray-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                <path d="M220.8 123.3c1 .5 1.8 1.7 3 1.7 1.1 0 2.8-.4 2.9-1.5.2-1.4-1.9-2.3-3.2-2.9-1.7-.7-3.9-1-5.5-.1-.4.2-.8.7-.6 1.1.3 1.3 2.3 1.1 3.4 1.7zm-21.9 1.7c1.2 0 2-1.2 3-1.7 1.1-.6 3.1-.4 3.5-1.6.2-.4-.2-.9-.6-1.1-1.6-.9-3.8-.6-5.5.1-1.3.6-3.4 1.5-3.2 2.9.1 1 1.8 1.5 2.8 1.4zM420 403.8c-3.6-4-5.3-11.6-7.2-19.7-1.8-8.1-3.9-16.8-10.5-22.4-1.3-1.1-2.6-2.1-4-2.9-1.3-.8-2.7-1.5-4.1-2 9.2-27.3 5.6-54.5-3.7-79.1-11.4-30.1-31.3-56.4-46.5-74.4-17.1-21.5-33.7-41.9-33.4-72C311.1 85.4 315.7.1 234.8 0 132.4-.2 158 103.4 156.9 135.2c-1.7 23.4-6.4 41.8-22.5 64.7-18.9 22.5-45.5 58.8-58.1 96.7-6 17.9-8.8 36.1-6.2 53.3-6.5 5.8-11.4 14.7-16.6 20.2-4.2 4.3-10.3 5.9-17 8.3s-14 6-18.5 14.5c-2.1 3.9-2.8 8.1-2.8 12.4 0 3.9.6 7.9 1.2 11.8 1.2 8.1 2.5 15.7.8 20.8-5.2 14.4-5.9 24.4-2.2 31.7 3.8 7.3 11.4 10.5 20.1 12.3 17.3 3.6 40.8 2.7 59.3 12.5 19.8 10.4 39.9 14.1 55.9 10.4 11.6-2.6 21.1-9.6 25.9-20.2 12.5-.1 26.3-5.4 48.3-6.6 14.9-1.2 33.6 5.3 55.1 4.1.6 2.3 1.4 4.6 2.5 6.7v.1c8.3 16.7 23.8 24.3 40.3 23 16.6-1.3 34.1-11 48.3-27.9 13.6-16.4 36-23.2 50.9-32.2 7.4-4.5 13.4-10.1 13.9-18.3.4-8.2-4.4-17.3-15.5-29.7z"/>
+            </svg>
+        </div>
+        <div class="py-2.5">
+            <a href="https://github.com/managerhq/Manager/releases/latest/download/Manager-x86_64.AppImage" class="{{ buttonClass }}">
+                {{ t.download }}
+                <i class="fa fa-download {{ iconMargin }}"></i>
+            </a>
+        </div>
+        <div>
+            <img src="https://img.shields.io/github/v/release/managerhq/Manager?logo=false&label=Manager.AppImage&style=social" class="inline">
+        </div>
+        <div class="text-xs text-gray-400">
+            {{ t.linuxRequires }}
+        </div>
+    </div>
+</div>
+
+<!-- Alternative Mac download -->
+<div class="flex flex-col lg:flex-row gap-4 w-full mt-4">
+    <div class="text-xs basis-full lg:basis-1/3 text-center"></div>
+    <div class="text-xs basis-full lg:basis-1/3 text-center">
+        <a href="https://github.com/managerhq/Manager/releases/latest/download/Manager-x64.dmg" class="block p-2 text-gray-400 hover:underline hover:text-sky-400 hover:underline-offset-4">
+            {{ t.altMacDownload }}
+        </a>
+    </div>
+    <div class="text-xs basis-full lg:basis-1/3 text-center"></div>
+</div>

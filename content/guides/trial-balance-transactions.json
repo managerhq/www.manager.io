@@ -1,0 +1,4 @@
+{
+  "content": "<h1><span translate=\"true\" keyword=\"TrialBalance\">Trial Balance</span> &mdash; <span translate=\"true\" keyword=\"Transactions\">Transactions</span></h1><p translate=\"true\" keywords=\"Account Action Balance Count On Transaction Transactions TrialBalance\">Shows individual transactions that make up account balances in the trial balance.</p><p translate=\"true\" keywords=\"Account Action Balance Count History Is On To ToDate Transaction\">Click on account balances to see their detailed transaction history.</p>",
+  "key": "trial-balance-transactions"
+}

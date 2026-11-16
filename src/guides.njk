@@ -1,0 +1,104 @@
+---
+layout: layout.njk
+pagination:
+  data: guides
+  size: 1
+  alias: guide
+permalink: "{{ guide.url }}"
+eleventyComputed:
+  title: "{{ guide.title | safe }}"
+---
+{# One page per file in content/guides. The menu on the left is src/_data/guideSidebar.json. #}
+{% macro sidebar() %}
+<div class="guide-menu text-base lg:text-sm">
+    <ul class="space-y-9">
+        {% for section in guideSidebar %}
+        <details class="group"{% if section.open %} open{% endif %}>
+            <summary class="flex items-center justify-between cursor-pointer py-2 font-display font-medium text-slate-900 dark:text-white hover:text-slate-700">
+                <span>{{ section.title }}</span>
+                <i class="fas fa-chevron-right text-xs transition-transform group-open:rotate-90"></i>
+            </summary>
+            <ul class="mt-2 space-y-2 border-l-2 border-slate-100 dark:border-slate-800 lg:mt-4 lg:space-y-4 lg:border-slate-200">
+                {% for item in section.items %}
+                <li class="relative">
+                    <a href="/guides/{{ item.slug }}/">
+                        {{ item.label }}
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+        </details>
+        {% endfor %}
+    </ul>
+</div>
+{% endmacro %}
+
+<!-- Mobile menu toggle -->
+<div class="lg:hidden px-4 py-4">
+    <button type="button" class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500" onclick="document.getElementById('mobile-sidebar').classList.toggle('hidden')">
+        <i class="fas fa-bars mr-2"></i>
+        Guides Menu
+    </button>
+</div>
+
+<div class="mx-auto flex w-full max-w-[88rem] justify-center px-4 sm:px-6 lg:px-8 py-8">
+    <!-- Desktop sidebar -->
+    <div class="hidden lg:block flex-none">
+        <div id="sidebar" class="w-64 py-8 pl-0.5 pr-8 xl:w-72 xl:pr-16">
+            {{ sidebar() }}
+        </div>
+    </div>
+
+    <!-- Mobile sidebar -->
+    <div id="mobile-sidebar" class="hidden lg:hidden fixed inset-0 z-40">
+        <button type="button" class="fixed inset-0 bg-black bg-opacity-50" onclick="document.getElementById('mobile-sidebar').classList.add('hidden')">
+            <span class="sr-only">Close menu</span>
+        </button>
+        <div class="relative flex w-full max-w-xs flex-col bg-white dark:bg-slate-900 h-full overflow-y-auto">
+            <div class="flex items-center justify-between px-4 py-4 border-b">
+                <h2 class="text-lg font-semibold">Guides</h2>
+                <button type="button" class="text-gray-500 hover:text-gray-700" onclick="document.getElementById('mobile-sidebar').classList.add('hidden')">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="px-4 py-4">
+                {{ sidebar() }}
+            </div>
+        </div>
+    </div>
+
+    <!-- Article -->
+    <div class="min-w-0 max-w-2xl flex-auto px-4 lg:max-w-none lg:pl-8 lg:pr-0 xl:px-16">
+        <div class="flex flex-col gap-6">
+            {% include "banner.njk" %}
+            <div id="guide-content" class="prose prose-slate max-w-none prose-h1:font-display prose-h1:text-3xl prose-h1:tracking-tight prose-h1:text-slate-900 prose-headings:scroll-mt-28 prose-headings:font-display prose-headings:font-normal lg:prose-headings:scroll-mt-[8.5rem] prose-a:no-underline prose-a:text-sky-600 hover:prose-a:text-sky-700 hover:prose-a:underline hover:prose-a:underline-offset-4 prose-pre:bg-white prose-pre:border-2 prose-pre:border-stone-200 prose-pre:border-dashed prose-code:text-black prose-code:before:content-none prose-code:after:content-none prose-code:whitespace-nowrap dark:prose-invert dark:text-slate-400 dark:prose-lead:text-slate-400 dark:prose-pre:bg-slate-800/60 dark:prose-pre:shadow-none dark:prose-pre:ring-1 dark:prose-pre:ring-slate-300/10 dark:prose-hr:border-slate-800 dark:[--tw-prose-background:theme(colors.slate.900)]">
+                {{ guide.html | safe }}
+            </div>
+        </div>
+    </div>
+
+    <!-- On this page -->
+    <div class="hidden xl:block xl:flex-none xl:py-8 xl:pr-6">
+        <div class="w-56 mb-8">
+            {% if guide.toc.length %}
+            <h2 class="font-display text-sm font-medium text-slate-900 dark:text-white">
+                On this page
+            </h2>
+            <div class="mt-4 text-sm prose prose-slate prose-a:block prose-a:py-1 prose-a:no-underline prose-a:text-sky-600 hover:prose-a:text-sky-700 hover:prose-a:underline hover:prose-a:underline-offset-4">
+                {% for heading in guide.toc %}
+                <a href="#{{ heading.id }}" class="text-sky-600 hover:text-sky-800">{{ heading.text | safe }}</a>
+                {% endfor %}
+            </div>
+            {% endif %}
+        </div>
+
+        <div class="w-56 mb-8 border p-4 rounded bg-neutral-50 text-sm text-slate-700">
+            <div class="grow">
+                <div>These guides are work in progress. You can visit our previous guides.</div>
+                <div class="mt-4">
+                    <a href="https://www2.manager.io/guides" class="text-sm text-blue-600 border-b border-blue-600">www2.manager.io/guides</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

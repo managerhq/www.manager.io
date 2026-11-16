@@ -1,0 +1,4 @@
+{
+  "content": "<h1><span translate=\"true\" keyword=\"SalesInvoices\">Sales Invoices</span> &mdash; <span translate=\"true\" keyword=\"Reconciliation\">Reconciliation</span></h1><p translate=\"true\" keywords=\"Account Accounts AccountsReceivable Action Allocation And Count Find Invoice Is Location On To ToDate Transaction Transactions\">This screen finds accounts receivables transactions unallocated to specific invoice and suggests allocation.</p>",
+  "key": "sales-invoice-reconciliation"
+}

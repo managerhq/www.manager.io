@@ -1,0 +1,4 @@
+{
+  "content": "<h1><span translate=\"true\" keyword=\"BalanceSheet\">Balance Sheet</span> &mdash; <span translate=\"true\" keyword=\"Transactions\">Transactions</span></h1><p translate=\"true\" keywords=\"Account Accounts Action Balance BalanceSheet BalanceSheetAccount BalanceSheetAccounts Count On Transaction Transactions\">The Balance Sheet Transactions screen shows the detailed transactions for balance sheet accounts.</p><p translate=\"true\" keywords=\"Account Balance Count General_ledger View\">It provides a drill-down view of the general ledger entries that make up account balances.</p>",
+  "key": "balance-sheet-transactions"
+}

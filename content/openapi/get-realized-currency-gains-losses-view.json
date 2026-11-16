@@ -1,0 +1,307 @@
+{
+  "openapi": "3.1.1",
+  "info": {
+    "title": "ManagerServer | get-realized-currency-gains-losses-view",
+    "version": "1.0.0+c6d1f1e3306702a9f3c52e59bee7a51638b30e7c"
+  },
+  "paths": {
+    "/api4/realized-currency-gains-losses-view": {
+      "get": {
+        "parameters": [
+          {
+            "name": "Key",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "Referrer",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Language",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Handler",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Business",
+            "in": "query",
+            "description": "Name of business. If you are calling API from an extension running within IFRAME, then business does not have to be provided. Manager will automatically inject current business. This is useful when extension doesn't know business name which is typically the case.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReportModel"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Cell": {
+        "type": "object",
+        "properties": {
+          "value": {
+            "pattern": "^-?(?:0|[1-9]\\d*)(?:\\.\\d+)?$",
+            "type": [
+              "null",
+              "number",
+              "string"
+            ],
+            "format": "double"
+          },
+          "text": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "link": {
+            "$ref": "#/components/schemas/Link"
+          }
+        }
+      },
+      "Column": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "key": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "isBold": {
+            "type": "boolean"
+          },
+          "subcolumns": {
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/Column"
+            }
+          }
+        }
+      },
+      "ErrorResponse": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "message": {
+            "type": [
+              "null",
+              "string"
+            ]
+          }
+        }
+      },
+      "Link": {
+        "required": [
+          "href"
+        ],
+        "type": "object",
+        "properties": {
+          "href": {
+            "type": [
+              "null",
+              "string"
+            ]
+          }
+        }
+      },
+      "ReportModel": {
+        "type": "object",
+        "properties": {
+          "business": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "title": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "subtitle": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "subtitle2": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "wholeNumbers": {
+            "type": "boolean"
+          },
+          "columns": {
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/Column"
+            }
+          },
+          "rows": {
+            "$ref": "#/components/schemas/Rows"
+          },
+          "footer": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "direction": {
+            "type": [
+              "null",
+              "string"
+            ]
+          }
+        }
+      },
+      "Row": {
+        "type": "object",
+        "properties": {
+          "cells": {
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/Cell"
+            }
+          },
+          "rows": {
+            "$ref": "#/components/schemas/Rows"
+          },
+          "makeStandOut": {
+            "type": "boolean"
+          },
+          "isTotalRow": {
+            "type": "boolean"
+          },
+          "displayName": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "groupTotalText": {
+            "type": [
+              "null",
+              "string"
+            ]
+          }
+        }
+      },
+      "Rows": {
+        "type": "object",
+        "properties": {
+          "items": {
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/Row"
+            }
+          },
+          "totalText": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "makeTotalStandOut": {
+            "type": "boolean"
+          },
+          "totalCells": {
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/Cell"
+            }
+          },
+          "renderTotalRow": {
+            "type": "boolean"
+          }
+        }
+      }
+    }
+  }
+}

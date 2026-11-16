@@ -1,0 +1,4 @@
+{
+  "content": "<h1><span translate=\"true\" keyword=\"PurchaseOrder\">Purchase Order</span> &mdash; <span translate=\"true\" keyword=\"Footer\">Footer</span> &mdash; <span translate=\"true\" keyword=\"View\">View</span></h1><p translate=\"true\" keywords=\"Footer Is Orders Print PurchaseOrder PurchaseOrders Sent Supplier Suppliers To ToDate View\">This screen displays the footer that appears at the bottom of your purchase orders. You can preview how the footer will look when printed or sent to suppliers.</p><p><span translate=\"true\" keywords=\"On\">For more information, see:</span> <a href=\"/guides/purchase-order-footer-form\"><span translate=\"true\" keyword=\"Footer\">Footer</span></a></p>",
+  "key": "purchase-order-footer-view"
+}

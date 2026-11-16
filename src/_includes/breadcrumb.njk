@@ -1,0 +1,17 @@
+{% set trail = page.url | breadcrumb %}
+<nav id="breadcrumb" class="bg-gray-50 border-b border-gray-200" aria-label="Breadcrumb">
+    <div class="px-4 sm:px-6 lg:px-8">
+        <ol class="flex items-center gap-x-2 py-3 text-sm">
+            {% for item in trail %}
+            <li class="flex items-center{% if not loop.first %} gap-x-2{% endif %}">
+                {% if not loop.first %}<i class="fa fa-caret-right text-sm text-gray-400"></i>{% endif %}
+                {% if loop.last %}
+                <span class="text-gray-700 font-medium">{{ item.label }}</span>
+                {% else %}
+                <a href="{{ item.url }}" class="text-gray-500 hover:text-gray-700 transition-colors">{{ item.label }}</a>
+                {% endif %}
+            </li>
+            {% endfor %}
+        </ol>
+    </div>
+</nav>

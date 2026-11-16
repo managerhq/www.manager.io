@@ -1,0 +1,4 @@
+{
+  "content": "<h1><span translate=\"true\" keyword=\"PayslipSummary\">Payslip Summary</span></h1><p translate=\"true\" keywords=\"By Employee Payslip PayslipSummary Port Summary To ToDate Total\">The Payslip Summary report shows payroll totals by employee.</p><p translate=\"true\" keywords=\"And Contribution Contributions Deduction Deductions EmployerContribution GrossPay Is Net NetPay On\">It displays gross pay, deductions, net pay, and employer contributions.</p><p><span translate=\"true\" keywords=\"On\">For more information see:</span> <a href=\"/guides/payslip-summary-form\"><span translate=\"true\" keyword=\"PayslipSummary\">Payslip Summary</span></a></p>",
+  "key": "payslip-summary-view"
+}

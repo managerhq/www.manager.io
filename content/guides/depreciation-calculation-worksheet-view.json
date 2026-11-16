@@ -1,0 +1,4 @@
+{
+  "content": "<h1><span translate=\"true\" keyword=\"DepreciationCalculationWorksheet\">Depreciation Calculation Worksheet</span></h1><p translate=\"true\" keywords=\"Calculation Depreciation DepreciationCalculationWorksheet DepreciationEntries On Required\">The Depreciation Calculation Worksheet calculates required depreciation entries.</p><p translate=\"true\" keywords=\"Depreciation Difference On To ToDate\">It compares calculated depreciation with recorded entries to identify differences.</p><p><span translate=\"true\" keywords=\"On\">For more information see:</span> <a href=\"/guides/depreciation-calculation-worksheet-form\"><span translate=\"true\" keyword=\"DepreciationCalculationWorksheet\">Depreciation Calculation Worksheet</span></a></p>",
+  "key": "depreciation-calculation-worksheet-view"
+}

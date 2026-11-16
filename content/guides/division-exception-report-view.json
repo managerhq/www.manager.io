@@ -1,0 +1,4 @@
+{
+  "content": "<h1><span translate=\"true\" keyword=\"DivisionExceptionReport\">Division Exception Report</span></h1><p translate=\"true\" keywords=\"Action Division DivisionExceptionReport Divisions Is On Port Profit Transaction Transactions\">The Division Exception Report identifies profit/loss transactions missing divisions.</p><p translate=\"true\" keywords=\"Action Division Divisions Is On To ToDate Transaction Transactions\">It helps ensure all transactions are properly allocated to divisions.</p><p><span translate=\"true\" keywords=\"On\">For more information see:</span> <a href=\"/guides/division-exception-report-form\"><span translate=\"true\" keyword=\"DivisionExceptionReport\">Division Exception Report</span></a></p>",
+  "key": "division-exception-report-view"
+}

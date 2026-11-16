@@ -1,0 +1,4 @@
+{
+  "content": "<h1><span translate=\"true\" keyword=\"ReportTransformations\">Report Transformations</span></h1><p translate=\"true\" keywords=\"Custom Customize On Port Rate Reports ReportTransformation ReportTransformations To ToDate\">Report transformations allow you to generate customized reports based on predefined transformation rules.</p><p translate=\"true\" keywords=\"By Date Is On Port Rate Reports ReportTransformation Select\">This list displays all reports that have been generated using the selected <em>report transformation</em>, showing the date range covered by each report.</p><p translate=\"true\" keywords=\"Edit Is NewReport On Port Rate To ToDate View\">Click <strong>New Report</strong> to generate a new report using this transformation, or click any existing report to view or edit it.</p>",
+  "key": "report-transformation-report-list"
+}

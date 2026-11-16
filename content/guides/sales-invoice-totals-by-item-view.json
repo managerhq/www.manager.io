@@ -1,0 +1,4 @@
+{
+  "content": "<h1><span translate=\"true\" keyword=\"SalesInvoiceTotalsByItem\">Sales Invoice Totals by Item</span></h1><p translate=\"true\" keywords=\"By Invoice InvoiceTotal Item Port Sales SalesInvoice SalesInvoiceTotalsByItem To ToDate Total\">The Sales Invoice Totals by Item report shows revenue by product or service.</p><p translate=\"true\" keywords=\"Amount Is Item Sales To ToDate Total TotalSales\">It displays total sales amounts for each item over specified periods.</p><p><span translate=\"true\" keywords=\"On\">For more information see:</span> <a href=\"/guides/sales-invoice-totals-by-item-form\"><span translate=\"true\" keyword=\"SalesInvoiceTotalsByItem\">Sales Invoice Totals by Item</span></a></p>",
+  "key": "sales-invoice-totals-by-item-view"
+}

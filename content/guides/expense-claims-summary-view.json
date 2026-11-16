@@ -1,0 +1,4 @@
+{
+  "content": "<h1><span translate=\"true\" keyword=\"ExpenseClaimsSummary\">Expense Claims Summary</span></h1><p translate=\"true\" keywords=\"Balance By Expense_claims ExpenseClaim ExpenseClaims ExpenseClaimsPayer ExpenseClaimsSummary Port Summary\">The Expense Claims Summary report shows expense claim balances by payer.</p><p translate=\"true\" keywords=\"And Balance Employee\">It tracks movements and balances for employee reimbursements.</p><p><span translate=\"true\" keywords=\"On\">For more information see:</span> <a href=\"/guides/expense-claims-summary-form\"><span translate=\"true\" keyword=\"ExpenseClaimsSummary\">Expense Claims Summary</span></a></p>",
+  "key": "expense-claims-summary-view"
+}

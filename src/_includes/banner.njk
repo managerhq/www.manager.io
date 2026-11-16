@@ -1,0 +1,7 @@
+{# Country-specific message for this page. Filled in by /js/banner.js once the visitor's country is known. #}
+{% set pageBanners = banners | bannersFor(page.url) %}
+{% if pageBanners %}
+<div id="banner" hidden class="text-base leading-8 text-gray-600 border p-4 bg-yellow-50 rounded"></div>
+<script type="application/json" id="banner-data">{{ pageBanners | safe }}</script>
+<script src="/js/banner.js" defer></script>
+{% endif %}

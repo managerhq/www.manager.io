@@ -1,0 +1,4 @@
+{
+  "content": "<h1><span translate=\"true\" keyword=\"ReceiptsAndPaymentsSummary\">Receipts & Payments Summary</span> &mdash; <span translate=\"true\" keyword=\"Adjustments\">Adjustments</span> &mdash; <span translate=\"true\" keyword=\"Transactions\">Transactions</span></h1><p translate=\"true\" keywords=\"Action Journal JournalEntries On Payment Payments Receipt Receipts ReceiptsAndPaymentsSummary Summary Transaction Transactions\">The Receipts & Payments Summary Adjustment Transactions screen shows journal entries affecting cash.</p><p translate=\"true\" keywords=\"Account Accounts Adjustments And BankAndCashAccounts Count Is Journal JournalEntries Manual To ToDate\">It displays manual adjustments made to bank and cash accounts through journal entries.</p>",
+  "key": "receipts-and-payments-summary-adjustment-transactions"
+}

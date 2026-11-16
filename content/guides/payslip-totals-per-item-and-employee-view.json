@@ -1,0 +1,4 @@
+{
+  "content": "<h1><span translate=\"true\" keyword=\"PayslipTotalsPerItemAndEmployee\">Payslip Totals per Item and Employee</span></h1><p translate=\"true\" keywords=\"And Employee Is Item Payslip PayslipTotalsPerItemAndEmployee Port To ToDate Total\">The Payslip Totals Per Item and Employee report provides detailed payroll analysis.</p><p translate=\"true\" keywords=\"And By Contribution Contributions Deduction Deductions Earnings Employee Item On\">It shows earnings, deductions, and contributions broken down by item and employee.</p><p><span translate=\"true\" keywords=\"On\">For more information see:</span> <a href=\"/guides/payslip-totals-per-item-and-employee-form\"><span translate=\"true\" keyword=\"PayslipTotalsPerItemAndEmployee\">Payslip Totals per Item and Employee</span></a></p>",
+  "key": "payslip-totals-per-item-and-employee-view"
+}

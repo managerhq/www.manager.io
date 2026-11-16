@@ -1,0 +1,4 @@
+{
+  "content": "<h1><span translate=\"true\" keyword=\"ProfitAndLossStatement\">Profit and Loss Statement</span> &mdash; <span translate=\"true\" keyword=\"Total\">Total</span></h1><p translate=\"true\" keywords=\"And Create On Profit ProfitAndLossStatement Statement To ToDate Total\">Create totals to sum up sections on the profit and loss statement.</p><p translate=\"true\" keywords=\"Account Accounts Calculation Count Group On Summary To ToDate Total\">Totals provide summary calculations for groups of accounts.</p><details><summary><span translate=\"true\" keyword=\"Name\">Name</span></summary><div><p translate=\"true\" keywords=\"Custom Income Line Name Net Net_profit Net_profit_loss On Options Profit ProfitLoss To ToDate Total\">Enter a custom name for the final total line. Common options include 'Net Profit (Loss)', 'Net Income' or leave blank to use the default.</p></div></details>",
+  "key": "profit-and-loss-statement-total-form"
+}

@@ -1,0 +1,541 @@
+{
+  "openapi": "3.1.1",
+  "info": {
+    "title": "ManagerServer | post-inventory-item",
+    "version": "1.0.0+c6d1f1e3306702a9f3c52e59bee7a51638b30e7c"
+  },
+  "paths": {
+    "/api4/inventory-item": {
+      "post": {
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PostInventoryItem"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string",
+                  "format": "uuid"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "CustomFields": {
+        "type": "object",
+        "properties": {
+          "strings": {
+            "type": [
+              "null",
+              "object"
+            ],
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "decimals": {
+            "type": [
+              "null",
+              "object"
+            ],
+            "additionalProperties": {
+              "pattern": "^-?(?:0|[1-9]\\d*)(?:\\.\\d+)?$",
+              "type": [
+                "null",
+                "number",
+                "string"
+              ],
+              "format": "double"
+            }
+          },
+          "dates": {
+            "type": [
+              "null",
+              "object"
+            ],
+            "additionalProperties": {
+              "type": [
+                "null",
+                "string"
+              ],
+              "format": "date-time"
+            }
+          },
+          "booleans": {
+            "type": [
+              "null",
+              "object"
+            ],
+            "additionalProperties": {
+              "type": "boolean"
+            }
+          },
+          "stringArrays": {
+            "type": [
+              "null",
+              "object"
+            ],
+            "additionalProperties": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "images": {
+            "type": [
+              "null",
+              "object"
+            ],
+            "additionalProperties": {
+              "type": [
+                "null",
+                "string"
+              ],
+              "format": "uuid"
+            }
+          }
+        }
+      },
+      "ErrorResponse": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "message": {
+            "type": [
+              "null",
+              "string"
+            ]
+          }
+        }
+      },
+      "InventoryItem": {
+        "type": "object",
+        "properties": {
+          "itemCode": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "itemName": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "unitName": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "valuationMethod": {
+            "$ref": "#/components/schemas/InventoryValuationMethod"
+          },
+          "division": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "format": "uuid"
+          },
+          "controlAccount": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "format": "uuid"
+          },
+          "reorderPoint": {
+            "type": "boolean"
+          },
+          "qtyDesired": {
+            "pattern": "^-?(?:0|[1-9]\\d*)(?:\\.\\d+)?$",
+            "type": [
+              "number",
+              "string"
+            ],
+            "format": "double"
+          },
+          "customIncomeAccount": {
+            "type": "boolean"
+          },
+          "incomeAccount": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "format": "uuid"
+          },
+          "customExpenseAccount": {
+            "type": "boolean"
+          },
+          "expenseAccount": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "format": "uuid"
+          },
+          "hasDefaultLineDescription": {
+            "type": "boolean"
+          },
+          "defaultLineDescription": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "hasDefaultPurchaseUnitPrice": {
+            "type": "boolean"
+          },
+          "defaultPurchaseUnitPrice": {
+            "pattern": "^-?(?:0|[1-9]\\d*)(?:\\.\\d+)?$",
+            "type": [
+              "number",
+              "string"
+            ],
+            "format": "double"
+          },
+          "hasDefaultSalesUnitPrice": {
+            "type": "boolean"
+          },
+          "defaultSalesUnitPrice": {
+            "pattern": "^-?(?:0|[1-9]\\d*)(?:\\.\\d+)?$",
+            "type": [
+              "number",
+              "string"
+            ],
+            "format": "double"
+          },
+          "hasDefaultDivision": {
+            "type": "boolean"
+          },
+          "defaultDivision": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "format": "uuid"
+          },
+          "hasDefaultTaxCode": {
+            "type": "boolean"
+          },
+          "defaultTaxCode": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "format": "uuid"
+          },
+          "hideItemNameOnPrintedDocuments": {
+            "type": "boolean"
+          },
+          "inactive": {
+            "type": "boolean"
+          },
+          "customFields": {
+            "type": [
+              "null",
+              "object"
+            ],
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "customFields2": {
+            "$ref": "#/components/schemas/CustomFields"
+          },
+          "hasCostOfGoodsSold": {
+            "type": "boolean"
+          },
+          "obsolete_ProductionStage": {
+            "pattern": "^-?(?:0|[1-9]\\d*)$",
+            "type": [
+              "null",
+              "integer",
+              "string"
+            ],
+            "format": "int32"
+          },
+          "obsolete_TrackQuantityToReceive": {
+            "type": "boolean"
+          },
+          "obsolete_TrackQuantityToDeliver": {
+            "type": "boolean"
+          },
+          "obsolete_StartingBalance2": {
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/Obsolete_StartingBalanceQuantity"
+            }
+          },
+          "obsolete_StartingBalanceAverageCost2": {
+            "pattern": "^-?(?:0|[1-9]\\d*)(?:\\.\\d+)?$",
+            "type": [
+              "number",
+              "string"
+            ],
+            "format": "double"
+          },
+          "nameWithCode": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "hasDefaultQty": {
+            "type": "boolean"
+          },
+          "defaultQty": {
+            "pattern": "^-?(?:0|[1-9]\\d*)(?:\\.\\d+)?$",
+            "type": [
+              "null",
+              "number",
+              "string"
+            ],
+            "format": "double"
+          },
+          "purchaseItemAccount": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "format": "uuid"
+          },
+          "purchaseItemTaxCode": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "format": "uuid"
+          },
+          "purchaseItemTrackingCode": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "format": "uuid"
+          },
+          "saleItemAccount": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "format": "uuid"
+          },
+          "saleItemTaxCode": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "format": "uuid"
+          },
+          "saleItemTrackingCode": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "format": "uuid"
+          },
+          "text": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "uniqueName": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "isBillableExpense": {
+            "type": "boolean"
+          },
+          "isControlAccountForInvestments": {
+            "type": "boolean"
+          },
+          "isWithholdingTaxPayablePayable": {
+            "type": "boolean"
+          },
+          "isAccountsReceivable": {
+            "type": "boolean"
+          },
+          "isAccountsPayable": {
+            "type": "boolean"
+          },
+          "isCashAtBank": {
+            "type": "boolean"
+          },
+          "isInterAccountTransfers": {
+            "type": "boolean"
+          },
+          "isInventoryOnHand": {
+            "type": "boolean"
+          },
+          "isControlAccountForCapitalAccounts": {
+            "type": "boolean"
+          },
+          "isEmployeeClearingAccount": {
+            "type": "boolean"
+          },
+          "isControlAccountForSpecialAccounts": {
+            "type": "boolean"
+          },
+          "isControlAccountForFixedAssets": {
+            "type": "boolean"
+          },
+          "isControlAccountForFixedAssetsAccumulatedDepreciation": {
+            "type": "boolean"
+          },
+          "isControlAccountForIntangibleAssets": {
+            "type": "boolean"
+          },
+          "isControlAccountForIntangibleAssetsAccumulatedAmortization": {
+            "type": "boolean"
+          },
+          "hasCustomers": {
+            "type": "boolean"
+          },
+          "hasInvestments": {
+            "type": "boolean"
+          },
+          "hasSuppliers": {
+            "type": "boolean"
+          },
+          "hasFixedAssets": {
+            "type": "boolean"
+          },
+          "hasIntangibleAssets": {
+            "type": "boolean"
+          },
+          "isProfitAndLossAccount": {
+            "type": "boolean"
+          },
+          "hasExpenseClaimPayers": {
+            "type": "boolean"
+          },
+          "taxCodeEnabled": {
+            "type": "boolean"
+          },
+          "divisionEnabled": {
+            "type": "boolean"
+          },
+          "projectEnabled": {
+            "type": "boolean"
+          },
+          "canHaveCurrencyAmount": {
+            "type": "boolean"
+          },
+          "key": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "timestamp": {
+            "pattern": "^-?(?:0|[1-9]\\d*)$",
+            "type": [
+              "integer",
+              "string"
+            ],
+            "format": "int64"
+          },
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          }
+        }
+      },
+      "InventoryValuationMethod": {
+        "type": "integer"
+      },
+      "Obsolete_StartingBalanceQuantity": {
+        "type": "object",
+        "properties": {
+          "qty": {
+            "pattern": "^-?(?:0|[1-9]\\d*)(?:\\.\\d+)?$",
+            "type": [
+              "number",
+              "string"
+            ],
+            "format": "double"
+          },
+          "inventoryLocation": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "format": "uuid"
+          }
+        }
+      },
+      "PostInventoryItem": {
+        "type": "object",
+        "properties": {
+          "value": {
+            "$ref": "#/components/schemas/InventoryItem"
+          },
+          "business": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Name of business. If you are calling API from an extension running within IFRAME, then business does not have to be provided. Manager will automatically inject current business. This is useful when extension doesn't know business name which is typically the case."
+          }
+        }
+      }
+    }
+  }
+}

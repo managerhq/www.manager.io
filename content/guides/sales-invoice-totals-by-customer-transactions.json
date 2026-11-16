@@ -1,0 +1,4 @@
+{
+  "content": "<h1><span translate=\"true\" keyword=\"SalesInvoiceTotalsByCustomer\">Sales Invoice Totals by Customer</span> &mdash; <span translate=\"true\" keyword=\"Transactions\">Transactions</span></h1><p translate=\"true\" keywords=\"Action Custom Customer Invoice On Sales SalesInvoice To ToDate Transaction Transactions\">Shows sales invoice transactions for a specific customer.</p><p translate=\"true\" keywords=\"And Credit CreditNote CreditNotes Custom Customer Edit Invoice Invoices Is Notes Sales SalesInvoice SalesInvoices Select To ToDate\">Displays all sales invoices and credit notes for the selected customer and period.</p>",
+  "key": "sales-invoice-totals-by-customer-transactions"
+}

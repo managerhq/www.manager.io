@@ -1,0 +1,273 @@
+{
+  "openapi": "3.1.1",
+  "info": {
+    "title": "ManagerServer | post-checkbox-custom-field-batch",
+    "version": "1.0.0+c6d1f1e3306702a9f3c52e59bee7a51638b30e7c"
+  },
+  "paths": {
+    "/api4/checkbox-custom-field-batch": {
+      "post": {
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PostCheckboxCustomFieldBatch"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "format": "uuid"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "CheckboxCustomField": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "position": {
+            "pattern": "^-?(?:0|[1-9]\\d*)$",
+            "type": [
+              "null",
+              "integer",
+              "string"
+            ],
+            "format": "int32"
+          },
+          "placement": {
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          "description": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "excludeFromCopyingOrCloning": {
+            "type": "boolean"
+          },
+          "lockedForManualEditing": {
+            "type": "boolean"
+          },
+          "displayOnView": {
+            "type": "boolean"
+          },
+          "showAtTheTop": {
+            "type": "boolean"
+          },
+          "inactive": {
+            "type": "boolean"
+          },
+          "obsolete_DisplayOnList": {
+            "type": "boolean"
+          },
+          "containsGeneralLedgerTransactions": {
+            "type": "boolean"
+          },
+          "text": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "uniqueName": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "isBillableExpense": {
+            "type": "boolean"
+          },
+          "isControlAccountForInvestments": {
+            "type": "boolean"
+          },
+          "isWithholdingTaxPayablePayable": {
+            "type": "boolean"
+          },
+          "isAccountsReceivable": {
+            "type": "boolean"
+          },
+          "isAccountsPayable": {
+            "type": "boolean"
+          },
+          "isCashAtBank": {
+            "type": "boolean"
+          },
+          "isInterAccountTransfers": {
+            "type": "boolean"
+          },
+          "isInventoryOnHand": {
+            "type": "boolean"
+          },
+          "isControlAccountForCapitalAccounts": {
+            "type": "boolean"
+          },
+          "isEmployeeClearingAccount": {
+            "type": "boolean"
+          },
+          "isControlAccountForSpecialAccounts": {
+            "type": "boolean"
+          },
+          "isControlAccountForFixedAssets": {
+            "type": "boolean"
+          },
+          "isControlAccountForFixedAssetsAccumulatedDepreciation": {
+            "type": "boolean"
+          },
+          "isControlAccountForIntangibleAssets": {
+            "type": "boolean"
+          },
+          "isControlAccountForIntangibleAssetsAccumulatedAmortization": {
+            "type": "boolean"
+          },
+          "hasCustomers": {
+            "type": "boolean"
+          },
+          "hasInvestments": {
+            "type": "boolean"
+          },
+          "hasSuppliers": {
+            "type": "boolean"
+          },
+          "hasFixedAssets": {
+            "type": "boolean"
+          },
+          "hasIntangibleAssets": {
+            "type": "boolean"
+          },
+          "isProfitAndLossAccount": {
+            "type": "boolean"
+          },
+          "hasExpenseClaimPayers": {
+            "type": "boolean"
+          },
+          "taxCodeEnabled": {
+            "type": "boolean"
+          },
+          "divisionEnabled": {
+            "type": "boolean"
+          },
+          "projectEnabled": {
+            "type": "boolean"
+          },
+          "canHaveCurrencyAmount": {
+            "type": "boolean"
+          },
+          "key": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "timestamp": {
+            "pattern": "^-?(?:0|[1-9]\\d*)$",
+            "type": [
+              "integer",
+              "string"
+            ],
+            "format": "int64"
+          },
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          }
+        }
+      },
+      "ErrorResponse": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "message": {
+            "type": [
+              "null",
+              "string"
+            ]
+          }
+        }
+      },
+      "PostCheckboxCustomFieldBatch": {
+        "type": "object",
+        "properties": {
+          "values": {
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/CheckboxCustomField"
+            }
+          },
+          "business": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Name of business. If you are calling API from an extension running within IFRAME, then business does not have to be provided. Manager will automatically inject current business. This is useful when extension doesn't know business name which is typically the case."
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,4 @@
+{
+  "content": "<h1><span translate=\"true\" keyword=\"StartingBalances\">Starting Balances</span> &mdash; <span translate=\"true\" keyword=\"ExchangeRates\">Exchange Rates</span></h1><p translate=\"true\" keywords=\"Account Accounts Balance Business Count Currency ExchangeRate ExchangeRates ForeignCurrency Is Rate Required StartingBalance StartingBalances StartingExchangeRate To ToDate\">This screen allows to setup starting exchange rates. This is required if business is setting up starting balances for foreign currency accounts.</p>",
+  "key": "starting-exchange-rates-form"
+}

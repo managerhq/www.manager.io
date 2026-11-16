@@ -1,0 +1,4 @@
+{
+  "content": "<h1><span translate=\"true\" keyword=\"ConnectToBankFeedProvider\">Connect to Bank Feed Provider</span> &mdash; <span translate=\"true\" keyword=\"BankAccount\">Bank account</span></h1><p translate=\"true\" keywords=\"Account Accounts Bank_account BankAccount BankFeedProvider Count On Select To ToDate\">After authorizing Manager to access your bank accounts through a bank feed provider, you need to select which external bank account to connect with your bank account in Manager.</p><p translate=\"true\" keywords=\"Account Accounts And Bank_account BankAccount BankFeedProvider Count From FromDate Is On Select To ToDate\">This screen displays all available bank accounts from your bank feed provider. Select the appropriate account from the dropdown menu and click <strong>Connect</strong> to establish the connection.</p>",
+  "key": "fdx-connect-bank-account-select"
+}

@@ -1,0 +1,4 @@
+{
+  "content": "<h1><span translate=\"true\" keyword=\"InventoryQuantityByLocation\">Inventory Quantity by Location</span> &mdash; <span translate=\"true\" keyword=\"Transactions\">Transactions</span></h1><p translate=\"true\" keywords=\"Item Location On To ToDate\">Shows inventory quantity movements for items at specific locations.</p><p translate=\"true\" keywords=\"And Balance Is Receipt Receipts To ToDate Transfer\">Displays receipts, deliveries, and transfers affecting inventory balances.</p>",
+  "key": "inventory-quantity-by-location-transactions"
+}

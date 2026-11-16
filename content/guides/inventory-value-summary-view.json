@@ -1,0 +1,4 @@
+{
+  "content": "<h1><span translate=\"true\" keyword=\"InventoryValueSummary\">Inventory Value Summary</span></h1><p translate=\"true\" keywords=\"InventoryValueSummary Net On Port Summary To ToDate\">The Inventory Value Summary report shows monetary value movements.</p><p translate=\"true\" keywords=\"And CostOfSales Purchases Sales\">It tracks opening values, purchases, cost of sales, and closing values.</p><p><span translate=\"true\" keywords=\"On\">For more information see:</span> <a href=\"/guides/inventory-value-summary-form\"><span translate=\"true\" keyword=\"InventoryValueSummary\">Inventory Value Summary</span></a></p>",
+  "key": "inventory-value-summary-view"
+}

@@ -1,0 +1,57 @@
+[
+  {
+    "country": "af",
+    "path": "/",
+    "value": "**Manager.io** is now integrated with the **ZIMRA Fiscal Device Management System**, enabling Zimbabwean businesses to seamlessly manage fiscal devices and send compliant electronic invoices directly from the app using our free **ZimraEGS service**.\n\nCurrently in trial mode, we encourage you to explore [ZimraEGS](https://zimraegs.azurewebsites.net/) and provide your valuable feedback to help us improve the service. Experience hassle-free fiscal device integration with no hidden fees or subscriptions, tailored to meet your compliance requirements."
+  },
+  {
+    "country": "af",
+    "path": "/af",
+    "value": "**Manager.io** is now integrated with the **ZIMRA Fiscal Device Management System**, enabling Zimbabwean businesses to seamlessly manage fiscal devices and send compliant electronic invoices directly from the app using our free **ZimraEGS service**.\n\nCurrently in trial mode, we encourage you to explore [ZimraEGS](https://zimraegs.azurewebsites.net/) and provide your valuable feedback to help us improve the service. Experience hassle-free fiscal device integration with no hidden fees or subscriptions, tailored to meet your compliance requirements."
+  },
+  {
+    "country": "af",
+    "path": "/af/",
+    "value": "**Manager.io** is now integrated with the **ZIMRA Fiscal Device Management System**, enabling Zimbabwean businesses to seamlessly manage fiscal devices and send compliant electronic invoices directly from the app using our free **ZimraEGS service**.\n\nCurrently in trial mode, we encourage you to explore [ZimraEGS](https://zimraegs.azurewebsites.net/) and provide your valuable feedback to help us improve the service. Experience hassle-free fiscal device integration with no hidden fees or subscriptions, tailored to meet your compliance requirements."
+  },
+  {
+    "country": "sa",
+    "path": "/",
+    "value": "Manager.io is fully integrated with **ZATCA eInvoicing system for Phase II**, allowing Saudi businesses to send compliant electronic invoices directly from the app with our **[free ZatcaEGS service](https://zatcaextension.azurewebsites.net)**. Enjoy seamless eInvoicing with no hidden fees or subscriptions, specially designed to support your compliance needs."
+  },
+  {
+    "country": "sa",
+    "path": "/ar",
+    "value": "تم دمج Manager.io بالكامل مع **منظومة الفوترة الإلكترونية للهيئة الزكاة والضريبة والجمارك (ZATCA) للمرحلة الثانية**، مما يتيح للشركات السعودية إرسال الفواتير الإلكترونية المتوافقة مباشرة من التطبيق من خلال [خدمة ZatcaEGS المجانية](https://zatcaegs.azurewebsites.net/). استمتع بتجربة فوترة سلسة دون رسوم خفية أو اشتراكات، مصممة خصيصًا لدعم احتياجاتك في الامتثال."
+  },
+  {
+    "country": "sa",
+    "path": "/ar/",
+    "value": "تم دمج Manager.io بالكامل مع **منظومة الفوترة الإلكترونية للهيئة الزكاة والضريبة والجمارك (ZATCA) للمرحلة الثانية**، مما يتيح للشركات السعودية إرسال الفواتير الإلكترونية المتوافقة مباشرة من التطبيق من خلال [خدمة ZatcaEGS المجانية](https://zatcaegs.azurewebsites.net/). استمتع بتجربة فوترة سلسة دون رسوم خفية أو اشتراكات، مصممة خصيصًا لدعم احتياجاتك في الامتثال."
+  },
+  {
+    "country": "my",
+    "path": "/",
+    "value": "**Need e-Invoicing in Malaysia?** [MyInvois Extension](https://myinvoisextension.azurewebsites.net/) enables businesses in Malaysia to comply with the LHDNM e-invoicing requirements. It covers integration, invoice/credit note submission, status updates, and taxpayer lookup via QR code."
+  },
+  {
+    "country": "zw",
+    "path": "/",
+    "value": "**Need a fiscal integrated solution?** [Fiscalharmony.co.zw](https://www.fiscalharmony.co.zw) is a system that links Manager.io with Zimra and makes the generation of Fiscal Tax Invoices seamless."
+  },
+  {
+    "country": "au",
+    "path": "/",
+    "value": "Manager.io is tailored for Australian businesses, including essential features like **GST compliance**, **BAS Worksheet**, **TPAR Worksheet**, **PAYG Summary**, and **Single Touch Payroll (STP)**. Plus, we're the first in Australia to offer **[free bank feeds](https://www.aussiebankfeeds.com)** with secure connections to Australian and New Zealand banks — helping you save time and streamline your accounting processes."
+  },
+  {
+    "country": "au",
+    "path": "/guides/bank-and-cash-accounts",
+    "value": "We are using [Basiq](https://basiq.manager.io) to faciliate bank feeds for Australian and New Zealand banks."
+  },
+  {
+    "country": "au",
+    "path": "/guides/capital-accounts",
+    "value": "In Australia, Capital Accounts are used for **Trusts**, **Partnerships** and **Self-Managed Superannuation Funds** where each capital account represents **Beneficiary**, **Partner** or **Member**."
+  }
+]

@@ -1,0 +1,4 @@
+{
+  "content": "<h1><span translate=\"true\" keyword=\"Export\">Export</span></h1><p translate=\"true\" keywords=\"And Business Code Export On Port\">The <code>Export Success</code> screen confirms that your business data has been successfully exported and archived.</p><p translate=\"true\" keywords=\"Automatic Download Export Port Settings To ToDate\">Your export file will begin downloading automatically. If the download does not start, check your browser's download settings.</p><p translate=\"true\" keywords=\"Back Backup Business Contains Export Import On Port To ToDate\">The exported file contains a complete backup of your business data that can be imported into Manager at any time.</p>",
+  "key": "purge-success"
+}

@@ -1,0 +1,4 @@
+{
+  "content": "<h1><span translate=\"true\" keyword=\"StartingBalance\">Starting balance</span> &mdash; <span translate=\"true\" keyword=\"SalesInvoice\">Sales Invoice</span> &mdash; <span translate=\"true\" keyword=\"Edit\">Edit</span></h1><p translate=\"true\" keywords=\"Balance HasWhere Invoice Is Sales SalesInvoice StartingBalance\">This form is the place where you can set up starting balance for sales invoice.</p><p translate=\"true\" keywords=\"\">The form includes the following fields:</p>",
+  "key": "sales-invoice-starting-balance-form"
+}

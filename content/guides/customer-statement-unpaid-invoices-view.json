@@ -1,0 +1,4 @@
+{
+  "content": "<h1><span translate=\"true\" keyword=\"CustomerStatement\">Customer Statement</span></h1><p translate=\"true\" keywords=\"And Custom Customer CustomerStatement Invoice Invoices Paid Statement To ToDate Unpaid UnpaidInvoices View\">The Customer Statement Unpaid Invoices view shows all outstanding invoices for a customer.</p><p translate=\"true\" keywords=\"Amount On Paid Summary Unpaid\">It provides an aging summary of unpaid amounts for collection purposes.</p><p><span translate=\"true\" keywords=\"On\">For more information see:</span> <a href=\"/guides/customer-statements-unpaid-invoices-form\"><span translate=\"true\" keyword=\"CustomerStatementsUnpaidInvoices\">Customer Statements (Unpaid Invoices)</span></a></p>",
+  "key": "customer-statement-unpaid-invoices-view"
+}

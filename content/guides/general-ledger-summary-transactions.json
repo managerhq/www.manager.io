@@ -1,0 +1,4 @@
+{
+  "content": "<h1><span translate=\"true\" keyword=\"GeneralLedgerSummary\">General Ledger Summary</span> &mdash; <span translate=\"true\" keyword=\"Transactions\">Transactions</span></h1><p translate=\"true\" keywords=\"Account Accounts Action Count Date General_ledger GeneralLedgerAccount On Transaction Transactions\">Shows transactions for specific general ledger accounts within the date range.</p><p translate=\"true\" keywords=\"Account Adjustments And Count Credit Debit Edit Is\">Displays debits, credits, and account movements with calculated adjustments.</p>",
+  "key": "general-ledger-summary-transactions"
+}

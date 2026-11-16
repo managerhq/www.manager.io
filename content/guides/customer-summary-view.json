@@ -1,0 +1,4 @@
+{
+  "content": "<h1><span translate=\"true\" keyword=\"CustomerSummary\">Customer Summary</span></h1><p translate=\"true\" keywords=\"And Balance Custom Customer CustomerSummary Port Summary To ToDate\">The Customer Summary report shows customer activity and balances for a specified period.</p><p translate=\"true\" keywords=\"Action And Balance By ClosingBalance ClosingBalances Custom Customer Is On OpeningBalance To ToDate Transaction Transactions Type\">It displays opening balances, transactions by type, and closing balances for each customer.</p><p><span translate=\"true\" keywords=\"On\">For more information see:</span> <a href=\"/guides/customer-summary-form\"><span translate=\"true\" keyword=\"CustomerSummary\">Customer Summary</span></a></p>",
+  "key": "customer-summary-view"
+}

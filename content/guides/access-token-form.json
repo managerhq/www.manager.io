@@ -1,0 +1,4 @@
+{
+  "content": "<h1><span translate=\"true\" keyword=\"AccessToken\">Access Token</span> &mdash; <span translate=\"true\" keyword=\"Edit\">Edit</span></h1><p translate=\"true\" keywords=\"AccessToken AccessTokens Create Is To ToDate\">The Access Token form is used to create API access tokens.</p><p translate=\"true\" keywords=\"AccessToken AccessTokens Business On To ToDate\">Access tokens allow external applications to interact with your business data through the API.</p><p translate=\"true\" keywords=\"Contains Is On\">This form contains the following fields:</p><details><summary><span translate=\"true\" keyword=\"Name\">Name</span></summary><div><p translate=\"true\" keywords=\"AccessToken Is Name On To ToDate Website\">Enter a descriptive name for this access token that clearly identifies its purpose or the application using it. For example, 'E-commerce Website Integration' or 'Mobile App Access'.</p></div></details>",
+  "key": "access-token-form"
+}

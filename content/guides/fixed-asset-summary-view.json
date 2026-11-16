@@ -1,0 +1,4 @@
+{
+  "content": "<h1><span translate=\"true\" keyword=\"FixedAssetSummary\">Fixed Asset Summary</span></h1><p translate=\"true\" keywords=\"Assets Fixed_asset FixedAsset FixedAssets FixedAssetSummary Port Summary\">The Fixed Asset Summary report shows movements in fixed assets.</p><p translate=\"true\" keywords=\"And Depreciation Disposals Is On Port\">It tracks costs, depreciation, and disposals for the reporting period.</p><p><span translate=\"true\" keywords=\"On\">For more information see:</span> <a href=\"/guides/fixed-asset-summary-form\"><span translate=\"true\" keyword=\"FixedAssetSummary\">Fixed Asset Summary</span></a></p>",
+  "key": "fixed-asset-summary-view"
+}

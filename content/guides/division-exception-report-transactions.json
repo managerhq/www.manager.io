@@ -1,0 +1,4 @@
+{
+  "content": "<h1><span translate=\"true\" keyword=\"DivisionExceptionReport\">Division Exception Report</span> &mdash; <span translate=\"true\" keyword=\"Transactions\">Transactions</span></h1><p translate=\"true\" keywords=\"Account Accounts Action Count Division Divisions Is On Transaction Transactions\">Shows transactions for accounts that should have divisions but don't.</p><p translate=\"true\" keywords=\"Action Date Division Is On Transaction Transactions\">Lists all transactions within the date range that are missing division assignments.</p>",
+  "key": "division-exception-report-transactions"
+}

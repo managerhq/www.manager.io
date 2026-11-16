@@ -1,0 +1,4 @@
+{
+  "content": "<h1><span translate=\"true\" keyword=\"AmortizationEntry\">Amortization Entry</span> &mdash; <span translate=\"true\" keyword=\"View\">View</span></h1><p translate=\"true\" keywords=\"Amortization AmortizationEntry And Create Date Is Item Line On Reference View\">The <em>amortization entry</em> view screen displays the details of a previously created amortization entry, including the date, reference, and line items.</p><p translate=\"true\" keywords=\"Amortization AmortizationEntries AmortizationEntry By Is Next On To ToDate View\">Access this screen by clicking the <strong>View</strong> button next to any amortization entry in the <strong>Amortization Entries</strong> tab.</p><p translate=\"true\" keywords=\"Edit From FromDate Is On To ToDate View\">From this view, you can review the complete details of the entry or click <strong>Edit</strong> to make changes.</p>",
+  "key": "amortization-entry-view"
+}

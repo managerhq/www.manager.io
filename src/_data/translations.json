@@ -1,0 +1,189 @@
+{
+  "ar": {
+    "download": "تحميل مجاني",
+    "advisors": "المستشارون",
+    "installDesktop": "تثبيت على سطح المكتب أو الكمبيوتر المحمول",
+    "noInternet": "لا يتطلب اتصال بالإنترنت. كامل الميزات ومجاني للأبد.",
+    "windowsRequires": "يتطلب Windows 10 الإصدار 1709 (64-bit) أو أحدث.",
+    "macRequires": "يتطلب Mac OS X 12 (مع Apple Silicon) أو أحدث.",
+    "linuxRequires": "يتطلب Ubuntu 20.04 (64-bit) / Fedora 38 (64-bit) أو أحدث.",
+    "altMacDownload": "تحميل بديل لأجهزة Mac المعتمدة على Intel",
+    "connectAdvisors": "تواصل مع مستشارين متخصصين في Manager.io"
+  },
+  "es": {
+    "download": "Descarga gratis",
+    "advisors": "Asesores",
+    "installDesktop": "Instalar en tu escritorio o portátil",
+    "noInternet": "No requiere conexión a internet. Todas las funciones, gratis para siempre.",
+    "windowsRequires": "Requiere Windows 10 versión 1709 (64-bit) o más reciente.",
+    "macRequires": "Requiere Mac OS X 12 (con Apple Silicon) o más reciente.",
+    "linuxRequires": "Requiere Ubuntu 20.04 (64-bit) / Fedora 38 (64-bit) o más reciente.",
+    "altMacDownload": "Descarga alternativa para Macs con Intel",
+    "connectAdvisors": "Conecta con asesores especializados en Manager.io"
+  },
+  "fr": {
+    "download": "Téléchargement gratuit",
+    "advisors": "Conseillers",
+    "installDesktop": "Installer sur votre ordinateur de bureau ou portable",
+    "noInternet": "Pas de connexion internet requise. Toutes les fonctionnalités, gratuit pour toujours.",
+    "windowsRequires": "Nécessite Windows 10 version 1709 (64-bit) ou plus récent.",
+    "macRequires": "Nécessite Mac OS X 12 (avec Apple Silicon) ou plus récent.",
+    "linuxRequires": "Nécessite Ubuntu 20.04 (64-bit) / Fedora 38 (64-bit) ou plus récent.",
+    "altMacDownload": "Téléchargement alternatif pour Mac Intel",
+    "connectAdvisors": "Connectez-vous avec des conseillers spécialisés dans Manager.io"
+  },
+  "de": {
+    "download": "Kostenloser Download",
+    "advisors": "Berater",
+    "installDesktop": "Auf Ihrem Desktop oder Laptop installieren",
+    "noInternet": "Keine Internetverbindung erforderlich. Voller Funktionsumfang, für immer kostenlos.",
+    "windowsRequires": "Erfordert Windows 10 Version 1709 (64-bit) oder neuer.",
+    "macRequires": "Erfordert Mac OS X 12 (mit Apple Silicon) oder neuer.",
+    "linuxRequires": "Erfordert Ubuntu 20.04 (64-bit) / Fedora 38 (64-bit) oder neuer.",
+    "altMacDownload": "Alternativer Download für Intel-basierte Macs",
+    "connectAdvisors": "Verbinden Sie sich mit auf Manager.io spezialisierten Beratern"
+  },
+  "pt": {
+    "download": "Download grátis",
+    "advisors": "Consultores",
+    "installDesktop": "Instale no seu computador ou notebook",
+    "noInternet": "Não requer conexão com a internet. Recursos completos, grátis para sempre.",
+    "windowsRequires": "Requer Windows 10 versão 1709 (64-bit) ou mais recente.",
+    "macRequires": "Requer Mac OS X 12 (com Apple Silicon) ou mais recente.",
+    "linuxRequires": "Requer Ubuntu 20.04 (64-bit) / Fedora 38 (64-bit) ou mais recente.",
+    "altMacDownload": "Download alternativo para Macs Intel",
+    "connectAdvisors": "Conecte-se com consultores especializados em Manager.io"
+  },
+  "zh": {
+    "download": "免费下载",
+    "advisors": "顾问",
+    "installDesktop": "安装到您的台式机或笔记本电脑",
+    "noInternet": "无需网络连接。功能完整，永久免费。",
+    "windowsRequires": "需要 Windows 10 1709版 (64位) 或更新版本。",
+    "macRequires": "需要 Mac OS X 12 (Apple Silicon) 或更新版本。",
+    "linuxRequires": "需要 Ubuntu 20.04 (64位) / Fedora 38 (64位) 或更新版本。",
+    "altMacDownload": "Intel Mac 替代下载",
+    "connectAdvisors": "联系专门从事Manager.io的顾问"
+  },
+  "ja": {
+    "download": "無料ダウンロード",
+    "advisors": "アドバイザー",
+    "installDesktop": "デスクトップまたはノートパソコンにインストール",
+    "noInternet": "インターネット接続不要。全機能搭載、永久無料。",
+    "windowsRequires": "Windows 10 バージョン 1709 (64ビット) 以降が必要です。",
+    "macRequires": "Mac OS X 12 (Apple Silicon搭載) 以降が必要です。",
+    "linuxRequires": "Ubuntu 20.04 (64ビット) / Fedora 38 (64ビット) 以降が必要です。",
+    "altMacDownload": "Intel Mac用の代替ダウンロード",
+    "connectAdvisors": "Manager.io専門のアドバイザーと繋がる"
+  },
+  "ko": {
+    "download": "무료 다운로드",
+    "advisors": "어드바이저",
+    "installDesktop": "데스크톱 또는 노트북에 설치",
+    "noInternet": "인터넷 연결 불필요. 모든 기능, 영원히 무료.",
+    "windowsRequires": "Windows 10 버전 1709 (64비트) 이상 필요.",
+    "macRequires": "Mac OS X 12 (Apple Silicon) 이상 필요.",
+    "linuxRequires": "Ubuntu 20.04 (64비트) / Fedora 38 (64비트) 이상 필요.",
+    "altMacDownload": "Intel Mac용 대체 다운로드",
+    "connectAdvisors": "Manager.io 전문 어드바이저와 연결하세요"
+  },
+  "ru": {
+    "download": "Скачать бесплатно",
+    "advisors": "Консультанты",
+    "installDesktop": "Установить на компьютер или ноутбук",
+    "noInternet": "Подключение к интернету не требуется. Полный функционал, бесплатно навсегда.",
+    "windowsRequires": "Требуется Windows 10 версии 1709 (64-бит) или новее.",
+    "macRequires": "Требуется Mac OS X 12 (с Apple Silicon) или новее.",
+    "linuxRequires": "Требуется Ubuntu 20.04 (64-бит) / Fedora 38 (64-бит) или новее.",
+    "altMacDownload": "Альтернативная загрузка для Mac на Intel",
+    "connectAdvisors": "Свяжитесь с консультантами, специализирующимися на Manager.io"
+  },
+  "it": {
+    "download": "Scarica gratis",
+    "advisors": "Consulenti",
+    "installDesktop": "Installa sul tuo desktop o laptop",
+    "noInternet": "Nessuna connessione internet richiesta. Funzionalità complete, gratis per sempre.",
+    "windowsRequires": "Richiede Windows 10 versione 1709 (64-bit) o successivo.",
+    "macRequires": "Richiede Mac OS X 12 (con Apple Silicon) o successivo.",
+    "linuxRequires": "Richiede Ubuntu 20.04 (64-bit) / Fedora 38 (64-bit) o successivo.",
+    "altMacDownload": "Download alternativo per Mac Intel",
+    "connectAdvisors": "Connettiti con consulenti specializzati in Manager.io"
+  },
+  "nl": {
+    "download": "Gratis downloaden",
+    "advisors": "Adviseurs",
+    "installDesktop": "Installeer op uw desktop of laptop",
+    "noInternet": "Geen internetverbinding vereist. Volledige functionaliteit, voor altijd gratis.",
+    "windowsRequires": "Vereist Windows 10 versie 1709 (64-bit) of nieuwer.",
+    "macRequires": "Vereist Mac OS X 12 (met Apple Silicon) of nieuwer.",
+    "linuxRequires": "Vereist Ubuntu 20.04 (64-bit) / Fedora 38 (64-bit) of nieuwer.",
+    "altMacDownload": "Alternatieve download voor Intel Macs",
+    "connectAdvisors": "Maak contact met adviseurs gespecialiseerd in Manager.io"
+  },
+  "tr": {
+    "download": "Ücretsiz İndir",
+    "advisors": "Danışmanlar",
+    "installDesktop": "Masaüstü veya dizüstü bilgisayarınıza yükleyin",
+    "noInternet": "İnternet bağlantısı gerekmez. Tam özellikli, sonsuza kadar ücretsiz.",
+    "windowsRequires": "Windows 10 sürüm 1709 (64-bit) veya daha yenisi gerekir.",
+    "macRequires": "Mac OS X 12 (Apple Silicon ile) veya daha yenisi gerekir.",
+    "linuxRequires": "Ubuntu 20.04 (64-bit) / Fedora 38 (64-bit) veya daha yenisi gerekir.",
+    "altMacDownload": "Intel Mac için alternatif indirme",
+    "connectAdvisors": "Manager.io konusunda uzman danışmanlarla bağlantı kurun"
+  },
+  "pl": {
+    "download": "Pobierz za darmo",
+    "advisors": "Doradcy",
+    "installDesktop": "Zainstaluj na swoim komputerze stacjonarnym lub laptopie",
+    "noInternet": "Połączenie internetowe nie jest wymagane. Pełna funkcjonalność, na zawsze za darmo.",
+    "windowsRequires": "Wymaga Windows 10 wersji 1709 (64-bit) lub nowszej.",
+    "macRequires": "Wymaga Mac OS X 12 (z Apple Silicon) lub nowszego.",
+    "linuxRequires": "Wymaga Ubuntu 20.04 (64-bit) / Fedora 38 (64-bit) lub nowszego.",
+    "altMacDownload": "Alternatywne pobieranie dla Mac Intel",
+    "connectAdvisors": "Połącz się z doradcami specjalizującymi się w Manager.io"
+  },
+  "he": {
+    "download": "הורדה חינם",
+    "advisors": "יועצים",
+    "installDesktop": "התקן על המחשב השולחני או הנייד שלך",
+    "noInternet": "אין צורך בחיבור לאינטרנט. כל התכונות, חינם לנצח.",
+    "windowsRequires": "דורש Windows 10 גרסה 1709 (64-bit) או חדש יותר.",
+    "macRequires": "דורש Mac OS X 12 (עם Apple Silicon) או חדש יותר.",
+    "linuxRequires": "דורש Ubuntu 20.04 (64-bit) / Fedora 38 (64-bit) או חדש יותר.",
+    "altMacDownload": "הורדה חלופית למחשבי Mac מבוססי Intel",
+    "connectAdvisors": "התחבר עם יועצים המתמחים ב-Manager.io"
+  },
+  "fa": {
+    "download": "دانلود رایگان",
+    "advisors": "مشاوران",
+    "installDesktop": "نصب روی کامپیوتر رومیزی یا لپ‌تاپ",
+    "noInternet": "نیازی به اتصال اینترنت نیست. امکانات کامل، برای همیشه رایگان.",
+    "windowsRequires": "نیاز به Windows 10 نسخه 1709 (64-bit) یا جدیدتر.",
+    "macRequires": "نیاز به Mac OS X 12 (با Apple Silicon) یا جدیدتر.",
+    "linuxRequires": "نیاز به Ubuntu 20.04 (64-bit) / Fedora 38 (64-bit) یا جدیدتر.",
+    "altMacDownload": "دانلود جایگزین برای Mac‌های اینتل",
+    "connectAdvisors": "با مشاوران متخصص در Manager.io ارتباط برقرار کنید"
+  },
+  "ur": {
+    "download": "مفت ڈاؤن لوڈ",
+    "advisors": "مشیران",
+    "installDesktop": "اپنے ڈیسک ٹاپ یا لیپ ٹاپ پر انسٹال کریں",
+    "noInternet": "انٹرنیٹ کنکشن کی ضرورت نہیں۔ مکمل فیچرز، ہمیشہ کے لیے مفت۔",
+    "windowsRequires": "Windows 10 ورژن 1709 (64-bit) یا نیا درکار ہے۔",
+    "macRequires": "Mac OS X 12 (Apple Silicon کے ساتھ) یا نیا درکار ہے۔",
+    "linuxRequires": "Ubuntu 20.04 (64-bit) / Fedora 38 (64-bit) یا نیا درکار ہے۔",
+    "altMacDownload": "Intel Macs کے لیے متبادل ڈاؤن لوڈ",
+    "connectAdvisors": "Manager.io میں ماہر مشیران سے رابطہ کریں"
+  },
+  "default": {
+    "download": "Free Download",
+    "advisors": "Advisors",
+    "installDesktop": "Install on your Desktop or Laptop",
+    "noInternet": "No internet connection required. Fully-featured and free forever.",
+    "windowsRequires": "Requires Windows 10 Version 1709 (64-bit) or newer.",
+    "macRequires": "Requires Mac OS X 12 (with Apple Silicon) or newer.",
+    "linuxRequires": "Requires Ubuntu 20.04 (64-bit) / Fedora 38 (64-bit) or newer.",
+    "altMacDownload": "Alternative download for Intel-based Macs",
+    "connectAdvisors": "Connect with experienced consultants who specialize in Manager.io"
+  }
+}

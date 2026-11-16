@@ -1,0 +1,449 @@
+{
+  "openapi": "3.1.1",
+  "info": {
+    "title": "ManagerServer | post-fixed-asset-batch",
+    "version": "1.0.0+c6d1f1e3306702a9f3c52e59bee7a51638b30e7c"
+  },
+  "paths": {
+    "/api4/fixed-asset-batch": {
+      "post": {
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PostFixedAssetBatch"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "format": "uuid"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "CustomFields": {
+        "type": "object",
+        "properties": {
+          "strings": {
+            "type": [
+              "null",
+              "object"
+            ],
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "decimals": {
+            "type": [
+              "null",
+              "object"
+            ],
+            "additionalProperties": {
+              "pattern": "^-?(?:0|[1-9]\\d*)(?:\\.\\d+)?$",
+              "type": [
+                "null",
+                "number",
+                "string"
+              ],
+              "format": "double"
+            }
+          },
+          "dates": {
+            "type": [
+              "null",
+              "object"
+            ],
+            "additionalProperties": {
+              "type": [
+                "null",
+                "string"
+              ],
+              "format": "date-time"
+            }
+          },
+          "booleans": {
+            "type": [
+              "null",
+              "object"
+            ],
+            "additionalProperties": {
+              "type": "boolean"
+            }
+          },
+          "stringArrays": {
+            "type": [
+              "null",
+              "object"
+            ],
+            "additionalProperties": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "images": {
+            "type": [
+              "null",
+              "object"
+            ],
+            "additionalProperties": {
+              "type": [
+                "null",
+                "string"
+              ],
+              "format": "uuid"
+            }
+          }
+        }
+      },
+      "DepreciationMethod": {
+        "type": "integer"
+      },
+      "ErrorResponse": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "message": {
+            "type": [
+              "null",
+              "string"
+            ]
+          }
+        }
+      },
+      "FixedAsset": {
+        "type": "object",
+        "properties": {
+          "itemCode": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "itemName": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "depreciationRate": {
+            "pattern": "^-?(?:0|[1-9]\\d*)(?:\\.\\d+)?$",
+            "type": [
+              "number",
+              "string"
+            ],
+            "format": "double"
+          },
+          "description": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "division": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "format": "uuid"
+          },
+          "controlAccountForFixedAssets": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "format": "uuid"
+          },
+          "controlAccountForFixedAssetsAccumulatedDepreciation": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "format": "uuid"
+          },
+          "customDepreciationExpenseAccount": {
+            "type": "boolean"
+          },
+          "customDepreciationExpenseAccountSelection": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "format": "uuid"
+          },
+          "disposedFixedAsset": {
+            "type": "boolean"
+          },
+          "disposalDate": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "format": "date-time"
+          },
+          "customExpenseAccountForDisposal": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "format": "uuid"
+          },
+          "customFields": {
+            "type": [
+              "null",
+              "object"
+            ],
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "customFields2": {
+            "$ref": "#/components/schemas/CustomFields"
+          },
+          "obsolete_StartingBalance2": {
+            "type": "boolean"
+          },
+          "obsolete_StartingBalanceAcquisitionCost2": {
+            "pattern": "^-?(?:0|[1-9]\\d*)(?:\\.\\d+)?$",
+            "type": [
+              "number",
+              "string"
+            ],
+            "format": "double"
+          },
+          "obsolete_StartingBalanceAccumulatedDepreciation2": {
+            "pattern": "^-?(?:0|[1-9]\\d*)(?:\\.\\d+)?$",
+            "type": [
+              "number",
+              "string"
+            ],
+            "format": "double"
+          },
+          "obsolete_HasOpeningBalance": {
+            "type": "boolean"
+          },
+          "obsolete_OpeningBalanceDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "obsolete_DepreciationMethod": {
+            "$ref": "#/components/schemas/DepreciationMethod"
+          },
+          "obsolete_EffectiveLife": {
+            "pattern": "^-?(?:0|[1-9]\\d*)$",
+            "type": [
+              "null",
+              "integer",
+              "string"
+            ],
+            "format": "int32"
+          },
+          "obsolete_HasStartingBalance": {
+            "type": "boolean"
+          },
+          "obsolete_StartingBalanceCost": {
+            "pattern": "^-?(?:0|[1-9]\\d*)(?:\\.\\d+)?$",
+            "type": [
+              "number",
+              "string"
+            ],
+            "format": "double"
+          },
+          "obsolete_StartingBalanceAccumulatedDepreciation": {
+            "pattern": "^-?(?:0|[1-9]\\d*)(?:\\.\\d+)?$",
+            "type": [
+              "number",
+              "string"
+            ],
+            "format": "double"
+          },
+          "nameWithCode": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "text": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "uniqueName": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "isBillableExpense": {
+            "type": "boolean"
+          },
+          "isControlAccountForInvestments": {
+            "type": "boolean"
+          },
+          "isWithholdingTaxPayablePayable": {
+            "type": "boolean"
+          },
+          "isAccountsReceivable": {
+            "type": "boolean"
+          },
+          "isAccountsPayable": {
+            "type": "boolean"
+          },
+          "isCashAtBank": {
+            "type": "boolean"
+          },
+          "isInterAccountTransfers": {
+            "type": "boolean"
+          },
+          "isInventoryOnHand": {
+            "type": "boolean"
+          },
+          "isControlAccountForCapitalAccounts": {
+            "type": "boolean"
+          },
+          "isEmployeeClearingAccount": {
+            "type": "boolean"
+          },
+          "isControlAccountForSpecialAccounts": {
+            "type": "boolean"
+          },
+          "isControlAccountForFixedAssets": {
+            "type": "boolean"
+          },
+          "isControlAccountForFixedAssetsAccumulatedDepreciation": {
+            "type": "boolean"
+          },
+          "isControlAccountForIntangibleAssets": {
+            "type": "boolean"
+          },
+          "isControlAccountForIntangibleAssetsAccumulatedAmortization": {
+            "type": "boolean"
+          },
+          "hasCustomers": {
+            "type": "boolean"
+          },
+          "hasInvestments": {
+            "type": "boolean"
+          },
+          "hasSuppliers": {
+            "type": "boolean"
+          },
+          "hasFixedAssets": {
+            "type": "boolean"
+          },
+          "hasIntangibleAssets": {
+            "type": "boolean"
+          },
+          "isProfitAndLossAccount": {
+            "type": "boolean"
+          },
+          "hasExpenseClaimPayers": {
+            "type": "boolean"
+          },
+          "taxCodeEnabled": {
+            "type": "boolean"
+          },
+          "divisionEnabled": {
+            "type": "boolean"
+          },
+          "projectEnabled": {
+            "type": "boolean"
+          },
+          "canHaveCurrencyAmount": {
+            "type": "boolean"
+          },
+          "key": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "timestamp": {
+            "pattern": "^-?(?:0|[1-9]\\d*)$",
+            "type": [
+              "integer",
+              "string"
+            ],
+            "format": "int64"
+          },
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          }
+        }
+      },
+      "PostFixedAssetBatch": {
+        "type": "object",
+        "properties": {
+          "values": {
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/FixedAsset"
+            }
+          },
+          "business": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Name of business. If you are calling API from an extension running within IFRAME, then business does not have to be provided. Manager will automatically inject current business. This is useful when extension doesn't know business name which is typically the case."
+          }
+        }
+      }
+    }
+  }
+}

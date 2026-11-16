@@ -1,0 +1,4 @@
+{
+  "content": "<h1><span translate=\"true\" keyword=\"TrialBalance\">Trial Balance</span></h1><p translate=\"true\" keywords=\"Account Accounts And Balance Count Credit Debit Edit Port TrialBalance\">The Trial Balance report shows debit and credit balances for all accounts.</p><p translate=\"true\" keywords=\"Balance Balanced Credit Debit Edit To ToDate Total Total_credits Total_debits\">It verifies that total debits equal total credits, ensuring balanced books.</p><p><span translate=\"true\" keywords=\"On\">For more information see:</span> <a href=\"/guides/trial-balance-form\"><span translate=\"true\" keyword=\"TrialBalance\">Trial Balance</span></a></p>",
+  "key": "trial-balance-view"
+}

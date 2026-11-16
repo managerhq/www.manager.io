@@ -1,0 +1,4 @@
+{
+  "content": "<h1><span translate=\"true\" keyword=\"ReportTransformation\">Report Transformation</span></h1><p translate=\"true\" keywords=\"From FromDate Is On Port ReportTransformation ReportTransformations\">The <strong>Report Transformation Figures</strong> screen displays the calculated results from your <em>report transformations</em>.</p><p translate=\"true\" keywords=\"And Is On To ToDate\">This screen shows how your financial data has been transformed according to the rules and formulas you have configured.</p><p translate=\"true\" keywords=\"On Port Reports Sent\">Each figure represents a calculated value that can be used in financial reports or further transformations.</p>",
+  "key": "report-transformation-report-figures"
+}

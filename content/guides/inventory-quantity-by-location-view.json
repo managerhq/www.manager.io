@@ -1,0 +1,4 @@
+{
+  "content": "<h1><span translate=\"true\" keyword=\"InventoryQuantityByLocation\">Inventory Quantity by Location</span></h1><p translate=\"true\" keywords=\"By InventoryQuantityByLocation Is Location On Port To ToDate\">The Inventory Quantity by Location report shows inventory distribution.</p><p translate=\"true\" keywords=\"InventoryItem InventoryItems Is Item Location On Rent Storage To ToDate\">It displays quantities of inventory items across different storage locations.</p><p><span translate=\"true\" keywords=\"On\">For more information see:</span> <a href=\"/guides/inventory-quantity-by-location-form\"><span translate=\"true\" keyword=\"InventoryQuantityByLocation\">Inventory Quantity by Location</span></a></p>",
+  "key": "inventory-quantity-by-location-view"
+}

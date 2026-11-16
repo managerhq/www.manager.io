@@ -1,0 +1,198 @@
+---
+layout: layout.njk
+breadcrumb: false
+demoTabs:
+  - { icon: fa-coins, label: Bank and Cash Accounts, count: 5 }
+  - { icon: fa-plus-square, label: Receipts, count: 458 }
+  - { icon: fa-minus-square, label: Payments, count: 954 }
+  - { icon: fa-users-class, label: Customers, count: 188 }
+  - { icon: fa-file-invoice, label: Sales Invoices, count: 505 }
+  - { icon: fa-city, label: Suppliers, count: 18 }
+  - { icon: fa-file-invoice, label: Purchase Invoices, count: 256 }
+  - { icon: fa-inventory, label: Inventory Items, count: 25 }
+  - { icon: fa-id-card, label: Employees, count: 3 }
+  - { icon: fa-money-check-edit, label: Payslips, count: 89 }
+  - { icon: fa-car-building, label: Fixed Assets, count: 12 }
+  - { icon: fa-balance-scale, label: Journal Entries, count: 89 }
+demoStatements:
+  - title: Balance Sheet
+    groups:
+      - title: Assets
+        rows:
+          - { label: Accounts receivable, value: 35565 }
+          - { label: Cash and cash equivalents, value: 14565 }
+          - { label: Inventory on hand, value: 5675 }
+          - { label: "Fixed assets, at cost", value: 4456 }
+      - title: Liabilities
+        rows:
+          - { label: Accounts payable, value: 24565 }
+          - { label: Tax payable, value: 3565 }
+  - title: Profit and Loss Statement
+    groups:
+      - title: Income
+        rows:
+          - { label: Sales, value: 20565 }
+          - { label: Interest received, value: 565 }
+      - title: Expenses
+        rows:
+          - { label: Accounting fees, value: 5656 }
+          - { label: Advertising and promotion, value: 8945 }
+          - { label: Computer equipment, value: 3254 }
+          - { label: Repairs and maintenance, value: 5658 }
+features:
+  - icon: fa-check-circle
+    title: Full-Featured Accounting
+    description: This is the most comprehensive free accounting software. It has all the features you'd expect from an accounting package and we are working on adding even more.
+  - icon: fa-gift
+    title: Free Forever
+    description: You can use the program for as long as you like, use all the features and enter as much data as required. There are no time limits, no usage limits, no ads.
+  - icon: fa-plug
+    title: Work Offline
+    description: All of your work can be done offline on your desktop or laptop meaning you don't lose access to your data or program if your Internet stops working or is not available.
+  - icon: fa-dove
+    title: Cross-platform
+    description: It is available for download on Windows, Mac OS X and Linux. The database format is universal across all operating systems which means an accounting file created on Windows can be easily transferred to Mac OS X or Linux if the need arises.
+---
+{% macro actionButtons() %}
+<div class="mt-10 flex flex-wrap items-center justify-center gap-y-2 gap-x-4">
+    <a href="/download/" class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-base font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 flex gap-2 items-center hover:text-white">
+        Free Download
+        <i class="fa fa-download"></i>
+    </a>
+    <a href="https://www.manager.cloud" class="rounded-md bg-white px-3.5 py-2.5 text-base font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 flex gap-2 items-center">
+        Compare with Cloud Edition
+        <i class="fa fa-cloud"></i>
+    </a>
+</div>
+{% endmacro %}
+
+<div class="mx-auto flex w-full max-w-[88rem] flex-auto justify-center sm:px-2 lg:px-8 xl:px-12">
+    <div class="min-w-0 max-w-2xl flex-auto px-4 py-16 lg:max-w-none lg:pl-8 lg:pr-0 xl:px-16">
+        <div class="mx-auto max-w-5xl text-center">
+            <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
+                Free Accounting Software
+            </h1>
+            <div class="my-6 text-lg leading-8 text-gray-600">
+                Manager.io is free accounting software for Windows, Mac and Linux
+            </div>
+
+            {% include "banner.njk" %}
+
+            {{ actionButtons() }}
+
+            <div class="flex justify-center mt-6 text-sm gap-2">
+                <div class="flex gap-0.5">
+                    {% for star in range(5) %}<i class="fas fa-star fa-fw text-yellow-400 text-lg"></i>{% endfor %}
+                </div>
+                <span class="text-gray-600">—</span>
+                <a href="https://www.capterra.com/p/122579/Manager/" target="_blank" class="text-gray-600 hover:text-gray-800">
+                    Rated 4.8 out of 5 stars on Capterra.com
+                </a>
+            </div>
+        </div>
+
+        <!-- Mock-up of the application -->
+        <div class="border rounded p-0.5 pointer-events-none text-sm block mt-12 h-[36rem] overflow-hidden">
+            <div class="bg-neutral-200 text-neutral-900 p-8 dark:text-slate-200 dark:bg-slate-800">
+                <div class="bg-neutral-100 border border-neutral-300 dark:bg-slate-700 dark:border-slate-600">
+                    <div class="flex items-center justify-between space-x-4 rtl:space-x-reverse border-t border-l border-white px-6 py-4 dark:border-0">
+                        <div class="flex items-center space-x-4 rtl:space-x-reverse text-lg">
+                            <i class="fas fa-xmark text-neutral-300 hover:text-neutral-400 dark:text-slate-300 dark:hover:text-slate-200"></i>
+                            <div class="text-neutral-600 text-shadow font-bold dark:text-shadow-none dark:text-slate-300 whitespace-nowrap">
+                                Demo Company
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-row">
+                    <div class="flex flex-col">
+                        <!-- Summary tab (active) -->
+                        <div class="group flex justify-between font-semibold px-4 py-2 space-x-4 rtl:space-x-reverse border-r border-l border-b border-neutral-300 dark:border-slate-600 dark:border-t-0 bg-white border-r-white border-b-neutral-300 dark:bg-slate-900 dark:border-r-gray-900 rtl:border-l-white rtl:border-r-neutral-300">
+                            <div class="inline-flex space-x-2 rtl:space-x-reverse items-center whitespace-nowrap">
+                                <i class="text-neutral-400 dark:text-slate-400 fas fa-fw fa-presentation"></i>
+                                <div class="text-[#428bca] hidden sm:inline-block">
+                                    Summary
+                                </div>
+                            </div>
+                        </div>
+
+                        {% for tab in demoTabs %}
+                        <div class="group flex justify-between font-semibold px-4 py-2 space-x-4 rtl:space-x-reverse hover:no-underline border-r border-l border-b border-neutral-300 box-shadow-inset dark:border-slate-600 dark:border-t-0 bg-neutral-50 dark:bg-slate-700">
+                            <div class="inline-flex space-x-2 rtl:space-x-reverse items-center whitespace-nowrap">
+                                <i class="text-neutral-400 dark:text-slate-400 fas fa-fw {{ tab.icon }}"></i>
+                                <div class="text-[#428bca] hidden sm:inline-block">
+                                    {{ tab.label }}
+                                </div>
+                            </div>
+                            <div class="hidden sm:inline-block flex items-center space-x-2 rtl:space-x-reverse">
+                                <span class="whitespace-nowrap border font-normal tabular-nums py-0.5 px-2 bg-white rounded-lg dark:border-0 dark:bg-slate-800 dark:text-slate-200 text-neutral-500 border-neutral-300 text-xs">
+                                    {{ tab.count }}
+                                </span>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <div class="grow bg-white p-8 border-neutral-300 border-r border-b rtl:border-l rtl:border-r-0 dark:bg-gray-900 dark:border-slate-600">
+                        <div class="bg-neutral-100 p-4 border-neutral-200 box-shadow-inset border-x border-b first:rounded-t-lg first:border-t last:rounded-b-lg dark:bg-slate-800 dark:border-slate-700 dark:shadow-none">
+                            <div class="flex items-center space-x-4 rtl:space-x-reverse">
+                                <div class="font-bold text-neutral-300 dark:text-gray-400" style="text-shadow: 1px 1px 0px #fff">
+                                    Summary
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-8 pt-4 shadow-inner bg-neutral-100 border border-neutral-200 dark:shadow-none dark:border-slate-700 dark:bg-slate-800 grid grid-cols-1 lg:grid-cols-2 gap-8">
+                            {% for statement in demoStatements %}
+                            <div class="flex flex-col space-y-4">
+                                <div class="text-center text-neutral-300 font-semibold" style="text-shadow: 1px 1px 0px #fff">
+                                    {{ statement.title }}
+                                </div>
+                                {% for group in statement.groups %}
+                                <div class="border border-neutral-300 bg-white drop-shadow rounded-lg">
+                                    <div class="flex justify-between p-4 bg-[ivory] border-b font-semibold text-base rounded-t-lg last:rounded-b-lg">
+                                        <div>{{ group.title }}</div>
+                                        <div class="text-right">{{ group.rows | sumBy("value") | num }}</div>
+                                    </div>
+                                    <div class="p-4">
+                                        {% for row in group.rows %}
+                                        <div class="flex justify-between text-xs py-1">
+                                            <div>{{ row.label }}</div>
+                                            <div class="text-right text-[#428bca]">{{ row.value | num }}</div>
+                                        </div>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Features -->
+        <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
+            <div class="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-2 lg:gap-y-16">
+                {% for feature in features %}
+                <div class="relative pl-16">
+                    <div class="text-base font-semibold leading-7 text-gray-900">
+                        <div class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600">
+                            <i class="fal {{ feature.icon }} fa-fw text-white"></i>
+                        </div>
+                        {{ feature.title }}
+                    </div>
+                    <div class="mt-2 text-base leading-7 text-gray-600">
+                        {{ feature.description }}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <hr class="mt-8">
+
+        <div class="mx-auto max-w-4xl text-center">
+            {{ actionButtons() }}
+        </div>
+    </div>
+</div>

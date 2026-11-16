@@ -1,0 +1,4 @@
+{
+  "content": "<h1><span translate=\"true\" keyword=\"ForecastProfitAndLossStatement\">Forecast Profit & Loss Statement</span> &mdash; <span translate=\"true\" keyword=\"Transactions\">Transactions</span></h1><p translate=\"true\" keywords=\"Account Action Count Date Forecast On Transaction Transactions\">Shows forecast transactions for a specific account within the date range.</p><p translate=\"true\" keywords=\"Action And Forecast Forecasts From FromDate Income Is On Project Transaction Transactions\">Displays projected income and expense transactions from forecasts.</p>",
+  "key": "forecast-profit-and-loss-statement-transactions"
+}

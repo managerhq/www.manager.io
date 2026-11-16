@@ -1,0 +1,338 @@
+[
+  {
+    "open": false,
+    "title": "Getting Started",
+    "items": [
+      {
+        "label": "Businesses",
+        "slug": "businesses"
+      },
+      {
+        "label": "Users",
+        "slug": "users"
+      }
+    ]
+  },
+  {
+    "open": true,
+    "title": "Business",
+    "items": [
+      {
+        "label": "Summary",
+        "slug": "summary-view"
+      },
+      {
+        "label": "Bank and Cash Accounts",
+        "slug": "bank-and-cash-accounts"
+      },
+      {
+        "label": "Receipts",
+        "slug": "receipts"
+      },
+      {
+        "label": "Payments",
+        "slug": "payments"
+      },
+      {
+        "label": "Inter Account Transfers",
+        "slug": "inter-account-transfers"
+      },
+      {
+        "label": "Bank Reconciliations",
+        "slug": "bank-reconciliations"
+      },
+      {
+        "label": "Expense Claims",
+        "slug": "expense-claims"
+      },
+      {
+        "label": "Customers",
+        "slug": "customers"
+      },
+      {
+        "label": "Sales Quotes",
+        "slug": "sales-quotes"
+      },
+      {
+        "label": "Sales Orders",
+        "slug": "sales-orders"
+      },
+      {
+        "label": "Sales Invoices",
+        "slug": "sales-invoices"
+      },
+      {
+        "label": "Credit Notes",
+        "slug": "credit-notes"
+      },
+      {
+        "label": "Late Payment Fees",
+        "slug": "late-payment-fees"
+      },
+      {
+        "label": "Billable Time",
+        "slug": "billable-time"
+      },
+      {
+        "label": "Withholding Tax Receipts",
+        "slug": "withholding-tax-receipts"
+      },
+      {
+        "label": "Delivery Notes",
+        "slug": "delivery-notes"
+      },
+      {
+        "label": "Suppliers",
+        "slug": "suppliers"
+      },
+      {
+        "label": "Purchase Quotes",
+        "slug": "purchase-quotes"
+      },
+      {
+        "label": "Purchase Orders",
+        "slug": "purchase-orders"
+      },
+      {
+        "label": "Purchase Invoices",
+        "slug": "purchase-invoices"
+      },
+      {
+        "label": "Debit Notes",
+        "slug": "debit-notes"
+      },
+      {
+        "label": "Goods Receipts",
+        "slug": "goods-receipts"
+      },
+      {
+        "label": "Projects",
+        "slug": "projects"
+      },
+      {
+        "label": "Inventory Items",
+        "slug": "inventory-items"
+      },
+      {
+        "label": "Inventory Transfers",
+        "slug": "inventory-transfers"
+      },
+      {
+        "label": "Inventory Write-offs",
+        "slug": "inventory-write-offs"
+      },
+      {
+        "label": "Production Orders",
+        "slug": "production-orders"
+      },
+      {
+        "label": "Employees",
+        "slug": "employees"
+      },
+      {
+        "label": "Payslips",
+        "slug": "payslips"
+      },
+      {
+        "label": "Investments",
+        "slug": "investments"
+      },
+      {
+        "label": "Fixed Assets",
+        "slug": "fixed-assets"
+      },
+      {
+        "label": "Depreciation Entries",
+        "slug": "depreciation-entries"
+      },
+      {
+        "label": "Intangible Assets",
+        "slug": "intangible-assets"
+      },
+      {
+        "label": "Amortization Entries",
+        "slug": "amortization-entries"
+      },
+      {
+        "label": "Capital Accounts",
+        "slug": "capital-accounts"
+      },
+      {
+        "label": "Special Accounts",
+        "slug": "special-accounts"
+      },
+      {
+        "label": "Folders",
+        "slug": "folders"
+      },
+      {
+        "label": "Journal Entries",
+        "slug": "journal-entries"
+      },
+      {
+        "label": "Reports",
+        "slug": "reports"
+      },
+      {
+        "label": "Settings",
+        "slug": "settings"
+      }
+    ]
+  },
+  {
+    "open": false,
+    "title": "Settings",
+    "items": [
+      {
+        "label": "Access Tokens",
+        "slug": "access-tokens"
+      },
+      {
+        "label": "Bank Rules",
+        "slug": "bank-rules"
+      },
+      {
+        "label": "Billable Expenses",
+        "slug": "billable-expenses-form"
+      },
+      {
+        "label": "Business Details",
+        "slug": "business-details-form"
+      },
+      {
+        "label": "Capital Subaccounts",
+        "slug": "capital-subaccounts"
+      },
+      {
+        "label": "Cash Flow Statement Groups",
+        "slug": "cash-flow-statement-groups"
+      },
+      {
+        "label": "Chart of Accounts",
+        "slug": "chart-of-accounts"
+      },
+      {
+        "label": "Control Accounts",
+        "slug": "control-accounts"
+      },
+      {
+        "label": "Currencies",
+        "slug": "currencies"
+      },
+      {
+        "label": "Custom Fields",
+        "slug": "custom-fields"
+      },
+      {
+        "label": "Date and Number Format",
+        "slug": "date-and-number-format-form"
+      },
+      {
+        "label": "Divisions",
+        "slug": "divisions"
+      },
+      {
+        "label": "Email Settings",
+        "slug": "email-settings"
+      },
+      {
+        "label": "Expense Claim Payers",
+        "slug": "expense-claim-payers"
+      },
+      {
+        "label": "Extensions",
+        "slug": "extensions"
+      },
+      {
+        "label": "Footers",
+        "slug": "footers"
+      },
+      {
+        "label": "Forecasts",
+        "slug": "forecasts"
+      },
+      {
+        "label": "Inventory Kits",
+        "slug": "inventory-kits"
+      },
+      {
+        "label": "Inventory Locations",
+        "slug": "inventory-locations"
+      },
+      {
+        "label": "Inventory Unit Costs",
+        "slug": "inventory-unit-costs"
+      },
+      {
+        "label": "Investment Market Prices",
+        "slug": "investment-market-prices"
+      },
+      {
+        "label": "Lock Date",
+        "slug": "lock-date-form"
+      },
+      {
+        "label": "Non-inventory Items",
+        "slug": "non-inventory-items"
+      },
+      {
+        "label": "Obsolete Features",
+        "slug": "obsolete-features"
+      },
+      {
+        "label": "Payslip Items",
+        "slug": "payslip-items"
+      },
+      {
+        "label": "Recurring Transactions",
+        "slug": "recurring-transactions"
+      },
+      {
+        "label": "Tax Codes",
+        "slug": "tax-codes"
+      },
+      {
+        "label": "Themes",
+        "slug": "themes"
+      },
+      {
+        "label": "Starting Balances",
+        "slug": "starting-balances"
+      },
+      {
+        "label": "User Permissions",
+        "slug": "user-permissions"
+      },
+      {
+        "label": "Withholding Tax",
+        "slug": "withholding-tax-form"
+      }
+    ]
+  },
+  {
+    "open": false,
+    "title": "Tips & Tricks",
+    "items": [
+      {
+        "label": "Advanced Queries",
+        "slug": "advanced-queries"
+      },
+      {
+        "label": "Batch Operations",
+        "slug": "batch-operations"
+      },
+      {
+        "label": "Edit Columns",
+        "slug": "edit-columns"
+      },
+      {
+        "label": "Form Defaults",
+        "slug": "form-defaults"
+      },
+      {
+        "label": "Copy to clipboard",
+        "slug": "copy-to-clipboard"
+      }
+    ]
+  }
+]

@@ -1,0 +1,4 @@
+{
+  "content": "<h1><span translate=\"true\" keyword=\"InventoryCostingCalculationWorksheet\">Inventory Costing Calculation Worksheet</span> &mdash; <span translate=\"true\" keyword=\"Qty\">Qty</span> &mdash; <span translate=\"true\" keyword=\"Transactions\">Transactions</span></h1><p translate=\"true\" keywords=\"Action Calculation InventoryItem InventoryItems Item On To ToDate Transaction Transactions\">Shows quantity transactions affecting inventory items for cost calculations.</p><p translate=\"true\" keywords=\"Adjustments And Is Receipt Receipts To ToDate\">Displays receipts, deliveries, and adjustments that impact inventory quantities.</p>",
+  "key": "inventory-costing-calculation-worksheet-qty-transactions"
+}

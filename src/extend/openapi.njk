@@ -1,0 +1,79 @@
+---
+layout: layout.njk
+title: OpenAPI Specifications
+verbs:
+  - { key: get, label: GET, active: "bg-emerald-600 text-white ring-emerald-600", idle: "bg-white text-emerald-700 ring-emerald-200 hover:bg-emerald-50" }
+  - { key: post, label: POST, active: "bg-sky-600 text-white ring-sky-600", idle: "bg-white text-sky-700 ring-sky-200 hover:bg-sky-50" }
+  - { key: put, label: PUT, active: "bg-amber-600 text-white ring-amber-600", idle: "bg-white text-amber-700 ring-amber-200 hover:bg-amber-50" }
+  - { key: delete, label: DELETE, active: "bg-rose-600 text-white ring-rose-600", idle: "bg-white text-rose-700 ring-rose-200 hover:bg-rose-50" }
+  - { key: query, label: QUERY, active: "bg-violet-600 text-white ring-violet-600", idle: "bg-white text-violet-700 ring-violet-200 hover:bg-violet-50" }
+---
+{# Lists every spec in content/openapi. Each filter button carries the classes for its two states. #}
+{% set filterButton = "inline-flex items-center rounded-md px-3 py-1.5 text-xs font-semibold ring-1 ring-inset transition-colors" %}
+<div class="px-6 pt-16 lg:px-8">
+    <div class="mx-auto max-w-2xl text-center lg:max-w-3xl">
+        <h1 class="text-base font-semibold leading-7 text-indigo-600">
+            API Reference
+        </h1>
+        <p class="mt-2 text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
+            OpenAPI Specifications
+        </p>
+    </div>
+    <p class="mx-auto mt-6 mb-12 max-w-2xl text-center text-lg leading-8 text-gray-600">
+        Each specification describes a slice of the Manager API. Pick one to view the raw document and learn which endpoints, request shapes, and responses are available.
+    </p>
+</div>
+
+<div class="mx-auto max-w-7xl px-6 pb-16 lg:px-8">
+    <div class="mx-auto max-w-3xl">
+        <div class="mb-4 flex flex-wrap items-center gap-2">
+            <span class="text-sm text-gray-500 mr-1">Filter:</span>
+            <button type="button" data-verb="" data-active="bg-gray-900 text-white ring-gray-900" data-idle="bg-white text-gray-700 ring-gray-200 hover:bg-gray-50"
+                class="{{ filterButton }} bg-gray-900 text-white ring-gray-900">
+                All
+            </button>
+            {% for verb in verbs %}
+            <button type="button" data-verb="{{ verb.key }}" data-active="{{ verb.active }}" data-idle="{{ verb.idle }}"
+                class="{{ filterButton }} {{ verb.idle }}">
+                {{ verb.label }}
+            </button>
+            {% endfor %}
+        </div>
+
+        <ul id="openapi-specs" class="divide-y divide-gray-200 rounded-lg bg-white ring-1 ring-gray-200 overflow-hidden">
+            {% for name in openapi %}
+            <li>
+                <a href="/extend/openapi/{{ name }}/" class="flex items-center justify-between px-6 py-4 hover:bg-slate-50 transition-colors">
+                    <div class="flex items-center gap-3">
+                        <i class="fas fa-file-lines text-indigo-600"></i>
+                        <span class="font-semibold text-gray-900">{{ name }}</span>
+                    </div>
+                    <i class="fas fa-chevron-right text-gray-400"></i>
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+
+<script>
+    // Filter the list by HTTP verb. A spec name starts with its verb, e.g. "get-customers".
+    const buttons = document.querySelectorAll('[data-verb]');
+    const items = document.querySelectorAll('#openapi-specs > li');
+    let activeVerb = '';
+
+    function setClasses(button, from, to) {
+        button.classList.remove(...button.dataset[from].split(' '));
+        button.classList.add(...button.dataset[to].split(' '));
+    }
+
+    buttons.forEach(button => button.addEventListener('click', () => {
+        // Clicking the active verb again goes back to "All"
+        activeVerb = activeVerb === button.dataset.verb ? '' : button.dataset.verb;
+
+        buttons.forEach(b => b.dataset.verb === activeVerb ? setClasses(b, 'idle', 'active') : setClasses(b, 'active', 'idle'));
+        items.forEach(item => {
+            item.hidden = activeVerb !== '' && !item.querySelector('span').textContent.startsWith(activeVerb + '-');
+        });
+    }));
+</script>

@@ -1,0 +1,570 @@
+{
+  "openapi": "3.1.1",
+  "info": {
+    "title": "ManagerServer | put-sales-order-batch",
+    "version": "1.0.0+c6d1f1e3306702a9f3c52e59bee7a51638b30e7c"
+  },
+  "paths": {
+    "/api4/sales-order-batch": {
+      "put": {
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PutSalesOrderBatch"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "CustomFields": {
+        "type": "object",
+        "properties": {
+          "strings": {
+            "type": [
+              "null",
+              "object"
+            ],
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "decimals": {
+            "type": [
+              "null",
+              "object"
+            ],
+            "additionalProperties": {
+              "pattern": "^-?(?:0|[1-9]\\d*)(?:\\.\\d+)?$",
+              "type": [
+                "null",
+                "number",
+                "string"
+              ],
+              "format": "double"
+            }
+          },
+          "dates": {
+            "type": [
+              "null",
+              "object"
+            ],
+            "additionalProperties": {
+              "type": [
+                "null",
+                "string"
+              ],
+              "format": "date-time"
+            }
+          },
+          "booleans": {
+            "type": [
+              "null",
+              "object"
+            ],
+            "additionalProperties": {
+              "type": "boolean"
+            }
+          },
+          "stringArrays": {
+            "type": [
+              "null",
+              "object"
+            ],
+            "additionalProperties": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "images": {
+            "type": [
+              "null",
+              "object"
+            ],
+            "additionalProperties": {
+              "type": [
+                "null",
+                "string"
+              ],
+              "format": "uuid"
+            }
+          }
+        }
+      },
+      "DiscountType": {
+        "type": "integer"
+      },
+      "ErrorResponse": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "message": {
+            "type": [
+              "null",
+              "string"
+            ]
+          }
+        }
+      },
+      "KeyValuePairOfGuidAndSalesOrder": {
+        "required": [
+          "key",
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "value": {
+            "$ref": "#/components/schemas/SalesOrder"
+          }
+        }
+      },
+      "Line": {
+        "type": "object",
+        "properties": {
+          "lineNumber": { },
+          "item": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "format": "uuid"
+          },
+          "lineDescription": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "customFields": {
+            "type": [
+              "null",
+              "object"
+            ],
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "customFields2": {
+            "$ref": "#/components/schemas/CustomFields"
+          },
+          "qty": {
+            "pattern": "^-?(?:0|[1-9]\\d*)(?:\\.\\d+)?$",
+            "type": [
+              "null",
+              "number",
+              "string"
+            ],
+            "format": "double"
+          },
+          "salesUnitPrice": {
+            "pattern": "^-?(?:0|[1-9]\\d*)(?:\\.\\d+)?$",
+            "type": [
+              "number",
+              "string"
+            ],
+            "format": "double"
+          },
+          "discountPercentage": {
+            "pattern": "^-?(?:0|[1-9]\\d*)(?:\\.\\d+)?$",
+            "type": [
+              "number",
+              "string"
+            ],
+            "format": "double"
+          },
+          "discountAmount": {
+            "pattern": "^-?(?:0|[1-9]\\d*)(?:\\.\\d+)?$",
+            "type": [
+              "number",
+              "string"
+            ],
+            "format": "double"
+          },
+          "totalBeforeTax": { },
+          "taxCode": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "format": "uuid"
+          },
+          "taxAmount": { },
+          "total": { }
+        }
+      },
+      "PutSalesOrderBatch": {
+        "type": "object",
+        "properties": {
+          "values": {
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/KeyValuePairOfGuidAndSalesOrder"
+            }
+          },
+          "business": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Name of business. If you are calling API from an extension running within IFRAME, then business does not have to be provided. Manager will automatically inject current business. This is useful when extension doesn't know business name which is typically the case."
+          }
+        }
+      },
+      "SalesOrder": {
+        "type": "object",
+        "properties": {
+          "date": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "reference": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "customer": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "format": "uuid"
+          },
+          "salesQuote": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "format": "uuid"
+          },
+          "billingAddress": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "description": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "lines": {
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/Line"
+            }
+          },
+          "amountsIncludeTax": {
+            "type": "boolean"
+          },
+          "hasLineNumber": {
+            "type": "boolean"
+          },
+          "discount": {
+            "type": "boolean"
+          },
+          "discountType": {
+            "$ref": "#/components/schemas/DiscountType"
+          },
+          "withholdingTax": {
+            "type": "boolean"
+          },
+          "withholdingTaxType": {
+            "$ref": "#/components/schemas/WithholdingTaxType"
+          },
+          "withholdingTaxPercentage": {
+            "pattern": "^-?(?:0|[1-9]\\d*)(?:\\.\\d+)?$",
+            "type": [
+              "number",
+              "string"
+            ],
+            "format": "double"
+          },
+          "withholdingTaxAmount": {
+            "pattern": "^-?(?:0|[1-9]\\d*)(?:\\.\\d+)?$",
+            "type": [
+              "number",
+              "string"
+            ],
+            "format": "double"
+          },
+          "customTheme": {
+            "type": "boolean"
+          },
+          "customThemeId": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "format": "uuid"
+          },
+          "showItemImages": {
+            "type": "boolean"
+          },
+          "showTaxAmountColumn": {
+            "type": "boolean"
+          },
+          "hasSalesOrderCustomTitle": {
+            "type": "boolean"
+          },
+          "salesOrderCustomTitle": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "hasSalesOrderFooters": {
+            "type": "boolean"
+          },
+          "salesOrderFooters": {
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          "cancelled": {
+            "type": "boolean"
+          },
+          "automaticReference": {
+            "type": "boolean"
+          },
+          "customFields": {
+            "type": [
+              "null",
+              "object"
+            ],
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "customFields2": {
+            "$ref": "#/components/schemas/CustomFields"
+          },
+          "obsolete_TrackQuantityToDeliver": {
+            "type": "boolean"
+          },
+          "obsolete_Lines": {
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/TransactionLine"
+            }
+          },
+          "obsolete_DeliveryInstructions": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "obsolete_AuthorizedBy": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "obsolete_DeliveryDate": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "format": "date-time"
+          },
+          "obsolete_DeliveryAddress": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "transactionTitle": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "text": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "uniqueName": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "isBillableExpense": {
+            "type": "boolean"
+          },
+          "isControlAccountForInvestments": {
+            "type": "boolean"
+          },
+          "isWithholdingTaxPayablePayable": {
+            "type": "boolean"
+          },
+          "isAccountsReceivable": {
+            "type": "boolean"
+          },
+          "isAccountsPayable": {
+            "type": "boolean"
+          },
+          "isCashAtBank": {
+            "type": "boolean"
+          },
+          "isInterAccountTransfers": {
+            "type": "boolean"
+          },
+          "isInventoryOnHand": {
+            "type": "boolean"
+          },
+          "isControlAccountForCapitalAccounts": {
+            "type": "boolean"
+          },
+          "isEmployeeClearingAccount": {
+            "type": "boolean"
+          },
+          "isControlAccountForSpecialAccounts": {
+            "type": "boolean"
+          },
+          "isControlAccountForFixedAssets": {
+            "type": "boolean"
+          },
+          "isControlAccountForFixedAssetsAccumulatedDepreciation": {
+            "type": "boolean"
+          },
+          "isControlAccountForIntangibleAssets": {
+            "type": "boolean"
+          },
+          "isControlAccountForIntangibleAssetsAccumulatedAmortization": {
+            "type": "boolean"
+          },
+          "hasCustomers": {
+            "type": "boolean"
+          },
+          "hasInvestments": {
+            "type": "boolean"
+          },
+          "hasSuppliers": {
+            "type": "boolean"
+          },
+          "hasFixedAssets": {
+            "type": "boolean"
+          },
+          "hasIntangibleAssets": {
+            "type": "boolean"
+          },
+          "isProfitAndLossAccount": {
+            "type": "boolean"
+          },
+          "hasExpenseClaimPayers": {
+            "type": "boolean"
+          },
+          "taxCodeEnabled": {
+            "type": "boolean"
+          },
+          "divisionEnabled": {
+            "type": "boolean"
+          },
+          "projectEnabled": {
+            "type": "boolean"
+          },
+          "canHaveCurrencyAmount": {
+            "type": "boolean"
+          },
+          "key": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "timestamp": {
+            "pattern": "^-?(?:0|[1-9]\\d*)$",
+            "type": [
+              "integer",
+              "string"
+            ],
+            "format": "int64"
+          },
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          }
+        }
+      },
+      "TransactionLine": {
+        "type": "object"
+      },
+      "WithholdingTaxType": {
+        "type": "integer"
+      }
+    }
+  }
+}

@@ -1,0 +1,4 @@
+{
+  "content": "<h1><span translate=\"true\" keyword=\"User\">User</span> &mdash; <span translate=\"true\" keyword=\"Delete\">Delete</span></h1><p translate=\"true\" keywords=\"Code Delete Is On To ToDate User Users\">To delete a user, go to the <code>Users</code> tab, click on the user you wish to delete, then click the <code>Delete</code> button.</p><p translate=\"true\" keywords=\"Administrator Code Delete Is On Other Role To ToDate User Users\">Only users with the <code>Administrator</code> role can delete other users.</p><p translate=\"true\" keywords=\"Account Administrator Count Delete Is Other To ToDate User\">An administrator can delete other administrators but cannot delete their own user account.</p>",
+  "key": "delete-user"
+}

@@ -1,0 +1,4 @@
+{
+  "content": "<h1><span translate=\"true\" keyword=\"SalesInvoiceTotalsByCustomer\">Sales Invoice Totals by Customer</span></h1><p translate=\"true\" keywords=\"By Custom Customer Invoice InvoiceTotal Port Sales SalesInvoice SalesInvoiceTotalsByCustomer To ToDate Total\">The Sales Invoice Totals by Customer report shows revenue by customer.</p><p translate=\"true\" keywords=\"Amount Custom Customer Is Sales To ToDate Total TotalSales\">It displays total sales amounts for each customer over specified periods.</p><p><span translate=\"true\" keywords=\"On\">For more information see:</span> <a href=\"/guides/sales-invoice-totals-by-customer-form\"><span translate=\"true\" keyword=\"SalesInvoiceTotalsByCustomer\">Sales Invoice Totals by Customer</span></a></p>",
+  "key": "sales-invoice-totals-by-customer-view"
+}

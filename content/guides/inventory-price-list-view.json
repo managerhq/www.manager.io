@@ -1,0 +1,4 @@
+{
+  "content": "<h1><span translate=\"true\" keyword=\"InventoryPriceList\">Inventory Price List</span></h1><p translate=\"true\" keywords=\"InventoryItem InventoryItems InventoryPriceList Is Item Price SalePrice Sales To ToDate View\">The Inventory Price List view displays sales prices for inventory items.</p><p translate=\"true\" keywords=\"Filter InventoryItem InventoryItems Item On Select To ToDate\">It shows configured pricing for selected inventory items based on filter criteria.</p><p><span translate=\"true\" keywords=\"On\">For more information see:</span> <a href=\"/guides/inventory-price-list-form\"><span translate=\"true\" keyword=\"InventoryPriceList\">Inventory Price List</span></a></p>",
+  "key": "inventory-price-list-view"
+}

@@ -1,0 +1,5 @@
+node_modules/
+_site/
+
+# The ASP.NET application this site replaces, kept locally for reference
+Previous/
