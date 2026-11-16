@@ -1,5 +1,6 @@
 {
   "name": "Manager.io",
   "url": "https://www.manager.io",
-  "image": "/apple-touch-icon.png"
+  "image": "/apple-touch-icon.png",
+  "cloud": "https://www.manager.cloud"
 }

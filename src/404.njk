@@ -7,9 +7,9 @@ permalink: /404.html
 breadcrumb: false
 ---
 <script>
-    // The accountant and advisor directories moved to manager.cloud
-    const moved = window.location.pathname.match(/^\/(accountants|advisors)(\/|$)/);
-    if (moved) window.location.replace('https://www.manager.cloud/' + moved[1]);
+    // Old links into the accountant and advisor directories go to the directory itself
+    const directory = window.location.pathname.match(/^\/(accountants|advisors)\/./);
+    if (directory) window.location.replace('/' + directory[1] + '/');
 </script>
 <div class="px-6 py-24 sm:py-32 lg:px-8">
     <div class="mx-auto max-w-2xl text-center">

@@ -1,0 +1,37 @@
+---
+layout: layout.njk
+title: Advisors
+metaTitle: Find an Advisor | Manager.io
+description: Connect with experienced consultants who specialise in Manager.
+faqs:
+  - q: What is an advisor?
+    a: Advisors are accountants, bookkeepers and consultants who specialise in implementing, configuring and supporting businesses that run the cloud edition.
+  - q: How are advisors different from accountants?
+    a: Advisors focus on Manager itself. The accountants in our <a href="/accountants/" class="underline text-sky-500 underline-offset-4">directory</a> offer general accounting services, while advisors bring deeper expertise in configuring Manager for complex workflows, training, migration and ongoing support. Advisors earn commission from Manager, and may also charge for their consulting services.
+  - q: Do advisors charge fees?
+    a: Advisors have flexibility in how they work with clients. They earn commission from Manager for the customers they support, and may also charge for implementation, customisation, training and ongoing consulting. Contact an advisor directly to discuss their services and pricing.
+  - q: How do I become an advisor?
+    a: Set up your profile in the <a href="https://www.manager.cloud/advisors/dashboard" class="underline text-sky-500 underline-offset-4">advisor dashboard</a>. Once you have a profile and at least one client with an active subscription assigned to you, you appear in this directory automatically.
+---
+{# The listing is loaded in the browser from the manager.cloud API by /js/advisors.js. #}
+<div class="px-6 py-16 lg:px-8">
+    <div class="mx-auto max-w-2xl text-center lg:max-w-3xl">
+        <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
+            Find an Advisor
+        </h1>
+    </div>
+    <p class="mx-auto mt-6 max-w-2xl text-center text-lg leading-8 text-gray-600">
+        Connect with experienced consultants who specialise in Manager.
+    </p>
+    <div id="countryLine" class="mt-4 text-center text-sm text-gray-500" hidden></div>
+</div>
+
+<div class="mx-auto w-full max-w-3xl px-6 lg:px-8">
+    <div id="advisorsList" class="space-y-4" data-api="{{ site.cloud }}">
+        <p class="text-center text-gray-500">Loading advisors...</p>
+    </div>
+</div>
+
+{% include "faqs.njk" %}
+
+<script type="module" src="/js/advisors.js"></script>

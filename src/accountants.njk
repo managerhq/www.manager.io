@@ -1,0 +1,35 @@
+---
+layout: layout.njk
+title: Accountants
+metaTitle: Find an Accountant | Manager.io
+description: Find a locally-based accountant or bookkeeper with expertise in Manager.
+faqs:
+  - q: Can I contact these accountants for free support?
+    a: The accountants listed above are independent professionals in your area who use Manager with their clients. They are not employees, agents, or representatives of Manager. While they are familiar with Manager, they are professional service providers who charge fees for their services.
+  - q: Why are these accountants listed here?
+    a: We provide this directory as a service to our users who might be seeking accounting professionals familiar with Manager. It's a way to connect businesses with professionals who can assist them in their accounting needs using our software.
+  - q: How can I be listed as an accountant on this directory?
+    a: To ensure the integrity and quality of our directory, only accountants who use cloud edition with their clients are eligible to be listed. This requirement helps us maintain a high standard for listings and minimize spam. If you are an accountant using cloud edition and wish to be included in the directory, please sign up <a href="https://www.manager.cloud/public-profile" class="underline text-sky-500 underline-offset-4">here</a>.
+---
+{# The listings live in StoreRocket. Accountants manage their own at manager.cloud/public-profile. #}
+<div class="px-6 py-16 lg:px-8">
+    <div class="mx-auto max-w-2xl text-center lg:max-w-3xl">
+        <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
+            Accountants and bookkeepers in your area
+        </h1>
+    </div>
+    <p class="mx-auto mt-6 max-w-2xl text-center text-lg leading-8 text-gray-600">
+        Find a locally-based accountant or bookkeeper who possesses expertise in Manager.
+    </p>
+</div>
+
+<div class="mx-auto w-full max-w-7xl px-6 lg:px-8">
+    {# The widget replaces everything inside this element once it loads. #}
+    <div class="storerocket-store-locator min-h-80 w-full" dir="ltr">
+        <p class="text-center text-gray-500">Loading directory...</p>
+    </div>
+</div>
+
+{% include "faqs.njk" %}
+
+<script src="/js/accountants.js" defer></script>

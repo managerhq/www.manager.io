@@ -1,0 +1,140 @@
+---
+layout: layout.njk
+title: Cloud Edition
+description: The cloud edition of Manager.io accounting software. No installation, anywhere access for your entire team. Unlimited users and unlimited businesses for one flat price.
+currencies:
+  - { code: USD, monthly: 59 }
+  - { code: CAD, monthly: 79 }
+  - { code: AUD, monthly: 89 }
+  - { code: EUR, monthly: 59 }
+  - { code: GBP, monthly: 49 }
+  - { code: NZD, monthly: 99 }
+  - { code: SGD, monthly: 79 }
+features:
+  - icon: fa-calculator
+    title: Full-Featured Accounting
+    description: The complete Manager feature set — invoicing, bank reconciliation, reports and more.
+  - icon: fa-bolt
+    title: Nothing to Install
+    description: Easy to set up. Your books run in the browser at your own address.
+  - icon: fa-mobile-screen
+    title: Any Device
+    description: Use on desktops, laptops, tablets and phones — anywhere with remote access.
+  - icon: fa-users
+    title: Multi-User Access
+    description: Your whole team works in the same books at the same time, with user permissions to control who sees what.
+  - icon: fa-database
+    title: Automatic Backups
+    description: Your data is backed up automatically — nothing for you to manage.
+  - icon: fa-rotate
+    title: Automatic Updates
+    description: Always on the latest version without lifting a finger.
+faqs:
+  - q: Do we pay extra for more users or businesses?
+    a: No. We don't charge you based on how many users or businesses you add. 5 or 50, the price is the same. If you have many businesses, you can also specify which businesses are visible to which users. Great for accountants with many clients.
+  - q: Do you offer discounts?
+    a: We strive to price our services fairly and transparently for all our customers, which is why we do not offer discounts. Our goal is to deliver exceptional value that exceeds the cost, even at full price. One flat price covers unlimited users and unlimited businesses, so what you see is what everyone pays.
+  - q: Can we cancel subscription at any time?
+    a: You can cancel at any time without penalty or hassle. And unlike most online accounting systems which lock you in, your data is always yours — you can download all of it from the cloud whenever you want.
+  - q: How do I manage my subscription?
+    a: Visit our <a href="https://www.manager.cloud/portal" class="underline text-sky-500 underline-offset-4">customer portal</a> where you can update your billing details, view invoices or cancel subscription.
+---
+{# The cloud edition is described here and run from manager.cloud: sign-up, the customer portal and the legal pages live there. #}
+{% set primaryButton = "rounded-md bg-indigo-600 px-3.5 py-2.5 text-base font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 hover:text-white" %}
+{% set secondaryButton = "rounded-md bg-white px-3.5 py-2.5 text-base font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50" %}
+<div class="px-6 py-16 lg:px-8">
+    <div class="mx-auto max-w-2xl text-center lg:max-w-3xl">
+        <p class="text-base font-semibold leading-7 text-indigo-600">
+            Cloud Edition
+        </p>
+        <h1 class="mt-2 text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
+            The Same Accounting Software but in the Cloud
+        </h1>
+    </div>
+    <p class="mx-auto mt-6 max-w-2xl text-center text-lg leading-8 text-gray-600">
+        No installation, anywhere access for your entire team
+    </p>
+    <div class="mt-10 flex flex-wrap items-center justify-center gap-y-2 gap-x-4">
+        <a href="{{ site.cloud }}/free-trial" class="{{ primaryButton }}">Begin Free Trial</a>
+        <a href="#pricing" class="{{ secondaryButton }}">See Pricing</a>
+    </div>
+</div>
+
+<!-- Pricing -->
+<div class="px-6 lg:px-8" id="pricing">
+    <h2 class="text-center text-2xl font-bold tracking-tight text-gray-900">Simple, Flat Pricing</h2>
+    <div class="mx-auto mt-8 max-w-md rounded-2xl p-8 text-center shadow-sm ring-1 ring-gray-200">
+        <div class="flex justify-center gap-2">
+            <select id="currency" aria-label="Currency" class="rounded-md border border-gray-300 bg-white px-3 py-2 text-sm text-gray-900">
+                {% for currency in currencies %}
+                <option value="{{ currency.monthly }}">{{ currency.code }}</option>
+                {% endfor %}
+            </select>
+            <select id="period" aria-label="Billing period" class="rounded-md border border-gray-300 bg-white px-3 py-2 text-sm text-gray-900">
+                <option value="1">per month</option>
+                <option value="10">per year</option>
+            </select>
+        </div>
+
+        <div class="mt-6 text-5xl font-bold tracking-tight text-gray-900" id="price">{{ currencies[0].monthly }} {{ currencies[0].code }}</div>
+        <div class="mt-1 text-gray-600" id="periodDisplay">per month</div>
+
+        <ul class="mt-6 space-y-2 text-gray-600">
+            <li class="font-semibold text-gray-900">Unlimited Users + Unlimited Businesses</li>
+            <li>No per-user pricing or fees</li>
+            <li>No per-business pricing or fees</li>
+        </ul>
+
+        <a href="{{ site.cloud }}/free-trial" class="mt-8 block {{ primaryButton }}">Begin Free Trial</a>
+        <p class="mt-4 text-sm text-gray-500">14-day free trial. No credit card required.</p>
+    </div>
+</div>
+
+<!-- Features -->
+<div class="mx-auto max-w-7xl px-6 pt-16 lg:px-8">
+    <h2 class="text-center text-2xl font-bold tracking-tight text-gray-900">Everything Included</h2>
+    <dl class="mt-10 grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
+        {% for feature in features %}
+        <div>
+            <dt class="text-base font-semibold leading-7 text-gray-900">
+                <i class="fa {{ feature.icon }} mr-2 text-indigo-600"></i>
+                {{ feature.title }}
+            </dt>
+            <dd class="mt-2 text-base leading-7 text-gray-600">{{ feature.description }}</dd>
+        </div>
+        {% endfor %}
+    </dl>
+</div>
+
+<!-- Existing customers -->
+<div class="px-6 pt-16 text-center lg:px-8">
+    <p class="mb-4 font-semibold text-gray-900">Existing Customer?</p>
+    <a href="{{ site.cloud }}/portal" class="inline-block {{ secondaryButton }}">Customer Portal</a>
+</div>
+
+{% include "faqs.njk" %}
+
+<p class="px-6 text-center text-sm text-gray-500">
+    <a href="{{ site.cloud }}/terms-of-use" class="hover:text-gray-800 hover:underline">Terms of Use</a>
+    ·
+    <a href="{{ site.cloud }}/privacy-policy" class="hover:text-gray-800 hover:underline">Privacy Policy</a>
+    ·
+    <a href="mailto:support@manager.cloud" class="hover:text-gray-800 hover:underline">support@manager.cloud</a>
+</p>
+
+<script>
+    // Annual billing costs ten months, so the price is the monthly figure times the period.
+    const currencySelect = document.getElementById("currency");
+    const periodSelect = document.getElementById("period");
+
+    function updatePrice() {
+        const currency = currencySelect.options[currencySelect.selectedIndex];
+        const period = periodSelect.options[periodSelect.selectedIndex];
+        document.getElementById("price").textContent = `${Number(currency.value) * Number(period.value)} ${currency.text}`;
+        document.getElementById("periodDisplay").textContent = period.text;
+    }
+
+    currencySelect.addEventListener("change", updatePrice);
+    periodSelect.addEventListener("change", updatePrice);
+    updatePrice();
+</script>

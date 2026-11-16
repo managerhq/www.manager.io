@@ -1,0 +1,15 @@
+---
+layout: layout.njk
+title: Advisor
+description: An advisor who specialises in Manager.
+permalink: /advisors/profile/
+noindex: true
+---
+{# One advisor's page: /advisors/profile/?username=… The same file serves every advisor, so it is kept out of search engines. #}
+<div class="mx-auto w-full max-w-2xl px-6 py-10 lg:px-8">
+    <div id="profileContent" class="space-y-4" data-api="{{ site.cloud }}">
+        <p class="text-center text-gray-500">Loading profile...</p>
+    </div>
+</div>
+
+<script type="module" src="/js/advisor-profile.js"></script>
