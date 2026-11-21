@@ -17,7 +17,7 @@ Pushing to `main` builds and deploys the site (`.github/workflows/pages.yml`).
 | Path | What it holds |
 |---|---|
 | `src/*.njk` | One file per page, or per kind of page (`guides.njk`, `language.njk`) |
-| `src/cloud-edition.njk`, `accountants.njk`, `advisors.njk`, `advisor-profile.njk` | Public pages of the cloud edition. Sign-up, the customer portal and the API they read are the ManagerCloud project at `site.cloud` (see below) |
+| `src/accountants.njk`, `advisors.njk`, `advisor-profile.njk` | Accountant and advisor directories. Their data comes from the ManagerCloud project at `site.cloud` (see below) |
 | `src/_includes/` | Layout, header, footer and other shared pieces |
 | `src/_data/releases.json` | Release notes shown on `/releases/` |
 | `src/_data/banners.json` | Country-specific messages, keyed by country and page path |
@@ -29,12 +29,14 @@ Pushing to `main` builds and deploys the site (`.github/workflows/pages.yml`).
 | `public/` | Files copied to the site as they are |
 | `eleventy.config.js` | Build configuration and template filters |
 
-## Cloud edition pages
+## Cloud edition
 
-Everything public about the cloud edition is here; everything that needs a signed-in user is on
-`www.manager.cloud` (the ManagerCloud project), whose address is `cloud` in `src/_data/site.json`.
+The cloud edition has its own site, `www.manager.cloud` (the ManagerCloud project), whose address is
+`cloud` in `src/_data/site.json`. Pricing, sign-up and the customer portal are there; this site only
+links to it. `/cloud-edition/` (`src/cloud-edition.njk`) forwards old links.
 
-- `/cloud-edition/` — pricing, features and FAQ. Prices are in the page's front matter.
+The accountant and advisor directories are still here:
+
 - `/accountants/` — the accountants directory, a StoreRocket widget loaded by `public/js/accountants.js`.
 - `/advisors/` — the advisor directory, an iframe of `https://advisors.manager.cloud/embed` that posts
   its height to the page so the frame fits its content.
@@ -43,6 +45,6 @@ Everything public about the cloud edition is here; everything that needs a signe
   which answer with `Access-Control-Allow-Origin: *`. Contacting an advisor needs a signed-in sender,
   so that button leads to manager.cloud.
 
-`www.manager.cloud` redirects its old `/`, `/accountants`, `/advisors` and `/advisors/profile` here.
+`www.manager.cloud` redirects its old `/accountants`, `/advisors` and `/advisors/profile` here.
 
 Tailwind runs after each Eleventy build and reads the generated HTML, so any class used in a page or in guide content is picked up automatically.
