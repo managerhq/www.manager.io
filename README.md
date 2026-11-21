@@ -36,10 +36,12 @@ Everything public about the cloud edition is here; everything that needs a signe
 
 - `/cloud-edition/` — pricing, features and FAQ. Prices are in the page's front matter.
 - `/accountants/` — the accountants directory, a StoreRocket widget loaded by `public/js/accountants.js`.
-- `/advisors/` and `/advisors/profile/?username=…` — the advisor directory. `public/js/advisors.js` and
-  `advisor-profile.js` read it in the browser from the anonymous `GET /api/advisors/*` and
-  `/api/languages` endpoints on manager.cloud, which answer with `Access-Control-Allow-Origin: *`.
-  Contacting an advisor needs a signed-in sender, so that button leads to manager.cloud.
+- `/advisors/` — the advisor directory, an iframe of `https://advisors.manager.cloud/embed` that posts
+  its height to the page so the frame fits its content.
+- `/advisors/profile/?username=…` — one advisor's page. `public/js/advisor-profile.js` reads it in the
+  browser from the anonymous `GET /api/advisors/*` and `/api/languages` endpoints on manager.cloud,
+  which answer with `Access-Control-Allow-Origin: *`. Contacting an advisor needs a signed-in sender,
+  so that button leads to manager.cloud.
 
 `www.manager.cloud` redirects its old `/`, `/accountants`, `/advisors` and `/advisors/profile` here.
 

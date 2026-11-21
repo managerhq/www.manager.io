@@ -13,7 +13,7 @@ faqs:
   - q: How do I become an advisor?
     a: Set up your profile in the <a href="https://www.manager.cloud/advisors/dashboard" class="underline text-sky-500 underline-offset-4">advisor dashboard</a>. Once you have a profile and at least one client with an active subscription assigned to you, you appear in this directory automatically.
 ---
-{# The listing is loaded in the browser from the manager.cloud API by /js/advisors.js. #}
+{# The listing is an iframe served by advisors.manager.cloud, which posts its height so the frame fits its content. #}
 <div class="px-6 py-16 lg:px-8">
     <div class="mx-auto max-w-2xl text-center lg:max-w-3xl">
         <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
@@ -23,15 +23,18 @@ faqs:
     <p class="mx-auto mt-6 max-w-2xl text-center text-lg leading-8 text-gray-600">
         Connect with experienced consultants who specialise in Manager.
     </p>
-    <div id="countryLine" class="mt-4 text-center text-sm text-gray-500" hidden></div>
 </div>
 
 <div class="mx-auto w-full max-w-3xl px-6 lg:px-8">
-    <div id="advisorsList" class="space-y-4" data-api="{{ site.cloud }}">
-        <p class="text-center text-gray-500">Loading advisors...</p>
-    </div>
+    <iframe id="manager-advisors" src="https://advisors.manager.cloud/embed"
+            style="width: 100%; border: 0;" height="600"></iframe>
 </div>
+<script>
+  window.addEventListener('message', e => {
+    if (e.origin !== 'https://advisors.manager.cloud') return;
+    if (e.data?.type !== 'manager-advisors-height') return;
+    document.getElementById('manager-advisors').height = e.data.height;
+  });
+</script>
 
 {% include "faqs.njk" %}
-
-<script type="module" src="/js/advisors.js"></script>
