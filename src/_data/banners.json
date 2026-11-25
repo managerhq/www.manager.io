@@ -30,6 +30,21 @@
     "value": "تم دمج Manager.io بالكامل مع **منظومة الفوترة الإلكترونية للهيئة الزكاة والضريبة والجمارك (ZATCA) للمرحلة الثانية**، مما يتيح للشركات السعودية إرسال الفواتير الإلكترونية المتوافقة مباشرة من التطبيق من خلال [خدمة ZatcaEGS المجانية](https://zatcaegs.azurewebsites.net/). استمتع بتجربة فوترة سلسة دون رسوم خفية أو اشتراكات، مصممة خصيصًا لدعم احتياجاتك في الامتثال."
   },
   {
+    "country": "ae",
+    "path": "/",
+    "value": "**UAE e-invoicing is coming to Manager.io.** Integration with the UAE e-invoicing system will be available in **December 2026**."
+  },
+  {
+    "country": "ae",
+    "path": "/ar",
+    "value": "**الفوترة الإلكترونية في الإمارات قادمة إلى Manager.io.** سيتوفر التكامل مع نظام الفوترة الإلكترونية في دولة الإمارات العربية المتحدة في **ديسمبر 2026**."
+  },
+  {
+    "country": "ae",
+    "path": "/ar/",
+    "value": "**الفوترة الإلكترونية في الإمارات قادمة إلى Manager.io.** سيتوفر التكامل مع نظام الفوترة الإلكترونية في دولة الإمارات العربية المتحدة في **ديسمبر 2026**."
+  },
+  {
     "country": "my",
     "path": "/",
     "value": "**Need e-Invoicing in Malaysia?** [MyInvois Extension](https://myinvoisextension.azurewebsites.net/) enables businesses in Malaysia to comply with the LHDNM e-invoicing requirements. It covers integration, invoice/credit note submission, status updates, and taxpayer lookup via QR code."

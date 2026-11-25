@@ -8,6 +8,7 @@
     const timeZoneCountries = {
         'Asia/Kabul': 'af',
         'Asia/Riyadh': 'sa',
+        'Asia/Dubai': 'ae',
         'Asia/Kuala_Lumpur': 'my',
         'Asia/Kuching': 'my',
         'Africa/Harare': 'zw'
