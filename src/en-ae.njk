@@ -1,0 +1,127 @@
+---
+layout: layout.njk
+permalink: /en-ae/
+breadcrumb: false
+lang: en-AE
+metaTitle: UAE eInvoicing with Free Accounting Software | Manager.io
+description: Manager.io is free accounting software for businesses in the UAE. Send invoices and credit notes as e-invoices that meet the UAE eInvoicing mandate with the eInvoices.ae extension.
+einvoices: https://www.einvoices.ae
+steps:
+  - title: Download Manager.io
+    description: Install the free desktop edition on Windows, Mac or Linux and set up your business.
+  - title: Add the eInvoices.ae extension
+    description: Open the Extensions screen in Manager.io, choose eInvoices.ae and create an account.
+  - title: Test with your own invoices
+    description: Send test e-invoices in the sandbox for free, for as long as you need.
+  - title: Subscribe and send for real
+    description: When you are ready, subscribe at eInvoices.ae and send live e-invoices directly from Manager.io.
+deadlines:
+  - date: 1 January 2027
+    who: Businesses with revenue of AED 50 million or more
+    what: eInvoicing becomes mandatory
+  - date: 31 March 2027
+    who: All other businesses and government entities
+    what: Deadline to appoint an Accredited Service Provider
+  - date: 1 July 2027
+    who: Businesses with revenue below AED 50 million
+    what: eInvoicing becomes mandatory
+  - date: 1 October 2027
+    who: Government entities
+    what: eInvoicing becomes mandatory
+faqs:
+  - q: Is Manager.io really free?
+    a: Yes. The desktop edition is free to use for as long as you like, with all features and no limits on how much data you enter. Sending live e-invoices needs a subscription to eInvoices.ae, which is a separate service.
+  - q: What is eInvoices.ae?
+    a: <a href="https://www.einvoices.ae" class="underline text-sky-500 underline-offset-4">eInvoices.ae</a> is an extension for Manager.io that sends your invoices and credit notes as e-invoices meeting the UAE eInvoicing mandate. It opens inside Manager.io, so you keep working in one place.
+  - q: Do I need my own Accredited Service Provider?
+    a: No. eInvoices.ae sends your e-invoices through an Accredited Service Provider on the Peppol network, as the UAE system requires, and they are reported to the Federal Tax Authority. You do not need a separate contract with the provider.
+  - q: How much does it cost?
+    a: Testing in the sandbox is free and needs no subscription. You pay only to send live e-invoices. Current pricing is on <a href="https://www.einvoices.ae/#pricing" class="underline text-sky-500 underline-offset-4">eInvoices.ae</a>.
+---
+{% macro actionButtons() %}
+<div class="mt-10 flex flex-wrap items-center justify-center gap-y-2 gap-x-4">
+    <a href="{{ einvoices }}" class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-base font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 flex gap-2 items-center hover:text-white">
+        Go to eInvoices.ae
+        <i class="fa fa-arrow-right"></i>
+    </a>
+    <a href="/download/" class="rounded-md bg-white px-3.5 py-2.5 text-base font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 flex gap-2 items-center">
+        Free Download
+        <i class="fa fa-download"></i>
+    </a>
+</div>
+{% endmacro %}
+
+<!-- Header -->
+<div class="px-6 pt-16 lg:px-8">
+    <div class="mx-auto max-w-2xl text-center lg:max-w-4xl">
+        <p class="text-base font-semibold leading-7 text-indigo-600">
+            United Arab Emirates
+        </p>
+        <h1 class="mt-2 text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
+            Free Accounting Software with UAE eInvoicing
+        </h1>
+    </div>
+    <p class="mx-auto mt-6 max-w-2xl text-center text-lg leading-8 text-gray-600">
+        Send your invoices and credit notes as e-invoices that meet the UAE eInvoicing mandate,
+        directly from Manager.io, using the
+        <a href="{{ einvoices }}" class="underline text-sky-500 underline-offset-4">eInvoices.ae</a> extension.
+    </p>
+    {{ actionButtons() }}
+</div>
+
+<!-- How it works -->
+<div class="mx-auto max-w-5xl px-6 pt-16 sm:pt-20 lg:px-8">
+    <h2 class="text-2xl font-bold tracking-tight text-gray-900">How it works</h2>
+    <div class="mt-10 grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-2">
+        {% for step in steps %}
+        <div class="relative pl-16">
+            <div class="text-base font-semibold leading-7 text-gray-900">
+                <div class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600 text-white">
+                    {{ loop.index }}
+                </div>
+                {{ step.title }}
+            </div>
+            <div class="mt-2 text-base leading-7 text-gray-600">
+                {{ step.description }}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<!-- Deadlines -->
+<div class="mx-auto max-w-5xl px-6 pt-16 sm:pt-20 lg:px-8">
+    <h2 class="text-2xl font-bold tracking-tight text-gray-900">When eInvoicing becomes mandatory</h2>
+    <p class="mt-4 text-base leading-7 text-gray-600">
+        Once your phase starts, a PDF or paper invoice no longer counts as an invoice.
+    </p>
+    <div class="mt-8 divide-y divide-gray-900/10 border-y border-gray-900/10">
+        {% for deadline in deadlines %}
+        <div class="py-4 sm:grid sm:grid-cols-12 sm:gap-8">
+            <div class="text-base font-semibold leading-7 text-gray-900 sm:col-span-3 whitespace-nowrap">
+                {{ deadline.date }}
+            </div>
+            <div class="text-base leading-7 text-gray-600 sm:col-span-5">
+                {{ deadline.who }}
+            </div>
+            <div class="text-base leading-7 text-gray-600 sm:col-span-4">
+                {{ deadline.what }}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <p class="mt-4 text-sm leading-6 text-gray-500">
+        Dates are those set by Ministerial Decision No. 244 of 2025 and its amendments. Confirm the ones
+        that apply to you with the
+        <a href="https://mof.gov.ae" class="underline underline-offset-4">Ministry of Finance</a>.
+    </p>
+</div>
+
+{% set faqWidth = "max-w-5xl" %}
+{% include "faqs.njk" %}
+
+<hr class="mx-auto max-w-5xl">
+
+<div class="mx-auto max-w-4xl px-6 pb-16 text-center lg:px-8">
+    {{ actionButtons() }}
+</div>

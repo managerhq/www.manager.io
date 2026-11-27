@@ -1,5 +1,6 @@
-{# Questions and answers from the page's front matter: faqs: [{ q, a }]. Answers may contain HTML. #}
-<div class="mx-auto max-w-7xl divide-y divide-gray-900/10 px-6 py-16 lg:px-8" id="faq">
+{# Questions and answers from the page's front matter: faqs: [{ q, a }]. Answers may contain HTML.
+   Set faqWidth (a max-w-* class) before including to match a narrower page. #}
+<div class="mx-auto {{ faqWidth or "max-w-7xl" }} divide-y divide-gray-900/10 px-6 py-16 lg:px-8" id="faq">
     <h2 class="text-2xl font-bold leading-10 tracking-tight text-gray-900">
         Frequently Asked Questions
     </h2>
