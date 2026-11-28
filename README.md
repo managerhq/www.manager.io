@@ -21,6 +21,7 @@ Pushing to `main` builds and deploys the site (`.github/workflows/pages.yml`).
 | `src/_includes/` | Layout, header, footer and other shared pieces |
 | `src/_data/releases.json` | Release notes shown on `/releases/` |
 | `src/_data/banners.json` | Country-specific messages, keyed by country and page path |
+| `src/_data/countries.json` | Country landing pages (`/en-au/`, `/en-ae/`) listed in the footer; "Global" is the home page |
 | `src/_data/languages.json` | Languages; each gets a download page such as `/ar/` |
 | `src/_data/translations.json` | Text of the language pages |
 | `src/_data/guideSidebar.json` | Menu on the guide pages |

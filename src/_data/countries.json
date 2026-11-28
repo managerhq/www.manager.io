@@ -1,0 +1,5 @@
+[
+  { "name": "Global", "url": "/" },
+  { "name": "Australia", "url": "/en-au/" },
+  { "name": "United Arab Emirates", "url": "/en-ae/" }
+]
