@@ -1,0 +1,152 @@
+---
+layout: layout.njk
+permalink: /en-au/
+breadcrumb: false
+lang: en-AU
+metaTitle: Free Accounting Software for Australia with Bank Feeds | Manager.io
+description: Manager.io is free accounting software for Australian businesses, with GST codes, BAS, Single Touch Payroll, PAYG payment summary and TPAR reports built in, and bank feeds from Australian banks through AussieBankFeeds.
+bankFeeds: https://www.aussiebankfeeds.com
+steps:
+  - title: Download Manager.io
+    description: Install the free desktop edition on Windows, Mac or Linux and set up your business.
+  - title: Create an AussieBankFeeds account
+    description: Open the Extensions screen in Manager.io, choose Aussie Bank Feeds and sign up with your email. There is nothing to install.
+  - title: Connect your bank
+    description: Give consent with your bank directly under the Consumer Data Right. Access is read-only and you never share your banking password.
+  - title: Import your transactions
+    description: Go to Sync, pick your business and open a bank account. New transactions are then imported daily.
+reports:
+  - name: Business Activity Statement
+    description: GST on sales and purchases (G1 to G11, 1A and 1B) and PAYG tax withheld (W1 and W2), by month, quarter or any date range, on a cash or accrual basis.
+  - name: Single Touch Payroll Worksheet (Phase 2)
+    description: Pay, tax and super for each employee, with a CSV download in the ATO worksheet layout.
+  - name: PAYG payment summary
+    description: One employee's payments and tax withheld for a financial year, laid out like the ATO form.
+  - name: Taxable Payments Annual Report (TPAR)
+    description: Gross amount and GST paid to each supplier you have marked for inclusion, with their ABN.
+taxCodes:
+  - GST 10%
+  - GST 10% (CAPEX)
+  - GST 10% (Deferred)
+  - GST Free
+  - GST Free Import Export
+  - GST on Imports
+  - Input Taxed
+faqs:
+  - q: Is Manager.io really free?
+    a: Yes. The desktop edition is free to use for as long as you like, with all features and no limits on how much data you enter. The Australian reports and GST codes are included. Bank feeds need a subscription to AussieBankFeeds, which is a separate service.
+  - q: What is AussieBankFeeds?
+    a: <a href="https://www.aussiebankfeeds.com" class="underline text-sky-500 underline-offset-4">AussieBankFeeds</a> is an extension for Manager.io that imports transactions from your Australian bank accounts automatically, so you do not have to upload bank statements by hand. It opens from the Extensions screen and works with all Manager.io editions.
+  - q: Which banks are supported?
+    a: The big four banks and more than 100 other Australian financial institutions.
+  - q: Does AussieBankFeeds see my banking password?
+    a: No. Your bank is connected through Basiq, an Accredited Data Recipient under Australia's Consumer Data Right. You give consent with your bank directly, access is read-only, and you can withdraw consent at any time.
+  - q: How much do bank feeds cost?
+    a: AussieBankFeeds charges one flat monthly fee, however many bank accounts, transactions and businesses you have. Current pricing is on <a href="https://www.aussiebankfeeds.com/pricing/" class="underline text-sky-500 underline-offset-4">AussieBankFeeds</a>.
+  - q: Does Manager.io lodge my BAS or STP with the ATO?
+    a: No. Manager.io works out the figures and produces the reports and the STP worksheet file. You or your tax agent lodge them with the ATO.
+---
+{% macro actionButtons() %}
+<div class="mt-10 flex flex-wrap items-center justify-center gap-y-2 gap-x-4">
+    <a href="/download/" class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-base font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 flex gap-2 items-center hover:text-white">
+        Free Download
+        <i class="fa fa-download"></i>
+    </a>
+    <a href="{{ bankFeeds }}" class="rounded-md bg-white px-3.5 py-2.5 text-base font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 flex gap-2 items-center">
+        Go to AussieBankFeeds
+        <i class="fa fa-arrow-right"></i>
+    </a>
+</div>
+{% endmacro %}
+
+<!-- Header -->
+<div class="px-6 pt-16 lg:px-8">
+    <div class="mx-auto max-w-2xl text-center lg:max-w-4xl">
+        <p class="text-base font-semibold leading-7 text-indigo-600">
+            Australia
+        </p>
+        <h1 class="mt-2 text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
+            Free Accounting Software for Australian Businesses
+        </h1>
+    </div>
+    <p class="mx-auto mt-6 max-w-2xl text-center text-lg leading-8 text-gray-600">
+        GST codes, BAS, Single Touch Payroll, PAYG payment summary and TPAR reports are built into
+        Manager.io. Add bank feeds from your Australian bank accounts with the
+        <a href="{{ bankFeeds }}" class="underline text-sky-500 underline-offset-4">AussieBankFeeds</a> extension.
+    </p>
+    {{ actionButtons() }}
+</div>
+
+<!-- Bank feeds -->
+<div class="mx-auto max-w-5xl px-6 pt-16 sm:pt-20 lg:px-8">
+    <h2 class="text-2xl font-bold tracking-tight text-gray-900">Bank feeds from Australian banks</h2>
+    <p class="mt-4 text-base leading-7 text-gray-600">
+        <a href="{{ bankFeeds }}" class="underline text-sky-500 underline-offset-4">AussieBankFeeds</a>
+        imports transactions from your bank accounts directly into Manager.io every day, from the big four
+        and more than 100 other Australian financial institutions.
+    </p>
+    <div class="mt-10 grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-2">
+        {% for step in steps %}
+        <div class="relative pl-16">
+            <div class="text-base font-semibold leading-7 text-gray-900">
+                <div class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600 text-white">
+                    {{ loop.index }}
+                </div>
+                {{ step.title }}
+            </div>
+            <div class="mt-2 text-base leading-7 text-gray-600">
+                {{ step.description }}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<!-- Reports -->
+<div class="mx-auto max-w-5xl px-6 pt-16 sm:pt-20 lg:px-8">
+    <h2 class="text-2xl font-bold tracking-tight text-gray-900">Reports for the ATO</h2>
+    <p class="mt-4 text-base leading-7 text-gray-600">
+        The Australia extension is included with Manager.io. Open it from the Extensions screen and run
+        any of these reports for your business.
+    </p>
+    <div class="mt-8 divide-y divide-gray-900/10 border-y border-gray-900/10">
+        {% for report in reports %}
+        <div class="py-4 sm:grid sm:grid-cols-12 sm:gap-8">
+            <div class="text-base font-semibold leading-7 text-gray-900 sm:col-span-5">
+                {{ report.name }}
+            </div>
+            <div class="text-base leading-7 text-gray-600 sm:col-span-7">
+                {{ report.description }}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<!-- GST -->
+<div class="mx-auto max-w-5xl px-6 pt-16 sm:pt-20 lg:px-8">
+    <h2 class="text-2xl font-bold tracking-tight text-gray-900">GST codes ready to use</h2>
+    <p class="mt-4 text-base leading-7 text-gray-600">
+        Australia's standard GST codes come already linked to the BAS labels they report to. Create them
+        in your business with one click, and invoices that charge GST are titled Tax Invoice.
+    </p>
+    <ul class="mt-6 flex flex-wrap gap-2">
+        {% for taxCode in taxCodes %}
+        <li class="rounded-md bg-gray-50 px-3 py-1.5 text-sm font-medium text-gray-900 ring-1 ring-inset ring-gray-200">{{ taxCode }}</li>
+        {% endfor %}
+    </ul>
+    <p class="mt-6 text-base leading-7 text-gray-600">
+        The extension also holds the details the reports read: your ABN, supplier ABNs and TPAR status,
+        employee details for STP Phase 2 such as TFN, tax treatment and income stream, and the ATO
+        category of each payslip item.
+    </p>
+</div>
+
+{% set faqWidth = "max-w-5xl" %}
+{% include "faqs.njk" %}
+
+<hr class="mx-auto max-w-5xl">
+
+<div class="mx-auto max-w-4xl px-6 pb-16 text-center lg:px-8">
+    {{ actionButtons() }}
+</div>
